@@ -829,6 +829,18 @@ footer {
   height: 0 !important;
 }
 
+/* Smooth transition from science to our story */
+.science-section {
+  position: relative;
+  transition: all 0.5s ease;
+}
+
+.our-story {
+  position: relative;
+  margin-top: 0 !important;
+  transition: all 0.5s ease;
+}
+
 
 /* ===== PRODUCTS PAGE - COOL & VIBEY ===== */
 
@@ -1605,12 +1617,21 @@ footer {
 .box-stack {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 10px;
     justify-content: center;
     align-items: center;
 }
 
 .box-stack.bulk {
+    gap: 6px;
+}
+
+/* Adjust spacing for multiple boxes */
+.quantity-card[data-index="1"] .box-stack {
+    gap: 8px;
+}
+
+.quantity-card[data-index="2"] .box-stack {
     gap: 6px;
 }
 
@@ -3374,8 +3395,6 @@ h1, h2, h3, h4, h5, h6, p {
         font-size: 0.95rem !important;
         line-height: 1.6 !important;
     }
-
-    
 }
 
 /* Cart Button */
@@ -3470,4 +3489,549 @@ h1, h2, h3, h4, h5, h6, p {
         padding: 40px 24px !important;
         border-radius: 155px 15px 125px 15px/15px 125px 15px 155px !important;
     }
+}
+
+
+/* ===== STACKED CARDS (for "How it feels" section) ===== */
+.stacked-cards-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.stacked-info-card {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border-left: 4px solid #8b5cf6;
+}
+
+.stacked-info-card:hover {
+  transform: translateX(8px);
+  box-shadow: 0 8px 30px rgba(139, 92, 246, 0.15);
+}
+
+.stacked-info-card .info-eyebrow {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #8b5cf6;
+  background: rgba(139, 92, 246, 0.1);
+  padding: 6px 14px;
+  border-radius: 20px;
+  margin-bottom: 16px;
+}
+
+.stacked-info-card h3 {
+  font-size: 1.8rem;
+  color: var(--espresso);
+  margin-bottom: 16px;
+  font-weight: 700;
+}
+
+.stacked-info-card p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text);
+  margin-bottom: 20px;
+}
+
+.stacked-info-card .info-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.stacked-info-card .info-list li {
+  padding-left: 28px;
+  margin-bottom: 12px;
+  position: relative;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+.stacked-info-card .info-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: #8b5cf6;
+  font-weight: 700;
+}
+
+/* Nutrition macros styling */
+.nutrition-macros {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin: 40px 0;
+}
+
+.macro-pill {
+  background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(139, 92, 246, 0.3);
+  transition: all 0.3s ease;
+}
+
+.macro-pill:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(139, 92, 246, 0.4);
+}
+
+.macro-label {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.9);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.macro-value {
+  font-size: 2.5rem;
+  color: white;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* ===== MOBILE RESPONSIVENESS IMPROVEMENTS ===== */
+
+/* Hero sections mobile */
+@media (max-width: 968px) {
+  .page-hero-inner,
+  .science-hero-grid,
+  .product-hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+  
+  .science-hero-product,
+  .product-hero-card {
+    order: -1;
+  }
+  
+  .page-hero-title {
+    font-size: 2.5rem !important;
+  }
+  
+  .page-hero-sub {
+    font-size: 1.1rem !important;
+  }
+}
+
+/* Split layouts mobile */
+@media (max-width: 968px) {
+  .split-layout {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+  
+  .section-intro {
+    text-align: center;
+  }
+  
+  .usecase-chips {
+    align-items: center;
+  }
+}
+
+/* Card grids mobile */
+@media (max-width: 768px) {
+  .card-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+  
+  .comparison-grid {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .nutrition-macros {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 15px !important;
+  }
+  
+  .macro-pill {
+    padding: 20px !important;
+  }
+  
+  .macro-value {
+    font-size: 2rem !important;
+  }
+}
+
+/* Stacked cards mobile */
+@media (max-width: 768px) {
+  .stacked-info-card {
+    padding: 24px !important;
+  }
+  
+  .stacked-info-card h3 {
+    font-size: 1.4rem !important;
+  }
+  
+  .stacked-info-card:hover {
+    transform: translateX(4px);
+  }
+}
+
+/* Product cards mobile */
+@media (max-width: 768px) {
+  .product-card {
+    padding: 20px !important;
+  }
+  
+  .product-visual {
+    padding: 20px !important;
+  }
+  
+  .bar-3d {
+    transform: scale(0.8) !important;
+  }
+}
+
+/* Hero details mobile */
+@media (max-width: 768px) {
+  .hero-details .container {
+    grid-template-columns: 1fr !important;
+    padding: 100px 20px 60px 20px !important;
+    gap: 40px !important;
+  }
+  
+  .hero-headline {
+    font-size: 3rem !important;
+  }
+  
+  .hero-cta-group {
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+  
+  .hero-cta-group .cta-primary,
+  .hero-cta-group .cta-secondary {
+    width: 100% !important;
+    text-align: center !important;
+  }
+}
+
+/* Founders section mobile */
+@media (max-width: 768px) {
+  .founders-row {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+  
+  .founder-card {
+    padding: 24px !important;
+  }
+}
+
+/* Story grid mobile */
+@media (max-width: 968px) {
+  .story-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+  
+  .story-visual {
+    order: -1;
+  }
+  
+  .story-columns {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Page hero meta mobile */
+@media (max-width: 768px) {
+  .page-hero-meta {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 10px !important;
+  }
+  
+  .tag-pill {
+    width: 100% !important;
+  }
+}
+
+/* Pill nav mobile */
+@media (max-width: 768px) {
+  .pill-nav {
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+  }
+  
+  .pill-nav a {
+    font-size: 0.9rem !important;
+    padding: 8px 16px !important;
+  }
+}
+
+/* Info cards mobile improvements */
+@media (max-width: 768px) {
+  .info-card {
+    padding: 24px !important;
+  }
+  
+  .info-card h3 {
+    font-size: 1.4rem !important;
+  }
+}
+
+/* Container padding mobile */
+@media (max-width: 768px) {
+  .container,
+  .section-inner {
+    padding: 0 20px !important;
+  }
+  
+  .page-section {
+    padding: 60px 0 !important;
+  }
+}
+
+/* Footer mobile */
+@media (max-width: 768px) {
+  .footer-container {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+  
+  .footer-column {
+    text-align: center !important;
+  }
+  
+  .footer-socials {
+    justify-content: center !important;
+  }
+}
+
+/* Science curve card mobile */
+@media (max-width: 768px) {
+  .science-curve-card svg {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+}
+
+/* Usecase chips mobile */
+@media (max-width: 768px) {
+  .usecase-chip {
+    width: 100% !important;
+    text-align: center !important;
+  }
+}
+
+/* Comparison cards mobile */
+@media (max-width: 768px) {
+  .comparison-card {
+    padding: 24px !important;
+  }
+  
+  .comparison-card h3 {
+    font-size: 1.3rem !important;
+  }
+}
+
+/* ===== VISUAL INTEREST ADDITIONS ===== */
+
+/* Animated gradient backgrounds */
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.page-section--soft {
+  position: relative;
+  overflow: hidden;
+}
+
+.page-section--soft::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(139, 92, 246, 0.03) 0%,
+    rgba(34, 197, 94, 0.03) 50%,
+    rgba(255, 208, 116, 0.03) 100%
+  );
+  background-size: 200% 200%;
+  animation: gradient-shift 15s ease infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.page-section--soft > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Floating animation for cards */
+@keyframes float-card {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.info-card:nth-child(1) {
+  animation: float-card 6s ease-in-out infinite;
+}
+
+.info-card:nth-child(2) {
+  animation: float-card 6s ease-in-out infinite 1s;
+}
+
+.info-card:nth-child(3) {
+  animation: float-card 6s ease-in-out infinite 2s;
+}
+
+.info-card:nth-child(4) {
+  animation: float-card 6s ease-in-out infinite 3s;
+}
+
+/* Hover effects for better interactivity */
+.tag-pill {
+  transition: all 0.3s ease;
+}
+
+.tag-pill:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Scroll reveal animations */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Add subtle pulse to eyebrows */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.2); }
+}
+
+.page-hero-eyebrow .dot {
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+/* Improve button hover states */
+.pill-nav a {
+  position: relative;
+  overflow: hidden;
+}
+
+.pill-nav a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s ease;
+}
+
+.pill-nav a:hover::before {
+  left: 100%;
+}
+
+/* Add depth to product cards */
+.product-card {
+  position: relative;
+}
+
+.product-card::after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: -10px;
+  bottom: -10px;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(34, 197, 94, 0.1));
+  border-radius: 20px;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.product-card:hover::after {
+  opacity: 1;
+}
+
+/* Improve section transitions */
+.page-section {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* Add visual interest to hero */
+.page-hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.page-hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.08), transparent 70%);
+  border-radius: 50%;
+  animation: float-blob 20s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.page-hero::after {
+  content: '';
+  position: absolute;
+  bottom: -30%;
+  left: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(34, 197, 94, 0.06), transparent 70%);
+  border-radius: 50%;
+  animation: float-blob 25s ease-in-out infinite reverse;
+  pointer-events: none;
+}
+
+@keyframes float-blob {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-50px, 50px) scale(1.1); }
+}
+
+/* Disable animations on mobile for performance */
+@media (max-width: 768px) {
+  .info-card:nth-child(1),
+  .info-card:nth-child(2),
+  .info-card:nth-child(3),
+  .info-card:nth-child(4) {
+    animation: none !important;
+  }
+  
+  .page-hero::before,
+  .page-hero::after {
+    display: none !important;
+  }
 }
