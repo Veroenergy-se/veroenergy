@@ -125,12 +125,7 @@
   padding: 40px !important;
   position: relative !important;
   border: 4px solid black !important;
-  box-shadow: 8px 8px 0px 0px rgba(107, 159, 62, 1) !important;
-  transition: box-shadow 0.3s ease !important;
-}
-
-.our-story-new .our-story-text-box:hover {
-  box-shadow: 12px 12px 0px 0px rgba(107, 159, 62, 1) !important;
+  box-shadow: 10px 10px 0px 0px rgba(107, 159, 62, 1) !important;
 }
 
 .our-story-new .corner-accent {
@@ -139,7 +134,7 @@
   left: -16px !important;
   background: #6B9F3E !important;
   color: black !important;
-  padding: 8px 16px !important;
+  padding: 12px 20px !important;
   transform: rotate(-2deg) !important;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
   border: 2px solid black !important;
@@ -215,6 +210,10 @@
   position: relative !important;
   transform: rotate(-3deg) !important;
   transition: transform 0.3s ease !important;
+  backface-visibility: hidden !important;
+  -webkit-backface-visibility: hidden !important;
+  -webkit-font-smoothing: subpixel-antialiased !important;
+  transform-style: preserve-3d !important;
 }
 
 .our-story-new .polaroid-container:hover {
@@ -226,17 +225,19 @@
   padding: 24px !important;
   padding-bottom: 64px !important;
   box-shadow: 12px 12px 0px 0px rgba(0, 0, 0, 1) !important;
-  border: 2px solid black !important;
+  outline: 2px solid black !important;
+  outline-offset: -2px !important;
 }
 
 .our-story-new .polaroid-image {
   overflow: hidden !important;
   border: 2px solid black !important;
+  line-height: 0 !important;
 }
 
 .our-story-new .polaroid-image img {
   width: 100% !important;
-  max-width: 400px !important;
+  max-width: 420px !important;
   height: auto !important;
   display: block !important;
   object-fit: cover !important;
@@ -271,6 +272,8 @@
 
 .our-story-new .sticker-bolt svg {
   display: block !important;
+  color: white !important;
+  fill: white !important;
 }
 
 .our-story-new .sticker-est {
