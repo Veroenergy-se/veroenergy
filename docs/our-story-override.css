@@ -1,11 +1,18 @@
 /* ===== OUR STORY OVERRIDE - FORCE NEW DESIGN ===== */
 
-/* Reset any conflicting styles */
+/* Reset any conflicting styles - but exclude graphic elements */
 #our-story.our-story-new,
-#our-story.our-story-new * {
+#our-story.our-story-new *:not(.graphic-star):not(.graphic-bolt):not(.graphic-circle) {
   all: unset;
   display: revert;
   box-sizing: border-box;
+}
+
+/* Ensure graphic elements are visible */
+.our-story-new .graphic-star,
+.our-story-new .graphic-bolt,
+.our-story-new .graphic-circle {
+  all: revert !important;
 }
 
 /* Main section */
