@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact — Buzzbar</title>
+  
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JWFPL9ZW9R"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-JWFPL9ZW9R', {
+      'send_page_view': true,
+      'anonymize_ip': true
+    });
+  </script>
+  
+  <link rel="stylesheet" href="style.css?v=7" />
+  <link rel="stylesheet" href="deux-style.css" />
+</head>
+<body data-page="contact">
+  <div class="page-top-gradient"></div>
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a href="index.html" class="brand" aria-label="Buzzbar — Home">
+        <span class="brand-line"><span class="brand-word buzz">Buzz</span><span class="brand-word bar">bar</span></span>
+        <span class="brand-sub">CLEAN ENERGY, SMARTER NUTRITION</span>
+      </a>
+      <nav class="main-nav" role="navigation" aria-label="Primary navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="Products.html"  class="nav-link">Products</a>
+        <a href="Science.html"   class="nav-link">Science</a>
+        <a href="nutrition.html" class="nav-link">Nutrition</a>
+        <a href="Our-Story.html"     class="nav-link">Our Story</a>
+        <a href="Contact.html"   class="nav-link">Contact</a>
+      </nav>
+      <a href="Products.html" class="cta-contact">Buy Now</a>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="section-header container" style="padding-top:40px">
+      <span class="section-badge">Contact</span>
+      <h1>Get in touch</h1>
+      <p class="section-subtitle">Questions, partnerships, or early access? We’d love to hear from you.</p>
+    </section>
+
+    <section class="container contact-grid">
+      <form class="contact-form" id="contact-form" action="https://formspree.io/f/your-id" method="POST">
+        <label for="contact-name">Name<input type="text" id="contact-name" name="name" required></label>
+        <label for="contact-email">Email<input type="email" id="contact-email" name="email" required></label>
+        <label for="contact-message">Message<textarea id="contact-message" name="message" rows="6" required></textarea></label>
+        <button type="submit" class="cta-primary">Send</button>
+      </form>
+
+      <div class="contact-side">
+        <h3>Direct email</h3>
+        <p><a href="mailto:tomwiseman@buzzbar.se">tomwiseman@buzzbar.se</a></p>
+        <p><a href="mailto:oliverwiseman@buzzbar.se">oliverwiseman@buzzbar.se</a></p>
+        <p><a href="mailto:charliewiseman@buzzbar.se">charliewiseman@buzzbar.se</a></p>
+        <h3>Follow</h3>
+        <p><a href="#">Instagram</a> · <a href="#">TikTok</a> · <a href="#">LinkedIn</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer" class="footer">
+    <!-- same footer markup as index.html -->
+    <div class="footer-container">
+      <div class="footer-column"><h3>Buzzbar</h3><p>Clean energy, smarter nutrition.</p></div>
+      <div class="footer-column"><h4>Contact</h4><p><a href="mailto:tomwiseman@buzzbar.se">tomwiseman@buzzbar.se</a></p></div>
+      <div class="footer-column"><h4>Info</h4><p>Plant-based. No artificial sweeteners.</p></div>
+      <div class="footer-column"><h4>Newsletter</h4><form class="newsletter-form" id="contact-newsletter-form" action="#" method="post"><input type="email" id="contact-newsletter-email" name="email" placeholder="Email" required aria-label="Email address" /><button type="submit" aria-label="Subscribe to newsletter">→</button></form></div>
+    </div>
+    <div class="footer-bottom">© 2025 Buzzbar</div>
+  </footer>
+
+  <script>
+    (function(){
+      const header=document.querySelector('.site-header'); let lastY=window.scrollY;
+      window.addEventListener('scroll',()=>{const y=window.scrollY;
+        if(y>80 && y>lastY){header.classList.add('hide')} else{header.classList.remove('hide')}
+        lastY=y;},{passive:true});
+      document.querySelectorAll('.main-nav .nav-link').forEach(a=>{
+        const href=a.getAttribute('href')||''; if(href.startsWith('contact')) a.classList.add('is-active');
+      });
+    })();
+  </script>
+</body>
+</html>
+
