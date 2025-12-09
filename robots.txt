@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://buzzbar.se/sitemap.xml
+Sitemap: https://veroenergy.se/sitemap.xml
