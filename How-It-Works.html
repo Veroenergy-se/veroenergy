@@ -213,45 +213,80 @@
 
   <main>
 
-    <!-- ===== STORY-DRIVEN HERO ===== -->
+    <!-- ===== VISUAL STORY HERO ===== -->
     <section style="background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #bae6fd 100%); padding: 100px 20px 80px; position: relative; overflow: hidden;">
-      <div style="max-width: 1000px; margin: 0 auto; text-align: center; position: relative; z-index: 2;">
-        <div style="display: inline-block; background: rgba(59, 130, 246, 0.1); color: #1d4ed8; padding: 8px 20px; border-radius: 25px; font-size: 0.9rem; font-weight: 600; margin-bottom: 20px;">
-          The Science Behind Better Energy
+      <div style="max-width: 1200px; margin: 0 auto; position: relative; z-index: 2;">
+        
+        <!-- Hero Grid -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; margin-bottom: 80px;">
+          <div>
+            <div style="display: inline-block; background: rgba(59, 130, 246, 0.1); color: #1d4ed8; padding: 8px 20px; border-radius: 25px; font-size: 0.9rem; font-weight: 600; margin-bottom: 20px;">
+              The Science Behind Better Energy
+            </div>
+            
+            <h1 style="font-size: 3.5rem; font-weight: 700; color: #1f2937; margin-bottom: 30px; line-height: 1.1;">
+              Why Your Energy Strategy <span style="background: linear-gradient(135deg, #ef4444, #dc2626); -webkit-background-clip: text; background-clip: text; color: transparent;">Isn't Working</span>
+            </h1>
+            
+            <p style="font-size: 1.3rem; color: #4b5563; margin-bottom: 40px; line-height: 1.6;">
+              You know the drill: coffee at 7am, crash at 11am, energy drink at 2pm, can't sleep at 11pm. We figured out how to break the cycle.
+            </p>
+            
+            <a href="#the-problem" style="background: linear-gradient(135deg, #3b82f6, #2563eb); color: white; padding: 18px 40px; border-radius: 12px; text-decoration: none; font-weight: 600; font-size: 1.1rem; box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3); transition: all 0.3s ease; display: inline-block;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 25px rgba(59, 130, 246, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(59, 130, 246, 0.3)'">
+              See The Solution
+            </a>
+          </div>
+          
+          <!-- Before/After Visual Placeholder -->
+          <div style="display: flex; justify-content: center; align-items: center;">
+            <div style="width: 400px; height: 300px; background: white; border-radius: 25px; box-shadow: 0 20px 60px rgba(59, 130, 246, 0.2); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; border: 3px solid rgba(59, 130, 246, 0.1);">
+              <div style="text-align: center; color: #6b7280;">
+                <div style="font-size: 3rem; margin-bottom: 15px; color: #3b82f6;">⚡</div>
+                <p style="margin: 0; font-weight: 600; color: #1f2937;">Before vs After</p>
+                <p style="margin: 5px 0 0 0; font-size: 0.9rem;">Energy transformation visual</p>
+              </div>
+            </div>
+          </div>
         </div>
         
-        <h1 style="font-size: 3.5rem; font-weight: 700; color: #1f2937; margin-bottom: 30px; line-height: 1.1;">
-          Why Your Energy Strategy <span style="background: linear-gradient(135deg, #ef4444, #dc2626); -webkit-background-clip: text; background-clip: text; color: transparent;">Isn't Working</span>
-        </h1>
-        
-        <p style="font-size: 1.3rem; color: #4b5563; margin-bottom: 40px; max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.6;">
-          You know the drill: coffee at 7am, crash at 11am, energy drink at 2pm, can't sleep at 11pm. We figured out how to break the cycle.
-        </p>
-        
-        <a href="#the-problem" style="background: linear-gradient(135deg, #3b82f6, #2563eb); color: white; padding: 18px 40px; border-radius: 12px; text-decoration: none; font-weight: 600; font-size: 1.1rem; box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3); transition: all 0.3s ease; display: inline-block; margin-bottom: 60px;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 25px rgba(59, 130, 246, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(59, 130, 246, 0.3)'">
-          See The Solution
-        </a>
-        
         <!-- Energy curve comparison -->
-        <div style="background: white; padding: 40px; border-radius: 25px; box-shadow: 0 15px 50px rgba(0,0,0,0.1); max-width: 600px; margin: 0 auto;">
-          <svg viewBox="0 0 500 200" style="width: 100%; height: auto;">
+        <div style="background: white; padding: 50px; border-radius: 25px; box-shadow: 0 15px 50px rgba(0,0,0,0.1); max-width: 800px; margin: 0 auto;">
+          <h3 style="text-align: center; color: #1f2937; margin-bottom: 30px; font-size: 1.5rem; font-weight: 700;">The Difference is Clear</h3>
+          <svg viewBox="0 0 600 250" style="width: 100%; height: auto;">
+            <!-- Grid background -->
+            <defs>
+              <pattern id="grid" width="50" height="25" patternUnits="userSpaceOnUse">
+                <path d="M 50 0 L 0 0 0 25" fill="none" stroke="#f3f4f6" stroke-width="1"/>
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#grid)" />
+            
+            <!-- Coffee spike area (red) -->
+            <path d="M50 220 C 120 100, 180 80, 240 70 S 350 140, 550 220 L550 230 L50 230 Z" 
+                  fill="rgba(239, 68, 68, 0.1)" />
+            
             <!-- Coffee spike (red) -->
-            <path d="M50 180 C 100 80, 150 60, 200 50 S 300 120, 450 180" 
+            <path d="M50 220 C 120 100, 180 80, 240 70 S 350 140, 550 220" 
                   fill="none" stroke="#ef4444" stroke-width="4" stroke-dasharray="8,4" />
             
+            <!-- Vero curve area (blue) -->
+            <path d="M50 220 C 150 170, 250 130, 350 120 S 500 140, 550 220 L550 230 L50 230 Z" 
+                  fill="rgba(59, 130, 246, 0.1)" />
+            
             <!-- Vero curve (blue) -->
-            <path d="M50 180 C 120 130, 200 110, 300 105 S 400 120, 450 180" 
-                  fill="none" stroke="#3b82f6" stroke-width="4" />
+            <path d="M50 220 C 150 170, 250 130, 350 120 S 500 140, 550 220" 
+                  fill="none" stroke="#3b82f6" stroke-width="5" />
             
             <!-- Labels -->
-            <text x="150" y="40" fill="#ef4444" font-size="14" text-anchor="middle" font-weight="600">Coffee Crash</text>
-            <text x="300" y="95" fill="#3b82f6" font-size="14" text-anchor="middle" font-weight="600">Vero Curve</text>
+            <text x="200" y="60" fill="#ef4444" font-size="16" text-anchor="middle" font-weight="700">Coffee Crash</text>
+            <text x="400" y="110" fill="#3b82f6" font-size="16" text-anchor="middle" font-weight="700">Vero Curve</text>
             
             <!-- Time axis -->
-            <line x1="50" y1="190" x2="450" y2="190" stroke="#e5e7eb" stroke-width="2"/>
-            <text x="50" y="205" fill="#6b7280" font-size="12" text-anchor="middle">0hr</text>
-            <text x="250" y="205" fill="#6b7280" font-size="12" text-anchor="middle">2hr</text>
-            <text x="450" y="205" fill="#6b7280" font-size="12" text-anchor="middle">4hr</text>
+            <line x1="50" y1="230" x2="550" y2="230" stroke="#6b7280" stroke-width="2"/>
+            <text x="50" y="245" fill="#6b7280" font-size="12" text-anchor="middle">0hr</text>
+            <text x="200" y="245" fill="#6b7280" font-size="12" text-anchor="middle">1hr</text>
+            <text x="350" y="245" fill="#6b7280" font-size="12" text-anchor="middle">2hr</text>
+            <text x="500" y="245" fill="#6b7280" font-size="12" text-anchor="middle">4hr</text>
           </svg>
         </div>
       </div>

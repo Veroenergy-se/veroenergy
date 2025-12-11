@@ -213,24 +213,65 @@
 
   <main>
 
-    <!-- ===== HERO WITH IMMEDIATE PRODUCT FOCUS ===== -->
+    <!-- ===== HERO WITH VISUAL STORY ===== -->
     <section style="background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 50%, #bbf7d0 100%); padding: 80px 20px 60px; position: relative; overflow: hidden;">
-      <div style="max-width: 1200px; margin: 0 auto; text-align: center; position: relative; z-index: 2;">
-        <div style="display: inline-block; background: rgba(34, 197, 94, 0.1); color: #15803d; padding: 8px 20px; border-radius: 25px; font-size: 0.9rem; font-weight: 600; margin-bottom: 20px;">
-          Clean Energy • Real Nutrition
+      <div style="max-width: 1200px; margin: 0 auto; position: relative; z-index: 2;">
+        
+        <!-- Hero Content Grid -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; margin-bottom: 80px;">
+          <div>
+            <div style="display: inline-block; background: rgba(34, 197, 94, 0.1); color: #15803d; padding: 8px 20px; border-radius: 25px; font-size: 0.9rem; font-weight: 600; margin-bottom: 20px;">
+              Clean Energy • Real Nutrition
+            </div>
+            
+            <h1 style="font-size: 3.5rem; font-weight: 700; color: #1f2937; margin-bottom: 20px; line-height: 1.1;">
+              Finally, Energy That <span style="background: linear-gradient(135deg, #22c55e, #16a34a); -webkit-background-clip: text; background-clip: text; color: transparent;">Doesn't Suck</span>
+            </h1>
+            
+            <p style="font-size: 1.3rem; color: #4b5563; margin-bottom: 40px; line-height: 1.5;">
+              Tired of coffee crashes and energy drink jitters? Vero gives you 4+ hours of smooth, steady focus. No crash, no guilt, no BS.
+            </p>
+            
+            <a href="#products" style="background: linear-gradient(135deg, #22c55e, #16a34a); color: white; padding: 18px 50px; border-radius: 12px; text-decoration: none; font-weight: 600; font-size: 1.2rem; box-shadow: 0 6px 20px rgba(34, 197, 94, 0.3); transition: all 0.3s ease; display: inline-block;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 10px 30px rgba(34, 197, 94, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 6px 20px rgba(34, 197, 94, 0.3)'">
+              Choose Your Pack
+            </a>
+          </div>
+          
+          <!-- Hero Image Placeholder -->
+          <div style="display: flex; justify-content: center; align-items: center;">
+            <div style="width: 400px; height: 300px; background: white; border-radius: 25px; box-shadow: 0 20px 60px rgba(34, 197, 94, 0.2); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; border: 3px solid rgba(34, 197, 94, 0.1);">
+              <div style="text-align: center; color: #6b7280;">
+                <div style="font-size: 3rem; margin-bottom: 15px; color: #22c55e;">📸</div>
+                <p style="margin: 0; font-weight: 600; color: #1f2937;">Hero Product Shot</p>
+                <p style="margin: 5px 0 0 0; font-size: 0.9rem;">Vero bar in action</p>
+              </div>
+            </div>
+          </div>
         </div>
         
-        <h1 style="font-size: 3.5rem; font-weight: 700; color: #1f2937; margin-bottom: 20px; line-height: 1.1;">
-          Finally, Energy That <span style="background: linear-gradient(135deg, #22c55e, #16a34a); -webkit-background-clip: text; background-clip: text; color: transparent;">Doesn't Suck</span>
-        </h1>
-        
-        <p style="font-size: 1.3rem; color: #4b5563; margin-bottom: 40px; max-width: 650px; margin-left: auto; margin-right: auto; line-height: 1.5;">
-          Tired of coffee crashes and energy drink jitters? Vero gives you 4+ hours of smooth, steady focus. No crash, no guilt, no BS.
-        </p>
-        
-        <a href="#products" style="background: linear-gradient(135deg, #22c55e, #16a34a); color: white; padding: 18px 50px; border-radius: 12px; text-decoration: none; font-weight: 600; font-size: 1.2rem; box-shadow: 0 6px 20px rgba(34, 197, 94, 0.3); transition: all 0.3s ease; display: inline-block; margin-bottom: 60px;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 10px 30px rgba(34, 197, 94, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 6px 20px rgba(34, 197, 94, 0.3)'">
-          Choose Your Pack
-        </a>
+        <!-- Quick Stats Visual -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 25px; max-width: 800px; margin: 0 auto;">
+          <div style="background: white; padding: 25px; border-radius: 20px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); text-align: center; border-top: 4px solid #22c55e;">
+            <div style="font-size: 2.2rem; color: #22c55e; margin-bottom: 10px; font-weight: 700;">80mg</div>
+            <div style="color: #1f2937; font-weight: 600; font-size: 1rem;">Natural Caffeine</div>
+            <div style="color: #6b7280; font-size: 0.85rem;">From green tea</div>
+          </div>
+          <div style="background: white; padding: 25px; border-radius: 20px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); text-align: center; border-top: 4px solid #3b82f6;">
+            <div style="font-size: 2.2rem; color: #3b82f6; margin-bottom: 10px; font-weight: 700;">10g</div>
+            <div style="color: #1f2937; font-weight: 600; font-size: 1rem;">Plant Protein</div>
+            <div style="color: #6b7280; font-size: 0.85rem;">Complete amino profile</div>
+          </div>
+          <div style="background: white; padding: 25px; border-radius: 20px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); text-align: center; border-top: 4px solid #8b5cf6;">
+            <div style="font-size: 2.2rem; color: #8b5cf6; margin-bottom: 10px; font-weight: 700;">0g</div>
+            <div style="color: #1f2937; font-weight: 600; font-size: 1rem;">Added Sugar</div>
+            <div style="color: #6b7280; font-size: 0.85rem;">Zero crash</div>
+          </div>
+          <div style="background: white; padding: 25px; border-radius: 20px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); text-align: center; border-top: 4px solid #f59e0b;">
+            <div style="font-size: 2.2rem; color: #f59e0b; margin-bottom: 10px; font-weight: 700;">4+</div>
+            <div style="color: #1f2937; font-weight: 600; font-size: 1rem;">Hours Focus</div>
+            <div style="color: #6b7280; font-size: 0.85rem;">Steady energy</div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -397,11 +438,26 @@
           </div>
         </div>
         
-        <div style="background: rgba(255,255,255,0.9); padding: 40px; border-radius: 20px; backdrop-filter: blur(10px); border: 2px solid rgba(34, 197, 94, 0.2);">
-          <h3 style="color: #1f2937; margin-bottom: 20px; font-size: 1.8rem; font-weight: 700;">The Magic Happens</h3>
-          <p style="color: #4b5563; font-size: 1.2rem; max-width: 600px; margin: 0 auto; line-height: 1.6;">
-            4+ hours of steady energy. Clear thinking without the crash. Finally, nutrition that actually works with your ambitions, not against them.
-          </p>
+        <!-- The Result with Visual -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; background: rgba(255,255,255,0.9); padding: 50px; border-radius: 25px; backdrop-filter: blur(10px); border: 2px solid rgba(34, 197, 94, 0.2);">
+          <div>
+            <h3 style="color: #1f2937; margin-bottom: 20px; font-size: 1.8rem; font-weight: 700;">The Magic Happens</h3>
+            <p style="color: #4b5563; font-size: 1.2rem; margin-bottom: 25px; line-height: 1.6;">
+              4+ hours of steady energy. Clear thinking without the crash. Finally, nutrition that actually works with your ambitions, not against them.
+            </p>
+            <div style="display: flex; gap: 15px; align-items: center;">
+              <div style="background: #22c55e; color: white; padding: 8px 16px; border-radius: 20px; font-size: 0.9rem; font-weight: 600;">✓ No Jitters</div>
+              <div style="background: #3b82f6; color: white; padding: 8px 16px; border-radius: 20px; font-size: 0.9rem; font-weight: 600;">✓ No Crash</div>
+              <div style="background: #8b5cf6; color: white; padding: 8px 16px; border-radius: 20px; font-size: 0.9rem; font-weight: 600;">✓ No Guilt</div>
+            </div>
+          </div>
+          
+          <!-- Energy Curve Visual Placeholder -->
+          <div style="background: #f8fafc; border-radius: 20px; padding: 30px; text-align: center; border: 2px dashed #e2e8f0;">
+            <div style="font-size: 2.5rem; margin-bottom: 15px; color: #3b82f6;">📊</div>
+            <p style="margin: 0; font-weight: 600; color: #1f2937;">Energy Curve Chart</p>
+            <p style="margin: 5px 0 0 0; font-size: 0.9rem; color: #6b7280;">Vero vs Coffee comparison</p>
+          </div>
         </div>
       </div>
     </section>
