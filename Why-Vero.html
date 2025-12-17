@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Why Vero – Our Story</title>
+  <title>Why Vero – The Future of Clean Energy</title>
   
   <!-- Google Analytics 4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-JWFPL9ZW9R"></script>
@@ -17,377 +17,1212 @@
     });
   </script>
   
-  <link rel="stylesheet" href="style.css?v=16" />
-  <link rel="stylesheet" href="deux-style.css" />
-</head>
-<body>
-
-  <!-- Soft purple band behind transparent header -->
-  <div class="page-top-gradient"></div>
-
-  <!-- ===== NAVBAR (matching index.html exactly) ===== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
   <style>
-    .vero-navbar {
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --primary: #667eea;
+      --primary-dark: #5a67d8;
+      --accent: #f093fb;
+      --success: #10b981;
+      --warning: #f59e0b;
+      --error: #ef4444;
+      --text-primary: #1f2937;
+      --text-secondary: #6b7280;
+      --text-muted: #9ca3af;
+      --surface: #ffffff;
+      --surface-elevated: #f9fafb;
+      --surface-dark: #111827;
+      --border: #e5e7eb;
+      --border-light: #f3f4f6;
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --radius-xl: 24px;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.6;
+      color: var(--text-primary);
+      background: linear-gradient(180deg, #fafbff 0%, #f0f4ff 100%);
+      overflow-x: hidden;
+    }
+
+    /* ===== NAVBAR ===== */
+    .navbar {
       position: sticky;
       top: 0;
-      z-index: 999;
-      width: 100%;
-      background: #ffffff;
-      border-bottom: 1px solid #e5e7eb;
-      transition: box-shadow 0.2s ease, border-color 0.2s ease;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
-    .vero-navbar--scrolled {
-      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-      border-color: transparent;
+
+    .navbar.scrolled {
+      background: rgba(255, 255, 255, 0.95);
+      box-shadow: var(--shadow-lg);
     }
-    .vero-navbar__inner {
-      max-width: 1120px;
-      margin: auto;
-      padding: 1.2rem 1.5rem;
+
+    .navbar-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 2rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
-    .vero-navbar__brand {
+
+    .navbar-brand {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--primary);
       text-decoration: none;
-      color: #111827;
-      font-size: 1.8rem;
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
+      letter-spacing: -0.02em;
     }
-    .vero-navbar__menu {
+
+    .navbar-nav {
       display: flex;
+      list-style: none;
+      gap: 2rem;
       align-items: center;
+    }
+
+    .navbar-link {
+      text-decoration: none;
+      color: var(--text-primary);
+      font-weight: 500;
+      font-size: 0.95rem;
+      padding: 0.5rem 1rem;
+      border-radius: var(--radius-sm);
+      transition: all 0.2s ease;
+    }
+
+    .navbar-link:hover {
+      background: rgba(102, 126, 234, 0.1);
+      color: var(--primary);
+    }
+
+    .navbar-cta {
+      background: var(--primary);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: var(--radius-md);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+    }
+
+    .navbar-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+      background: var(--primary-dark);
+    }
+
+    /* ===== HERO SECTION ===== */
+    .hero {
+      padding: 8rem 2rem 6rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(circle at 30% 20%, rgba(102, 126, 234, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 70% 80%, rgba(240, 147, 251, 0.1) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      max-width: 900px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--border);
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      margin-bottom: 2rem;
+      animation: fadeInUp 0.8s ease-out;
+    }
+
+    .hero-title {
+      font-size: clamp(3.5rem, 8vw, 6rem);
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(135deg, var(--text-primary) 0%, var(--primary) 50%, var(--accent) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: -0.03em;
+      animation: fadeInUp 0.8s ease-out 0.2s both;
+    }
+
+    .hero-subtitle {
+      font-size: 1.3rem;
+      color: var(--text-secondary);
+      margin-bottom: 3rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      animation: fadeInUp 0.8s ease-out 0.4s both;
+    }
+
+    /* ===== PROBLEM SECTION ===== */
+    .problem-section {
+      padding: 8rem 2rem;
+      background: var(--surface-dark);
+      color: white;
+    }
+
+    .problem-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .problem-header {
+      text-align: center;
+      margin-bottom: 5rem;
+    }
+
+    .problem-title {
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .problem-subtitle {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .problems-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
       gap: 2rem;
     }
-    .vero-navbar__links {
-      list-style: none;
+
+    .problem-card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius-xl);
+      padding: 3rem;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .problem-card:hover {
+      transform: translateY(-8px);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .problem-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, var(--error), var(--warning));
+      border-radius: var(--radius-lg);
+      margin: 0 auto 2rem;
       display: flex;
       align-items: center;
-      gap: 1.75rem;
+      justify-content: center;
+      font-size: 2rem;
     }
-    .vero-navbar__link {
-      text-decoration: none;
-      color: #111827;
+
+    .problem-title-card {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: white;
+    }
+
+    .problem-description {
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* ===== SOLUTION SECTION ===== */
+    .solution-section {
+      padding: 8rem 2rem;
+    }
+
+    .solution-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .solution-header {
+      text-align: center;
+      margin-bottom: 5rem;
+    }
+
+    .solution-title {
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+    }
+
+    .solution-subtitle {
+      font-size: 1.2rem;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .solutions-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+    }
+
+    .solution-card {
+      background: var(--surface);
+      border-radius: var(--radius-xl);
+      padding: 3rem;
+      text-align: center;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--border);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .solution-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--success), var(--primary));
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+
+    .solution-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-xl);
+    }
+
+    .solution-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .solution-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, var(--success), var(--primary));
+      border-radius: var(--radius-lg);
+      margin: 0 auto 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+    }
+
+    .solution-title-card {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+    }
+
+    .solution-description {
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* ===== BENEFITS SECTION ===== */
+    .benefits-section {
+      padding: 8rem 2rem;
+      background: var(--surface-elevated);
+    }
+
+    .benefits-container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .benefits-header {
+      text-align: center;
+      margin-bottom: 5rem;
+    }
+
+    .benefits-title {
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+    }
+
+    .benefits-subtitle {
+      font-size: 1.2rem;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .benefit-card {
+      background: var(--surface);
+      border-radius: var(--radius-xl);
+      padding: 2.5rem;
+      text-align: left;
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--border);
+      transition: all 0.3s ease;
+    }
+
+    .benefit-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-xl);
+    }
+
+    .benefit-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .benefit-icon {
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+
+    .benefit-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .benefit-description {
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .benefit-stats {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .stat-item {
+      text-align: center;
+      flex: 1;
+    }
+
+    .stat-number {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--primary);
+      display: block;
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
       text-transform: uppercase;
       letter-spacing: 0.05em;
-      font-size: 1.05rem;
-      padding-bottom: 2px;
-      position: relative;
     }
-    .vero-navbar__link::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 0%;
-      height: 2px;
-      background: #111827;
-      transition: width 0.2s ease;
+
+    /* ===== TESTIMONIALS SECTION ===== */
+    .testimonials-section {
+      padding: 8rem 2rem;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: white;
     }
-    .vero-navbar__link:hover::after {
-      width: 100%;
+
+    .testimonials-container {
+      max-width: 1200px;
+      margin: 0 auto;
     }
-    .vero-navbar__cta {
-      background-color: rgba(255, 208, 116);
-      color: #1d1d1f;
-      border-radius: 12px;
-      font-size: 17px;
-      font-weight: 600;
-      padding: 1em 2em;
-      cursor: pointer;
-      transition: all 0.3s ease-in-out;
-      border: 1px solid black;
-      box-shadow: 0 0 0 0 black;
-      text-decoration: none;
-      display: inline-block;
+
+    .testimonials-header {
+      text-align: center;
+      margin-bottom: 5rem;
     }
-    .vero-navbar__cta:hover {
-      transform: translateY(-4px) translateX(-2px);
-      box-shadow: 2px 5px 0 0 black;
+
+    .testimonials-title {
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
     }
-    .vero-navbar__cta:active {
-      transform: translateY(2px) translateX(1px);
-      box-shadow: 0 0 0 0 black;
+
+    .testimonials-subtitle {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      max-width: 600px;
+      margin: 0 auto;
     }
-    .vero-navbar__toggle {
-      display: none;
-      cursor: pointer;
-      width: 32px;
-      height: 32px;
-      flex-direction: column;
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+    }
+
+    .testimonial-card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: var(--radius-xl);
+      padding: 3rem;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-4px);
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    .testimonial-quote {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+      font-style: italic;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
       justify-content: center;
-      gap: 6px;
+      gap: 1rem;
     }
-    .vero-navbar__toggle span {
-      height: 3px;
-      width: 100%;
-      background: #111827;
-      border-radius: 5px;
-      transition: 0.3s ease;
+
+    .author-avatar {
+      width: 50px;
+      height: 50px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.2rem;
     }
-    .vero-navbar__toggle--open span:nth-child(1) {
-      transform: translateY(9px) rotate(45deg);
+
+    .author-info {
+      text-align: left;
     }
-    .vero-navbar__toggle--open span:nth-child(2) {
-      opacity: 0;
+
+    .author-name {
+      font-weight: 700;
+      margin-bottom: 0.25rem;
     }
-    .vero-navbar__toggle--open span:nth-child(3) {
-      transform: translateY(-9px) rotate(-45deg);
+
+    .author-role {
+      font-size: 0.9rem;
+      opacity: 0.8;
     }
-    @media (max-width: 768px) {
-      .vero-navbar__toggle {
-        display: flex;
-      }
-      .vero-navbar__menu {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background: #ffffff;
-        border-bottom: 1px solid #e5e7eb;
-        flex-direction: column;
-        gap: 1rem;
-        padding: 1.25rem;
+
+    /* ===== CTA SECTION ===== */
+    .cta-section {
+      padding: 8rem 2rem;
+      text-align: center;
+    }
+
+    .cta-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .cta-title {
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+      letter-spacing: -0.02em;
+    }
+
+    .cta-subtitle {
+      font-size: 1.2rem;
+      color: var(--text-secondary);
+      margin-bottom: 3rem;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .cta-button-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: var(--primary);
+      color: white;
+      padding: 1.25rem 2.5rem;
+      border-radius: var(--radius-lg);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.1rem;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 8px 32px rgba(102, 126, 234, 0.4);
+    }
+
+    .cta-button-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 40px rgba(102, 126, 234, 0.6);
+      background: var(--primary-dark);
+    }
+
+    .cta-button-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: transparent;
+      color: var(--text-primary);
+      padding: 1.25rem 2.5rem;
+      border: 2px solid var(--border);
+      border-radius: var(--radius-lg);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .cta-button-secondary:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background: var(--text-primary);
+      color: white;
+      padding: 5rem 2rem 2rem;
+      text-align: center;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-brand {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    .footer-tagline {
+      color: var(--text-muted);
+      margin-bottom: 3rem;
+      font-size: 1.1rem;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-link {
+      color: #d1d5db;
+      text-decoration: none;
+      transition: color 0.2s ease;
+      font-weight: 500;
+    }
+
+    .footer-link:hover {
+      color: white;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #374151;
+      padding-top: 2rem;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    /* ===== ANIMATIONS ===== */
+    @keyframes fadeInUp {
+      from {
         opacity: 0;
-        transform: translateY(-10px);
-        pointer-events: none;
-        transition: opacity 0.2s ease, transform 0.2s ease;
+        transform: translateY(30px);
       }
-      .vero-navbar__menu--open {
+      to {
         opacity: 1;
         transform: translateY(0);
-        pointer-events: auto;
       }
-      .vero-navbar__links {
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .navbar-container {
+        padding: 1rem;
+      }
+
+      .navbar-nav {
+        display: none;
+      }
+
+      .hero {
+        padding: 6rem 1rem 4rem;
+      }
+
+      .problem-section,
+      .solution-section,
+      .benefits-section,
+      .testimonials-section,
+      .cta-section {
+        padding: 6rem 1rem;
+      }
+
+      .problems-grid,
+      .solutions-grid,
+      .benefits-grid,
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .problem-card,
+      .solution-card,
+      .benefit-card,
+      .testimonial-card {
+        padding: 2rem;
+      }
+
+      .cta-buttons {
         flex-direction: column;
-        width: 100%;
-        align-items: flex-start;
-        gap: 1rem;
+        align-items: center;
       }
-      .vero-navbar__cta {
+
+      .cta-button-primary,
+      .cta-button-secondary {
         width: 100%;
-        text-align: center;
+        max-width: 300px;
+        justify-content: center;
+      }
+
+      .footer {
+        padding: 4rem 1rem 2rem;
+      }
+
+      .footer-links {
+        flex-direction: column;
+        gap: 1rem;
       }
     }
   </style>
+</head>
+<body>
 
-  <nav class="vero-navbar" id="veroNavbar">
-    <div class="vero-navbar__inner">
-      <a class="vero-navbar__brand" href="index.html">Vero</a>
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="navbar-container">
+      <a href="index.html" class="navbar-brand">Vero</a>
       
-      <div class="vero-navbar__toggle" id="veroToggle">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
+      <ul class="navbar-nav">
+        <li><a href="index.html" class="navbar-link">Home</a></li>
+        <li><a href="Shop.html" class="navbar-link">Shop</a></li>
+        <li><a href="How-It-Works.html" class="navbar-link">How It Works</a></li>
+        <li><a href="Why-Vero.html" class="navbar-link">Why Vero</a></li>
+      </ul>
       
-      <div class="vero-navbar__menu" id="veroMenu">
-        <ul class="vero-navbar__links">
-          <li><a class="vero-navbar__link" href="index.html">Home</a></li>
-          <li><a class="vero-navbar__link" href="Shop.html">Shop</a></li>
-          <li><a class="vero-navbar__link" href="How-It-Works.html">How It Works</a></li>
-          <li><a class="vero-navbar__link" href="Why-Vero.html">Why Vero</a></li>
-        </ul>
-        <a href="Shop.html#products" class="vero-navbar__cta">Get Energized</a>
-      </div>
+      <a href="Shop.html" class="navbar-cta">Get Started</a>
     </div>
   </nav>
 
-  <script>
-    const toggle = document.getElementById("veroToggle");
-    const menu = document.getElementById("veroMenu");
-    const navbar = document.getElementById("veroNavbar");
-    
-    toggle.addEventListener("click", () => {
-      toggle.classList.toggle("vero-navbar__toggle--open");
-      menu.classList.toggle("vero-navbar__menu--open");
-    });
-    
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 10) {
-        navbar.classList.add("vero-navbar--scrolled");
-      } else {
-        navbar.classList.remove("vero-navbar--scrolled");
-      }
-    });
-  </script>
+  <!-- ===== HERO SECTION ===== -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span>💡</span>
+        <span>The energy revolution starts here</span>
+      </div>
+      
+      <h1 class="hero-title">
+        Why We Built
+        <br>Vero
+      </h1>
+      
+      <p class="hero-subtitle">
+        We were tired of choosing between energy and health. So we created the first energy bar that delivers both – clean, sustained power without compromise.
+      </p>
+    </div>
+  </section>
 
-  <main>
-    <!-- Hero Section -->
-    <section style="padding: 80px 20px; background: linear-gradient(135deg, #faf5ff 0%, #8b5cf6 100%); position: relative; overflow: hidden;">
-      <!-- Playful Background Elements -->
-      <div style="position: absolute; top: 15%; right: 10%; width: 120px; height: 120px; background: rgba(255, 255, 255, 0.2); border-radius: 50%; animation: bounce 4s ease-in-out infinite;"></div>
-      <div style="position: absolute; bottom: 20%; left: 8%; width: 80px; height: 80px; background: rgba(255, 255, 255, 0.15); border-radius: 50%; animation: bounce 6s ease-in-out infinite reverse;"></div>
-      <div style="position: absolute; top: 40%; left: 20%; width: 40px; height: 40px; background: rgba(251, 191, 36, 0.3); border-radius: 50%; animation: bounce 5s ease-in-out infinite;"></div>
-      
-      <style>
-        @keyframes bounce {
-          0%, 100% { transform: translateY(0px) scale(1); }
-          50% { transform: translateY(-15px) scale(1.1); }
-        }
-      </style>
-      
-      <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; position: relative; z-index: 2;">
-        
-        <!-- Left: Content -->
-        <div>
-          <div style="background: rgba(255, 255, 255, 0.9); padding: 8px 20px; border-radius: 25px; display: inline-block; margin-bottom: 20px; font-size: 0.9rem; font-weight: 600; color: #581c87;">
-            👥 Meet the Founders
-          </div>
-          <h1 style="font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 900; color: white; margin-bottom: 20px; line-height: 1.1; text-shadow: 0 2px 10px rgba(0,0,0,0.2);">
-            Three brothers who love <span style="background: linear-gradient(135deg, #fbbf24, #f59e0b); -webkit-background-clip: text; background-clip: text; color: transparent;">good food</span>
-          </h1>
-          <p style="font-size: 1.2rem; color: rgba(255, 255, 255, 0.9); margin-bottom: 30px; line-height: 1.6; font-weight: 500;">
-            As students, we were tired of choosing between energy bars that tasted like cardboard or candy bars that left us hungry an hour later.
+  <!-- ===== PROBLEM SECTION ===== -->
+  <section class="problem-section">
+    <div class="problem-container">
+      <div class="problem-header">
+        <h2 class="problem-title">The Energy Problem</h2>
+        <p class="problem-subtitle">
+          Traditional energy sources leave you worse off than when you started.
+        </p>
+      </div>
+
+      <div class="problems-grid">
+        <div class="problem-card">
+          <div class="problem-icon">☕</div>
+          <h3 class="problem-title-card">Coffee Crashes</h3>
+          <p class="problem-description">
+            High caffeine spikes followed by inevitable crashes. You're left more tired than before, reaching for another cup in an endless cycle.
           </p>
-          <a href="Shop.html" style="background: #111827; color: white; padding: 18px 36px; border-radius: 12px; text-decoration: none; font-weight: 700; display: inline-block; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.2);" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(0,0,0,0.2)'">
-            Try Our Bars →
-          </a>
         </div>
-        
-        <!-- Right: Founder Photo -->
-        <div style="text-align: center;">
-          <div style="background: rgba(255, 255, 255, 0.95); border-radius: 20px; padding: 60px; min-height: 400px; display: flex; align-items: center; justify-content: center; box-shadow: 0 15px 50px rgba(0,0,0,0.15); backdrop-filter: blur(10px); transform: rotate(-2deg); transition: all 0.3s ease;" onmouseover="this.style.transform='rotate(0deg) scale(1.02)'" onmouseout="this.style.transform='rotate(-2deg) scale(1)'">
-            <div style="color: #6b7280; font-size: 1.1rem; text-align: center;">
-              <div style="font-size: 4rem; margin-bottom: 20px;">📸</div>
-              <strong style="color: #111827;">Founder Photo Here</strong><br/>
-              <span style="font-size: 0.9rem;">Tom, Charlie & Oliver together</span>
+
+        <div class="problem-card">
+          <div class="problem-icon">🍭</div>
+          <h3 class="problem-title-card">Sugar Rushes</h3>
+          <p class="problem-description">
+            Energy drinks and bars loaded with sugar give you a quick high, then send your blood sugar plummeting. The crash is brutal.
+          </p>
+        </div>
+
+        <div class="problem-card">
+          <div class="problem-icon">⚠️</div>
+          <h3 class="problem-title-card">Artificial Ingredients</h3>
+          <p class="problem-description">
+            Synthetic stimulants, artificial sweeteners, and chemical additives. Your body deserves better than a lab experiment.
+          </p>
+        </div>
+
+        <div class="problem-card">
+          <div class="problem-icon">😰</div>
+          <h3 class="problem-title-card">Jitters & Anxiety</h3>
+          <p class="problem-description">
+            Too much caffeine too fast creates jitters, anxiety, and that uncomfortable wired feeling. Energy shouldn't come with side effects.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SOLUTION SECTION ===== -->
+  <section class="solution-section">
+    <div class="solution-container">
+      <div class="solution-header">
+        <h2 class="solution-title">The Vero Solution</h2>
+        <p class="solution-subtitle">
+          We engineered a better way to fuel your body and mind.
+        </p>
+      </div>
+
+      <div class="solutions-grid">
+        <div class="solution-card">
+          <div class="solution-icon">🌿</div>
+          <h3 class="solution-title-card">Natural Caffeine</h3>
+          <p class="solution-description">
+            Green tea caffeine paired with L-theanine for smooth, sustained energy without jitters. Clean fuel for your brain.
+          </p>
+        </div>
+
+        <div class="solution-card">
+          <div class="solution-icon">⚖️</div>
+          <h3 class="solution-title-card">Balanced Macros</h3>
+          <p class="solution-description">
+            Protein, complex carbs, and healthy fats work together to provide steady energy release over hours, not minutes.
+          </p>
+        </div>
+
+        <div class="solution-card">
+          <div class="solution-icon">🌱</div>
+          <h3 class="solution-title-card">Plant-Based Power</h3>
+          <p class="solution-description">
+            100% plant-based ingredients with complete amino acids. Clean nutrition that your body recognizes and loves.
+          </p>
+        </div>
+
+        <div class="solution-card">
+          <div class="solution-icon">🎯</div>
+          <h3 class="solution-title-card">Zero Added Sugar</h3>
+          <p class="solution-description">
+            Naturally sweetened with no artificial additives. Stable blood sugar means stable energy and mood.
+          </p>
+        </div>
+
+        <div class="solution-card">
+          <div class="solution-icon">🧠</div>
+          <h3 class="solution-title-card">Cognitive Support</h3>
+          <p class="solution-description">
+            Adaptogens and nootropics enhance focus, reduce stress, and support mental clarity for peak performance.
+          </p>
+        </div>
+
+        <div class="solution-card">
+          <div class="solution-icon">⏰</div>
+          <h3 class="solution-title-card">Long-Lasting Energy</h3>
+          <p class="solution-description">
+            4+ hours of sustained energy without crashes. Fuel that lasts as long as your ambition.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BENEFITS SECTION ===== -->
+  <section class="benefits-section">
+    <div class="benefits-container">
+      <div class="benefits-header">
+        <h2 class="benefits-title">Real Benefits, Real Results</h2>
+        <p class="benefits-subtitle">
+          Experience the difference that clean, sustained energy makes in your daily life.
+        </p>
+      </div>
+
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-header">
+            <div class="benefit-icon">🎯</div>
+            <h3 class="benefit-title">Enhanced Focus</h3>
+          </div>
+          <p class="benefit-description">
+            Stay locked in for hours with smooth, sustained mental energy. No more afternoon brain fog or concentration crashes.
+          </p>
+          <div class="benefit-stats">
+            <div class="stat-item">
+              <span class="stat-number">4+</span>
+              <span class="stat-label">Hours Focus</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">90mg</span>
+              <span class="stat-label">Clean Caffeine</span>
             </div>
           </div>
-          <div style="margin-top: 25px; color: rgba(255, 255, 255, 0.9); font-size: 1rem; font-weight: 700; text-shadow: 0 1px 3px rgba(0,0,0,0.3);">Tom, Charlie & Oliver Wiseman</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Our Story -->
-    <section style="padding: 80px 20px; background: linear-gradient(135deg, #fef3c7 0%, #fbbf24 50%, #f59e0b 100%); position: relative; overflow: hidden;">
-      <!-- Background Elements -->
-      <div style="position: absolute; top: 10%; left: 5%; width: 100px; height: 100px; background: rgba(255, 255, 255, 0.1); border-radius: 50%; animation: float 8s ease-in-out infinite;"></div>
-      <div style="position: absolute; bottom: 15%; right: 10%; width: 60px; height: 60px; background: rgba(255, 255, 255, 0.15); border-radius: 50%; animation: float 6s ease-in-out infinite reverse;"></div>
-      
-      <div style="max-width: 800px; margin: 0 auto; text-align: center; position: relative; z-index: 2;">
-        <div style="background: rgba(255, 255, 255, 0.9); padding: 10px 25px; border-radius: 25px; display: inline-block; margin-bottom: 20px; font-size: 0.9rem; font-weight: 600; color: #92400e;">
-          📖 The Origin Story
-        </div>
-        <h2 style="font-size: 2.8rem; font-weight: 900; color: #111827; margin-bottom: 50px;">Our story</h2>
-        
-        <div style="background: rgba(255, 255, 255, 0.95); padding: 50px; border-radius: 20px; box-shadow: 0 15px 50px rgba(0,0,0,0.1); margin-bottom: 50px; backdrop-filter: blur(10px); transform: rotate(-1deg); transition: all 0.3s ease;" onmouseover="this.style.transform='rotate(0deg) scale(1.02)'" onmouseout="this.style.transform='rotate(-1deg) scale(1)'">
-          <div style="font-size: 3rem; margin-bottom: 20px;">💡</div>
-          <p style="color: #374151; font-size: 1.3rem; line-height: 1.7; margin-bottom: 30px; font-style: italic; font-weight: 600;">
-            "There had to be a way to make something that actually tasted good AND gave us real energy. Turns out, there was – we just had to make it ourselves."
-          </p>
-          
-          <p style="color: #6b7280; font-size: 1.1rem; line-height: 1.6; margin-bottom: 25px; font-weight: 500;">
-            We spent months in our kitchen, testing recipes and ingredients. We wanted something that would fuel our long study sessions without the sugar crash or artificial aftertaste.
-          </p>
-          
-          <p style="color: #6b7280; font-size: 1.1rem; line-height: 1.6; font-weight: 500;">
-            After countless iterations, we finally created what we'd been looking for: clean energy that actually tastes great. Now we want to share it with everyone who's tired of choosing between taste and nutrition.
-          </p>
         </div>
 
-        <!-- Kitchen Photo Placeholder -->
-        <div style="background: rgba(255, 255, 255, 0.9); border-radius: 20px; padding: 60px; min-height: 300px; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 40px rgba(0,0,0,0.1); backdrop-filter: blur(10px); transform: rotate(1deg); transition: all 0.3s ease;" onmouseover="this.style.transform='rotate(0deg) scale(1.02)'" onmouseout="this.style.transform='rotate(1deg) scale(1)'">
-          <div style="color: #6b7280; font-size: 1.1rem; text-align: center;">
-            <div style="font-size: 4rem; margin-bottom: 20px;">📸</div>
-            <strong style="color: #111827;">Kitchen Magic Photo</strong><br/>
-            <span style="font-size: 0.9rem;">Behind the scenes of creating Vero</span>
+        <div class="benefit-card">
+          <div class="benefit-header">
+            <div class="benefit-icon">💪</div>
+            <h3 class="benefit-title">Sustained Energy</h3>
+          </div>
+          <p class="benefit-description">
+            Power through your day with steady energy that doesn't quit. Perfect for long work sessions, study marathons, or active lifestyles.
+          </p>
+          <div class="benefit-stats">
+            <div class="stat-item">
+              <span class="stat-number">10g</span>
+              <span class="stat-label">Plant Protein</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">0g</span>
+              <span class="stat-label">Added Sugar</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-header">
+            <div class="benefit-icon">😌</div>
+            <h3 class="benefit-title">Stress Resilience</h3>
+          </div>
+          <p class="benefit-description">
+            Adaptogens help your body manage stress while maintaining energy. Stay calm, focused, and productive under pressure.
+          </p>
+          <div class="benefit-stats">
+            <div class="stat-item">
+              <span class="stat-number">100%</span>
+              <span class="stat-label">Natural</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">5g</span>
+              <span class="stat-label">Fiber</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-header">
+            <div class="benefit-icon">🏃</div>
+            <h3 class="benefit-title">Physical Performance</h3>
+          </div>
+          <p class="benefit-description">
+            Fuel your workouts and active lifestyle with clean energy that supports both endurance and recovery.
+          </p>
+          <div class="benefit-stats">
+            <div class="stat-item">
+              <span class="stat-number">210</span>
+              <span class="stat-label">Calories</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">8g</span>
+              <span class="stat-label">Net Carbs</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-header">
+            <div class="benefit-icon">🌙</div>
+            <h3 class="benefit-title">Better Sleep</h3>
+          </div>
+          <p class="benefit-description">
+            No late-day crashes or sleep disruption. Clean energy that works with your natural rhythms, not against them.
+          </p>
+          <div class="benefit-stats">
+            <div class="stat-item">
+              <span class="stat-number">L-Theanine</span>
+              <span class="stat-label">Calm Focus</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">No</span>
+              <span class="stat-label">Crashes</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-header">
+            <div class="benefit-icon">🎨</div>
+            <h3 class="benefit-title">Creative Flow</h3>
+          </div>
+          <p class="benefit-description">
+            Unlock your creative potential with sustained mental energy. Perfect for artists, writers, and innovators.
+          </p>
+          <div class="benefit-stats">
+            <div class="stat-item">
+              <span class="stat-number">Nootropics</span>
+              <span class="stat-label">Brain Boost</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">Clean</span>
+              <span class="stat-label">Ingredients</span>
+            </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Mission -->
-    <section style="padding: 80px 20px; background: linear-gradient(135deg, #111827 0%, #374151 100%); color: white; position: relative; overflow: hidden;">
-      <!-- Background Elements -->
-      <div style="position: absolute; top: 20%; right: 15%; width: 80px; height: 80px; background: linear-gradient(135deg, #10b981, #059669); border-radius: 50%; opacity: 0.2;"></div>
-      <div style="position: absolute; bottom: 25%; left: 10%; width: 60px; height: 60px; background: linear-gradient(135deg, #fbbf24, #f59e0b); border-radius: 50%; opacity: 0.2;"></div>
-      
-      <div style="max-width: 600px; margin: 0 auto; text-align: center; position: relative; z-index: 2;">
-        <div style="background: rgba(255, 255, 255, 0.1); padding: 10px 25px; border-radius: 25px; display: inline-block; margin-bottom: 20px; font-size: 0.9rem; font-weight: 600;">
-          🎯 Our Mission
-        </div>
-        <h2 style="font-size: 2.8rem; font-weight: 900; margin-bottom: 30px;">Why we do this</h2>
-        <p style="color: rgba(255, 255, 255, 0.9); font-size: 1.3rem; line-height: 1.7; margin-bottom: 50px; font-weight: 500;">
-          Make clean, delicious energy bars the norm, not the exception. Start with students (because we know what it's like), then help everyone who wants real food that actually fuels their day.
+  <!-- ===== TESTIMONIALS SECTION ===== -->
+  <section class="testimonials-section">
+    <div class="testimonials-container">
+      <div class="testimonials-header">
+        <h2 class="testimonials-title">What People Are Saying</h2>
+        <p class="testimonials-subtitle">
+          Real feedback from people who've made the switch to clean energy.
         </p>
-        
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 40px; margin-bottom: 50px;">
-          <div style="text-align: center; background: rgba(16, 185, 129, 0.1); padding: 30px; border-radius: 16px; backdrop-filter: blur(10px);">
-            <div style="font-size: 3.5rem; font-weight: 900; color: #10b981; margin-bottom: 12px;">3</div>
-            <div style="color: rgba(255, 255, 255, 0.8); font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">Brothers</div>
-          </div>
-          <div style="text-align: center; background: rgba(251, 191, 36, 0.1); padding: 30px; border-radius: 16px; backdrop-filter: blur(10px);">
-            <div style="font-size: 3.5rem; font-weight: 900; color: #fbbf24; margin-bottom: 12px;">0</div>
-            <div style="color: rgba(255, 255, 255, 0.8); font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">Added Sugar</div>
-          </div>
-          <div style="text-align: center; background: rgba(139, 92, 246, 0.1); padding: 30px; border-radius: 16px; backdrop-filter: blur(10px);">
-            <div style="font-size: 3.5rem; font-weight: 900; color: #8b5cf6; margin-bottom: 12px;">100%</div>
-            <div style="color: rgba(255, 255, 255, 0.8); font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">Plant-Based</div>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <p class="testimonial-quote">
+            "Finally, an energy bar that doesn't make me crash. I can study for hours without that awful afternoon slump. Game changer for my productivity."
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">JS</div>
+            <div class="author-info">
+              <div class="author-name">Jessica S.</div>
+              <div class="author-role">Medical Student</div>
+            </div>
           </div>
         </div>
-        
-        <!-- Fun Quote -->
-        <div style="background: rgba(255, 255, 255, 0.05); padding: 30px; border-radius: 16px; backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1);">
-          <p style="font-size: 1.1rem; font-style: italic; margin: 0; color: rgba(255, 255, 255, 0.9);">
-            "We're not trying to change the world... just make it taste better while giving you clean energy." 
+
+        <div class="testimonial-card">
+          <p class="testimonial-quote">
+            "I was skeptical about another energy bar, but Vero is different. Clean ingredients, great taste, and energy that actually lasts. No more 3pm coffee runs."
           </p>
-          <div style="margin-top: 15px; color: #fbbf24; font-weight: 600;">— The Wiseman Brothers</div>
+          <div class="testimonial-author">
+            <div class="author-avatar">MK</div>
+            <div class="author-info">
+              <div class="author-name">Marcus K.</div>
+              <div class="author-role">Software Engineer</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="testimonial-quote">
+            "Perfect for my morning workouts and long work days. The energy is smooth and sustained - exactly what I needed to replace my energy drink habit."
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">AL</div>
+            <div class="author-info">
+              <div class="author-name">Anna L.</div>
+              <div class="author-role">Fitness Coach</div>
+            </div>
+          </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- CTA Section -->
-    <section style="padding: 80px 20px; background: #f8fafc; text-align: center;">
-      <div style="max-width: 600px; margin: 0 auto;">
-        <h2 style="font-size: 2.2rem; font-weight: 700; color: #111827; margin-bottom: 20px;">Ready to try Vero?</h2>
-        <p style="color: #6b7280; font-size: 1.1rem; margin-bottom: 30px; line-height: 1.6;">
-          Thousands of people have already discovered what real energy tastes like. Experience the difference that clean, natural ingredients make.
-        </p>
-        <a href="Shop.html" style="background: rgba(255, 208, 116); color: #1d1d1f; padding: 16px 32px; border-radius: 12px; text-decoration: none; font-weight: 600; display: inline-block; border: 1px solid black; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='2px 4px 0 0 black'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 0 0 black'">
-          Shop Vero
+  <!-- ===== CTA SECTION ===== -->
+  <section class="cta-section">
+    <div class="cta-content">
+      <h2 class="cta-title">Ready to Experience the Difference?</h2>
+      <p class="cta-subtitle">
+        Join thousands who've discovered what clean, sustained energy feels like. Your body and mind will thank you.
+      </p>
+      <div class="cta-buttons">
+        <a href="Shop.html" class="cta-button-primary">
+          <span>Shop Vero Now</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+        <a href="How-It-Works.html" class="cta-button-secondary">
+          <span>Learn How It Works</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 18l6-6-6-6"/>
+          </svg>
         </a>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
 
   <!-- ===== FOOTER ===== -->
-  <footer id="footer" class="footer">
-    <div class="footer-container">
-      <div class="footer-column">
-        <h3 class="footer-title">Vero</h3>
-        <p>Clean energy, smarter nutrition.</p>
-        <div class="footer-socials">
-          <a href="#" class="social-btn">Instagram</a>
-          <a href="#" class="social-btn">TikTok</a>
-          <a href="#" class="social-btn">LinkedIn</a>
-        </div>
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand">Vero</div>
+      <p class="footer-tagline">Clean energy, smarter nutrition.</p>
+      
+      <div class="footer-links">
+        <a href="index.html" class="footer-link">Home</a>
+        <a href="Shop.html" class="footer-link">Shop</a>
+        <a href="How-It-Works.html" class="footer-link">How It Works</a>
+        <a href="mailto:hello@vero.energy" class="footer-link">Contact</a>
       </div>
-
-      <div class="footer-column">
-        <h4>Contact</h4>
-        <ul>
-          <li><a href="mailto:tomwiseman@Vero.se">tomwiseman@Vero.se</a></li>
-          <li><a href="mailto:oliverwiseman@Vero.se">oliverwiseman@Vero.se</a></li>
-          <li><a href="mailto:charliewiseman@Vero.se">charliewiseman@Vero.se</a></li>
-        </ul>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 Vero. All rights reserved.</p>
       </div>
-
-      <div class="footer-column">
-        <h4>Info</h4>
-        <ul>
-          <li>Plant-based. No artificial sweeteners.</li>
-          <li>Made with care in the EU.</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="footer-bottom">
-      <p>© 2025 Vero. All rights reserved.</p>
     </div>
   </footer>
+
+  <!-- ===== JAVASCRIPT ===== -->
+  <script>
+    // Navbar scroll effect
+    window.addEventListener('scroll', () => {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Intersection Observer for animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    // Initialize animations
+    document.addEventListener('DOMContentLoaded', () => {
+      const cards = document.querySelectorAll('.problem-card, .solution-card, .benefit-card, .testimonial-card');
+      cards.forEach((card, index) => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(30px)';
+        card.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+        observer.observe(card);
+      });
+    });
+
+    // Add hover effects to stat numbers
+    document.querySelectorAll('.stat-number').forEach(stat => {
+      stat.addEventListener('mouseenter', () => {
+        stat.style.animation = 'pulse 0.6s ease-in-out';
+      });
+      
+      stat.addEventListener('animationend', () => {
+        stat.style.animation = '';
+      });
+    });
+
+    // Add micro-interactions to CTA buttons
+    document.querySelectorAll('.cta-button-primary, .cta-button-secondary').forEach(button => {
+      button.addEventListener('mouseenter', () => {
+        button.style.animation = 'pulse 0.6s ease-in-out';
+      });
+      
+      button.addEventListener('animationend', () => {
+        button.style.animation = '';
+      });
+    });
+  </script>
 
 </body>
 </html>
