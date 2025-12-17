@@ -216,60 +216,83 @@
 
   <main>
     <!-- Hero Section -->
-    <section style="padding: 80px 20px; background: white;">
-      <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
+    <section style="padding: 80px 20px; background: linear-gradient(135deg, #faf5ff 0%, #8b5cf6 100%); position: relative; overflow: hidden;">
+      <!-- Playful Background Elements -->
+      <div style="position: absolute; top: 15%; right: 10%; width: 120px; height: 120px; background: rgba(255, 255, 255, 0.2); border-radius: 50%; animation: bounce 4s ease-in-out infinite;"></div>
+      <div style="position: absolute; bottom: 20%; left: 8%; width: 80px; height: 80px; background: rgba(255, 255, 255, 0.15); border-radius: 50%; animation: bounce 6s ease-in-out infinite reverse;"></div>
+      <div style="position: absolute; top: 40%; left: 20%; width: 40px; height: 40px; background: rgba(251, 191, 36, 0.3); border-radius: 50%; animation: bounce 5s ease-in-out infinite;"></div>
+      
+      <style>
+        @keyframes bounce {
+          0%, 100% { transform: translateY(0px) scale(1); }
+          50% { transform: translateY(-15px) scale(1.1); }
+        }
+      </style>
+      
+      <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; position: relative; z-index: 2;">
         
         <!-- Left: Content -->
         <div>
-          <h1 style="font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 800; color: #111827; margin-bottom: 20px; line-height: 1.1;">
-            Three brothers who love good food
+          <div style="background: rgba(255, 255, 255, 0.9); padding: 8px 20px; border-radius: 25px; display: inline-block; margin-bottom: 20px; font-size: 0.9rem; font-weight: 600; color: #581c87;">
+            👥 Meet the Founders
+          </div>
+          <h1 style="font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 900; color: white; margin-bottom: 20px; line-height: 1.1; text-shadow: 0 2px 10px rgba(0,0,0,0.2);">
+            Three brothers who love <span style="background: linear-gradient(135deg, #fbbf24, #f59e0b); -webkit-background-clip: text; background-clip: text; color: transparent;">good food</span>
           </h1>
-          <p style="font-size: 1.2rem; color: #6b7280; margin-bottom: 30px; line-height: 1.6;">
+          <p style="font-size: 1.2rem; color: rgba(255, 255, 255, 0.9); margin-bottom: 30px; line-height: 1.6; font-weight: 500;">
             As students, we were tired of choosing between energy bars that tasted like cardboard or candy bars that left us hungry an hour later.
           </p>
-          <a href="Shop.html" style="background: rgba(255, 208, 116); color: #1d1d1f; padding: 16px 32px; border-radius: 12px; text-decoration: none; font-weight: 600; display: inline-block; border: 1px solid black; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='2px 4px 0 0 black'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 0 0 black'">
-            Try Our Bars
+          <a href="Shop.html" style="background: #111827; color: white; padding: 18px 36px; border-radius: 12px; text-decoration: none; font-weight: 700; display: inline-block; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.2);" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(0,0,0,0.2)'">
+            Try Our Bars →
           </a>
         </div>
         
         <!-- Right: Founder Photo -->
         <div style="text-align: center;">
-          <div style="background: #f8fafc; border-radius: 16px; padding: 60px; min-height: 400px; display: flex; align-items: center; justify-content: center;">
-            <div style="color: #9ca3af; font-size: 1.1rem; text-align: center;">
-              <div style="font-size: 3rem; margin-bottom: 20px;">📸</div>
-              <strong>Founder Photo Here</strong><br/>
+          <div style="background: rgba(255, 255, 255, 0.95); border-radius: 20px; padding: 60px; min-height: 400px; display: flex; align-items: center; justify-content: center; box-shadow: 0 15px 50px rgba(0,0,0,0.15); backdrop-filter: blur(10px); transform: rotate(-2deg); transition: all 0.3s ease;" onmouseover="this.style.transform='rotate(0deg) scale(1.02)'" onmouseout="this.style.transform='rotate(-2deg) scale(1)'">
+            <div style="color: #6b7280; font-size: 1.1rem; text-align: center;">
+              <div style="font-size: 4rem; margin-bottom: 20px;">📸</div>
+              <strong style="color: #111827;">Founder Photo Here</strong><br/>
               <span style="font-size: 0.9rem;">Tom, Charlie & Oliver together</span>
             </div>
           </div>
-          <div style="margin-top: 20px; color: #6b7280; font-size: 0.95rem; font-weight: 600;">Tom, Charlie & Oliver Wiseman</div>
+          <div style="margin-top: 25px; color: rgba(255, 255, 255, 0.9); font-size: 1rem; font-weight: 700; text-shadow: 0 1px 3px rgba(0,0,0,0.3);">Tom, Charlie & Oliver Wiseman</div>
         </div>
       </div>
     </section>
 
     <!-- Our Story -->
-    <section style="padding: 80px 20px; background: #f8fafc;">
-      <div style="max-width: 800px; margin: 0 auto; text-align: center;">
-        <h2 style="font-size: 2.5rem; font-weight: 700; color: #111827; margin-bottom: 40px;">Our story</h2>
+    <section style="padding: 80px 20px; background: linear-gradient(135deg, #fef3c7 0%, #fbbf24 50%, #f59e0b 100%); position: relative; overflow: hidden;">
+      <!-- Background Elements -->
+      <div style="position: absolute; top: 10%; left: 5%; width: 100px; height: 100px; background: rgba(255, 255, 255, 0.1); border-radius: 50%; animation: float 8s ease-in-out infinite;"></div>
+      <div style="position: absolute; bottom: 15%; right: 10%; width: 60px; height: 60px; background: rgba(255, 255, 255, 0.15); border-radius: 50%; animation: float 6s ease-in-out infinite reverse;"></div>
+      
+      <div style="max-width: 800px; margin: 0 auto; text-align: center; position: relative; z-index: 2;">
+        <div style="background: rgba(255, 255, 255, 0.9); padding: 10px 25px; border-radius: 25px; display: inline-block; margin-bottom: 20px; font-size: 0.9rem; font-weight: 600; color: #92400e;">
+          📖 The Origin Story
+        </div>
+        <h2 style="font-size: 2.8rem; font-weight: 900; color: #111827; margin-bottom: 50px;">Our story</h2>
         
-        <div style="background: white; padding: 50px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); margin-bottom: 50px;">
-          <p style="color: #374151; font-size: 1.2rem; line-height: 1.7; margin-bottom: 30px; font-style: italic;">
+        <div style="background: rgba(255, 255, 255, 0.95); padding: 50px; border-radius: 20px; box-shadow: 0 15px 50px rgba(0,0,0,0.1); margin-bottom: 50px; backdrop-filter: blur(10px); transform: rotate(-1deg); transition: all 0.3s ease;" onmouseover="this.style.transform='rotate(0deg) scale(1.02)'" onmouseout="this.style.transform='rotate(-1deg) scale(1)'">
+          <div style="font-size: 3rem; margin-bottom: 20px;">💡</div>
+          <p style="color: #374151; font-size: 1.3rem; line-height: 1.7; margin-bottom: 30px; font-style: italic; font-weight: 600;">
             "There had to be a way to make something that actually tasted good AND gave us real energy. Turns out, there was – we just had to make it ourselves."
           </p>
           
-          <p style="color: #6b7280; font-size: 1.1rem; line-height: 1.6; margin-bottom: 25px;">
+          <p style="color: #6b7280; font-size: 1.1rem; line-height: 1.6; margin-bottom: 25px; font-weight: 500;">
             We spent months in our kitchen, testing recipes and ingredients. We wanted something that would fuel our long study sessions without the sugar crash or artificial aftertaste.
           </p>
           
-          <p style="color: #6b7280; font-size: 1.1rem; line-height: 1.6;">
+          <p style="color: #6b7280; font-size: 1.1rem; line-height: 1.6; font-weight: 500;">
             After countless iterations, we finally created what we'd been looking for: clean energy that actually tastes great. Now we want to share it with everyone who's tired of choosing between taste and nutrition.
           </p>
         </div>
 
         <!-- Kitchen Photo Placeholder -->
-        <div style="background: #f8fafc; border-radius: 16px; padding: 60px; min-height: 300px; display: flex; align-items: center; justify-content: center; border: 2px dashed #d1d5db;">
-          <div style="color: #9ca3af; font-size: 1.1rem; text-align: center;">
-            <div style="font-size: 3rem; margin-bottom: 20px;">📸</div>
-            <strong>Kitchen/Process Photo Here</strong><br/>
+        <div style="background: rgba(255, 255, 255, 0.9); border-radius: 20px; padding: 60px; min-height: 300px; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 40px rgba(0,0,0,0.1); backdrop-filter: blur(10px); transform: rotate(1deg); transition: all 0.3s ease;" onmouseover="this.style.transform='rotate(0deg) scale(1.02)'" onmouseout="this.style.transform='rotate(1deg) scale(1)'">
+          <div style="color: #6b7280; font-size: 1.1rem; text-align: center;">
+            <div style="font-size: 4rem; margin-bottom: 20px;">📸</div>
+            <strong style="color: #111827;">Kitchen Magic Photo</strong><br/>
             <span style="font-size: 0.9rem;">Behind the scenes of creating Vero</span>
           </div>
         </div>
@@ -277,26 +300,41 @@
     </section>
 
     <!-- Mission -->
-    <section style="padding: 80px 20px; background: white;">
-      <div style="max-width: 600px; margin: 0 auto; text-align: center;">
-        <h2 style="font-size: 2.2rem; font-weight: 700; color: #111827; margin-bottom: 30px;">Our mission</h2>
-        <p style="color: #6b7280; font-size: 1.2rem; line-height: 1.7; margin-bottom: 40px;">
+    <section style="padding: 80px 20px; background: linear-gradient(135deg, #111827 0%, #374151 100%); color: white; position: relative; overflow: hidden;">
+      <!-- Background Elements -->
+      <div style="position: absolute; top: 20%; right: 15%; width: 80px; height: 80px; background: linear-gradient(135deg, #10b981, #059669); border-radius: 50%; opacity: 0.2;"></div>
+      <div style="position: absolute; bottom: 25%; left: 10%; width: 60px; height: 60px; background: linear-gradient(135deg, #fbbf24, #f59e0b); border-radius: 50%; opacity: 0.2;"></div>
+      
+      <div style="max-width: 600px; margin: 0 auto; text-align: center; position: relative; z-index: 2;">
+        <div style="background: rgba(255, 255, 255, 0.1); padding: 10px 25px; border-radius: 25px; display: inline-block; margin-bottom: 20px; font-size: 0.9rem; font-weight: 600;">
+          🎯 Our Mission
+        </div>
+        <h2 style="font-size: 2.8rem; font-weight: 900; margin-bottom: 30px;">Why we do this</h2>
+        <p style="color: rgba(255, 255, 255, 0.9); font-size: 1.3rem; line-height: 1.7; margin-bottom: 50px; font-weight: 500;">
           Make clean, delicious energy bars the norm, not the exception. Start with students (because we know what it's like), then help everyone who wants real food that actually fuels their day.
         </p>
         
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 30px; margin-bottom: 40px;">
-          <div style="text-align: center;">
-            <div style="font-size: 2.5rem; font-weight: 900; color: #10b981; margin-bottom: 8px;">3</div>
-            <div style="color: #6b7280; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600;">Brothers</div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 40px; margin-bottom: 50px;">
+          <div style="text-align: center; background: rgba(16, 185, 129, 0.1); padding: 30px; border-radius: 16px; backdrop-filter: blur(10px);">
+            <div style="font-size: 3.5rem; font-weight: 900; color: #10b981; margin-bottom: 12px;">3</div>
+            <div style="color: rgba(255, 255, 255, 0.8); font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">Brothers</div>
           </div>
-          <div style="text-align: center;">
-            <div style="font-size: 2.5rem; font-weight: 900; color: #f59e0b; margin-bottom: 8px;">0</div>
-            <div style="color: #6b7280; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600;">Added Sugar</div>
+          <div style="text-align: center; background: rgba(251, 191, 36, 0.1); padding: 30px; border-radius: 16px; backdrop-filter: blur(10px);">
+            <div style="font-size: 3.5rem; font-weight: 900; color: #fbbf24; margin-bottom: 12px;">0</div>
+            <div style="color: rgba(255, 255, 255, 0.8); font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">Added Sugar</div>
           </div>
-          <div style="text-align: center;">
-            <div style="font-size: 2.5rem; font-weight: 900; color: #8b5cf6; margin-bottom: 8px;">100%</div>
-            <div style="color: #6b7280; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600;">Plant-Based</div>
+          <div style="text-align: center; background: rgba(139, 92, 246, 0.1); padding: 30px; border-radius: 16px; backdrop-filter: blur(10px);">
+            <div style="font-size: 3.5rem; font-weight: 900; color: #8b5cf6; margin-bottom: 12px;">100%</div>
+            <div style="color: rgba(255, 255, 255, 0.8); font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">Plant-Based</div>
           </div>
+        </div>
+        
+        <!-- Fun Quote -->
+        <div style="background: rgba(255, 255, 255, 0.05); padding: 30px; border-radius: 16px; backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1);">
+          <p style="font-size: 1.1rem; font-style: italic; margin: 0; color: rgba(255, 255, 255, 0.9);">
+            "We're not trying to change the world... just make it taste better while giving you clean energy." 
+          </p>
+          <div style="margin-top: 15px; color: #fbbf24; font-weight: 600;">— The Wiseman Brothers</div>
         </div>
       </div>
     </section>

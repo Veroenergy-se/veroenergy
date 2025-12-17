@@ -216,27 +216,41 @@
 
   <main>
     <!-- Hero Section -->
-    <section style="padding: 80px 20px; background: white;">
-      <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
+    <section style="padding: 80px 20px; background: linear-gradient(135deg, #f0fdf4 0%, #10b981 100%); position: relative; overflow: hidden;">
+      <!-- Animated Background Elements -->
+      <div style="position: absolute; top: 10%; left: 5%; width: 60px; height: 60px; background: rgba(255, 255, 255, 0.2); border-radius: 50%; animation: float 6s ease-in-out infinite;"></div>
+      <div style="position: absolute; bottom: 15%; right: 8%; width: 40px; height: 40px; background: rgba(255, 255, 255, 0.15); border-radius: 50%; animation: float 8s ease-in-out infinite reverse;"></div>
+      
+      <style>
+        @keyframes float {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-20px); }
+        }
+      </style>
+      
+      <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; position: relative; z-index: 2;">
         
         <!-- Left: Content -->
         <div>
-          <h1 style="font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 800; color: #111827; margin-bottom: 20px; line-height: 1.1;">
-            What makes Vero different
+          <div style="background: rgba(255, 255, 255, 0.9); padding: 8px 20px; border-radius: 25px; display: inline-block; margin-bottom: 20px; font-size: 0.9rem; font-weight: 600; color: #065f46;">
+            🔬 Science Meets Taste
+          </div>
+          <h1 style="font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 900; color: white; margin-bottom: 20px; line-height: 1.1; text-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+            What makes Vero <span style="background: linear-gradient(135deg, #fbbf24, #f59e0b); -webkit-background-clip: text; background-clip: text; color: transparent;">different</span>
           </h1>
-          <p style="font-size: 1.2rem; color: #6b7280; margin-bottom: 30px; line-height: 1.6;">
-            Most energy bars are loaded with sugar and artificial ingredients. We use real food to fuel your day.
+          <p style="font-size: 1.2rem; color: rgba(255, 255, 255, 0.9); margin-bottom: 30px; line-height: 1.6; font-weight: 500;">
+            Most energy bars are loaded with sugar and artificial ingredients. We use real food to fuel your day the way nature intended.
           </p>
-          <a href="Shop.html" style="background: rgba(255, 208, 116); color: #1d1d1f; padding: 16px 32px; border-radius: 12px; text-decoration: none; font-weight: 600; display: inline-block; border: 1px solid black; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='2px 4px 0 0 black'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 0 0 black'">
-            Try Vero
+          <a href="Shop.html" style="background: #111827; color: white; padding: 18px 36px; border-radius: 12px; text-decoration: none; font-weight: 700; display: inline-block; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.2);" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(0,0,0,0.2)'">
+            Try Vero →
           </a>
         </div>
         
         <!-- Right: Ingredients Photo Placeholder -->
-        <div style="background: #f8fafc; border-radius: 16px; padding: 60px; text-align: center; min-height: 400px; display: flex; align-items: center; justify-content: center;">
-          <div style="color: #9ca3af; font-size: 1.1rem; text-align: center;">
-            <div style="font-size: 3rem; margin-bottom: 20px;">📸</div>
-            <strong>Ingredients Photo Here</strong><br/>
+        <div style="background: rgba(255, 255, 255, 0.95); border-radius: 20px; padding: 60px; text-align: center; min-height: 400px; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 40px rgba(0,0,0,0.1); backdrop-filter: blur(10px);">
+          <div style="color: #6b7280; font-size: 1.1rem; text-align: center;">
+            <div style="font-size: 4rem; margin-bottom: 20px;">📸</div>
+            <strong style="color: #111827;">Ingredients Showcase</strong><br/>
             <span style="font-size: 0.9rem;">Natural ingredients spread out beautifully</span>
           </div>
         </div>
@@ -244,28 +258,37 @@
     </section>
 
     <!-- What's Inside -->
-    <section style="padding: 80px 20px; background: #f8fafc;">
-      <div style="max-width: 1000px; margin: 0 auto; text-align: center;">
-        <h2 style="font-size: 2.5rem; font-weight: 700; color: #111827; margin-bottom: 60px;">What's inside every bar</h2>
+    <section style="padding: 80px 20px; background: linear-gradient(135deg, #fef3c7 0%, #fed7aa 50%, #fbbf24 100%); position: relative;">
+      <!-- Background Pattern -->
+      <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; opacity: 0.1; background-image: radial-gradient(circle at 20% 80%, #10b981 2px, transparent 2px), radial-gradient(circle at 80% 20%, #8b5cf6 2px, transparent 2px), radial-gradient(circle at 40% 40%, #ef4444 2px, transparent 2px); background-size: 60px 60px;"></div>
+      
+      <div style="max-width: 1000px; margin: 0 auto; text-align: center; position: relative; z-index: 2;">
+        <div style="background: rgba(255, 255, 255, 0.9); padding: 10px 25px; border-radius: 25px; display: inline-block; margin-bottom: 20px; font-size: 0.9rem; font-weight: 600; color: #92400e;">
+          🌱 Pure Ingredients
+        </div>
+        <h2 style="font-size: 2.8rem; font-weight: 900; color: #111827; margin-bottom: 60px;">What's inside every bar</h2>
         
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px;">
           
-          <div style="background: white; border-radius: 16px; padding: 40px; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
-            <div style="width: 80px; height: 80px; background: #10b981; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; color: white; font-size: 1.8rem; font-weight: 900;">10g</div>
-            <h3 style="font-size: 1.3rem; font-weight: 700; color: #111827; margin-bottom: 15px;">Plant Protein</h3>
-            <p style="color: #6b7280; line-height: 1.5;">Complete amino profile from pea, rice, and hemp. Keeps you satisfied for hours.</p>
+          <div style="background: linear-gradient(135deg, #f0fdf4, #bbf7d0); border-radius: 20px; padding: 40px; text-align: center; box-shadow: 0 10px 30px rgba(16, 185, 129, 0.2); transform: rotate(-2deg); transition: all 0.3s ease; position: relative; overflow: hidden;" onmouseover="this.style.transform='rotate(0deg) scale(1.05)'" onmouseout="this.style.transform='rotate(-2deg) scale(1)'">
+            <div style="position: absolute; top: -20px; right: -20px; width: 80px; height: 80px; background: rgba(255, 255, 255, 0.3); border-radius: 50%;"></div>
+            <div style="width: 100px; height: 100px; background: linear-gradient(135deg, #10b981, #059669); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; color: white; font-size: 2rem; font-weight: 900; box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3);">10g</div>
+            <h3 style="font-size: 1.5rem; font-weight: 800; color: #111827; margin-bottom: 15px;">Plant Protein</h3>
+            <p style="color: #065f46; line-height: 1.6; font-weight: 500;">Complete amino profile from pea, rice, and hemp. Keeps you satisfied for hours without the heaviness.</p>
           </div>
 
-          <div style="background: white; border-radius: 16px; padding: 40px; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
-            <div style="width: 80px; height: 80px; background: #f59e0b; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; color: white; font-size: 1.4rem; font-weight: 900;">80mg</div>
-            <h3 style="font-size: 1.3rem; font-weight: 700; color: #111827; margin-bottom: 15px;">Natural Caffeine</h3>
-            <p style="color: #6b7280; line-height: 1.5;">From green tea extract. Smooth, sustained alertness without the jitters.</p>
+          <div style="background: linear-gradient(135deg, #fff7ed, #fed7aa); border-radius: 20px; padding: 40px; text-align: center; box-shadow: 0 10px 30px rgba(245, 158, 11, 0.2); transform: rotate(1deg); transition: all 0.3s ease; position: relative; overflow: hidden;" onmouseover="this.style.transform='rotate(0deg) scale(1.05)'" onmouseout="this.style.transform='rotate(1deg) scale(1)'">
+            <div style="position: absolute; bottom: -20px; left: -20px; width: 80px; height: 80px; background: rgba(255, 255, 255, 0.3); border-radius: 50%;"></div>
+            <div style="width: 100px; height: 100px; background: linear-gradient(135deg, #f59e0b, #d97706); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; color: white; font-size: 1.6rem; font-weight: 900; box-shadow: 0 8px 25px rgba(245, 158, 11, 0.3);">80mg</div>
+            <h3 style="font-size: 1.5rem; font-weight: 800; color: #111827; margin-bottom: 15px;">Natural Caffeine</h3>
+            <p style="color: #92400e; line-height: 1.6; font-weight: 500;">From green tea extract. Smooth, sustained alertness that works with your body's natural rhythms.</p>
           </div>
 
-          <div style="background: white; border-radius: 16px; padding: 40px; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
-            <div style="width: 80px; height: 80px; background: #8b5cf6; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; color: white; font-size: 1.8rem; font-weight: 900;">0g</div>
-            <h3 style="font-size: 1.3rem; font-weight: 700; color: #111827; margin-bottom: 15px;">Added Sugar</h3>
-            <p style="color: #6b7280; line-height: 1.5;">Naturally sweetened with dates and monk fruit. No sugar spikes or crashes.</p>
+          <div style="background: linear-gradient(135deg, #faf5ff, #e9d5ff); border-radius: 20px; padding: 40px; text-align: center; box-shadow: 0 10px 30px rgba(139, 92, 246, 0.2); transform: rotate(-1deg); transition: all 0.3s ease; position: relative; overflow: hidden;" onmouseover="this.style.transform='rotate(0deg) scale(1.05)'" onmouseout="this.style.transform='rotate(-1deg) scale(1)'">
+            <div style="position: absolute; top: -20px; left: -20px; width: 80px; height: 80px; background: rgba(255, 255, 255, 0.3); border-radius: 50%;"></div>
+            <div style="width: 100px; height: 100px; background: linear-gradient(135deg, #8b5cf6, #7c3aed); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; color: white; font-size: 2rem; font-weight: 900; box-shadow: 0 8px 25px rgba(139, 92, 246, 0.3);">0g</div>
+            <h3 style="font-size: 1.5rem; font-weight: 800; color: #111827; margin-bottom: 15px;">Added Sugar</h3>
+            <p style="color: #581c87; line-height: 1.6; font-weight: 500;">Naturally sweetened with dates and monk fruit. Clean energy without the rollercoaster ride.</p>
           </div>
         </div>
       </div>
