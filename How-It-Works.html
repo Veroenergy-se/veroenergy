@@ -375,6 +375,16 @@
       position: relative;
       height: 300px;
       margin: 40px 0;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .chart-container:hover {
+      transform: scale(1.02);
+    }
+
+    .chart-container:active {
+      transform: scale(0.98);
     }
 
     .chart-svg {
@@ -388,7 +398,8 @@
       fill: none;
       stroke-dasharray: 1000;
       stroke-dashoffset: 1000;
-      animation: drawCurve 3s ease-out forwards;
+      animation: drawCurve 3s ease-out forwards, glowPulse 2s ease-in-out infinite alternate;
+      filter: drop-shadow(0 0 8px rgba(34, 197, 94, 0.6));
     }
 
     .coffee-curve {
@@ -397,12 +408,22 @@
       fill: none;
       stroke-dasharray: 1000;
       stroke-dashoffset: 1000;
-      animation: drawCurve 3s ease-out 1s forwards;
+      animation: drawCurve 3s ease-out 1s forwards, glowPulse 2s ease-in-out 1s infinite alternate;
+      filter: drop-shadow(0 0 8px rgba(239, 68, 68, 0.6));
     }
 
     @keyframes drawCurve {
       to {
         stroke-dashoffset: 0;
+      }
+    }
+
+    @keyframes glowPulse {
+      0% {
+        filter: drop-shadow(0 0 8px rgba(34, 197, 94, 0.6));
+      }
+      100% {
+        filter: drop-shadow(0 0 16px rgba(34, 197, 94, 0.9));
       }
     }
 
@@ -787,8 +808,8 @@
             <text x="600" y="280" fill="#6b7280" font-size="12" text-anchor="middle">3 hours</text>
             <text x="720" y="280" fill="#6b7280" font-size="12" text-anchor="middle">4 hours</text>
             
-            <!-- Vero curve (higher and longer lasting) -->
-            <path class="vero-curve" d="M 60 260 Q 150 120 250 100 T 500 120 T 720 180"/>
+            <!-- Vero curve (matches coffee initially, then smoother decline) -->
+            <path class="vero-curve" d="M 60 260 Q 120 80 180 60 Q 300 70 450 90 Q 600 120 720 140"/>
             
             <!-- Coffee curve (spike and crash) -->
             <path class="coffee-curve" d="M 60 260 Q 120 80 180 60 Q 240 80 300 140 Q 400 200 500 220 T 720 240"/>
@@ -859,71 +880,71 @@
             <div class="step-number">3</div>
             <div class="step-badge">Enhanced</div>
           </div>
-          <h3 class="step-title">Peak Performance</h3>
+          <h3 class="step-title">Sustained Performance</h3>
           <p class="step-description">
-            This is where Vero shines. Adaptogens like rhodiola and ashwagandha help your body handle stress while maintaining mental clarity. You're not just energized - you're optimized.
+            This is where Vero shines. The balanced combination of protein, healthy fats, and complex carbs keeps your energy steady for hours. No crash, no fade - just consistent fuel for whatever comes next.
           </p>
           <ul class="step-details">
-            <li>Rhodiola for stress resilience</li>
-            <li>Lion's mane for cognitive support</li>
-            <li>Ashwagandha for calm energy</li>
+            <li>Balanced macronutrients for stability</li>
+            <li>MCT oil for sustained energy</li>
+            <li>No artificial stimulants or crashes</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== KEY INGREDIENTS SECTION ===== -->
+  <!-- ===== WHAT'S INSIDE SECTION ===== -->
   <section class="ingredients-section">
     <div class="container">
-      <h2 class="section-title" style="color: white;">The Science Behind The Ingredients</h2>
+      <h2 class="section-title" style="color: white;">What's Inside The Bar</h2>
       <p class="section-subtitle" style="color: #9ca3af;">
-        Every ingredient in Vero has a purpose. Here's what makes our formula work.
+        Every ingredient serves a purpose. Here's what powers your day.
       </p>
 
       <div class="ingredients-grid">
         <div class="ingredient-card">
           <div class="ingredient-header">
-            <div class="ingredient-icon">🍃</div>
-            <h3 class="ingredient-name">Green Tea Caffeine</h3>
+            <div class="ingredient-icon">☕</div>
+            <h3 class="ingredient-name">Natural Caffeine</h3>
           </div>
           <p class="ingredient-description">
-            Unlike synthetic caffeine that hits like a truck, green tea caffeine provides a gentle, sustained energy boost. It's naturally paired with L-theanine, creating the perfect balance of alertness and calm.
+            90mg of clean caffeine from green tea - enough to energize without overwhelming. No synthetic stimulants, no crash, just smooth activation that works with your body's natural rhythms.
           </p>
-          <div class="ingredient-benefit">Smooth Energy</div>
+          <div class="ingredient-benefit">90mg Per Bar</div>
         </div>
 
         <div class="ingredient-card">
           <div class="ingredient-header">
-            <div class="ingredient-icon">🌿</div>
-            <h3 class="ingredient-name">Rhodiola Rosea</h3>
+            <div class="ingredient-icon">🧘</div>
+            <h3 class="ingredient-name">L-Theanine</h3>
           </div>
           <p class="ingredient-description">
-            This Arctic root has been used for centuries to combat fatigue and stress. Modern research shows it helps your body adapt to physical and mental demands, keeping you resilient under pressure.
+            The secret to calm focus. This amino acid naturally occurs alongside caffeine in green tea, promoting relaxed alertness. You get the energy boost without the anxiety or jitters.
           </p>
-          <div class="ingredient-benefit">Stress Resilience</div>
+          <div class="ingredient-benefit">Calm Focus</div>
         </div>
 
         <div class="ingredient-card">
           <div class="ingredient-header">
-            <div class="ingredient-icon">🧠</div>
-            <h3 class="ingredient-name">Lion's Mane</h3>
+            <div class="ingredient-icon">💪</div>
+            <h3 class="ingredient-name">Plant Protein</h3>
           </div>
           <p class="ingredient-description">
-            This unique mushroom supports cognitive function and mental clarity. Studies suggest it may help with focus, memory, and overall brain health - perfect for those demanding mental tasks.
+            10g of complete plant-based protein from pea, rice, and hemp. Provides all essential amino acids for muscle support and helps slow the absorption of caffeine for sustained energy.
           </p>
-          <div class="ingredient-benefit">Cognitive Support</div>
+          <div class="ingredient-benefit">10g Complete Protein</div>
         </div>
 
         <div class="ingredient-card">
           <div class="ingredient-header">
             <div class="ingredient-icon">⚖️</div>
-            <h3 class="ingredient-name">Ashwagandha</h3>
+            <h3 class="ingredient-name">Smart Macros</h3>
           </div>
           <p class="ingredient-description">
-            Known as the "strength of the stallion," ashwagandha helps reduce cortisol levels and promotes calm energy. It's the reason you feel energized but not anxious after eating Vero.
+            Balanced carbs, protein, and healthy fats work together for steady energy release. 8g net carbs from dates and oats, plus MCT oil for sustained fuel that lasts hours.
           </p>
-          <div class="ingredient-benefit">Calm Energy</div>
+          <div class="ingredient-benefit">Balanced Nutrition</div>
         </div>
       </div>
     </div>
@@ -1011,6 +1032,27 @@
         }
       });
     });
+
+    // Chart animation restart functionality
+    const chartContainer = document.querySelector('.chart-container');
+    const veroCurve = document.querySelector('.vero-curve');
+    const coffeeCurve = document.querySelector('.coffee-curve');
+    
+    if (chartContainer && veroCurve && coffeeCurve) {
+      chartContainer.addEventListener('click', () => {
+        // Remove and re-add animation classes to restart
+        veroCurve.style.animation = 'none';
+        coffeeCurve.style.animation = 'none';
+        
+        // Force reflow
+        veroCurve.offsetHeight;
+        coffeeCurve.offsetHeight;
+        
+        // Restart animations
+        veroCurve.style.animation = 'drawCurve 3s ease-out forwards, glowPulse 2s ease-in-out infinite alternate';
+        coffeeCurve.style.animation = 'drawCurve 3s ease-out 1s forwards, glowPulse 2s ease-in-out 1s infinite alternate';
+      });
+    }
   </script>
 
 </body>
