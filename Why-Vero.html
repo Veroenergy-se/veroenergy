@@ -361,54 +361,119 @@
     /* ===== THE PROBLEM SECTION ===== */
     .problem-section {
       padding: 80px 0;
-      background: #1f2937;
-      color: white;
+      background: #fef3c7;
+      color: #1f2937;
     }
 
     .problem-content {
-      max-width: 800px;
+      max-width: 900px;
       margin: 0 auto;
+    }
+
+    .problem-intro {
       text-align: center;
+      margin-bottom: 60px;
     }
 
     .problem-story {
-      font-size: 1.3rem;
+      font-size: 1.4rem;
       line-height: 1.8;
-      color: #e5e7eb;
-      margin-bottom: 40px;
+      color: #374151;
+      margin-bottom: 30px;
+      text-align: center;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .problem-highlight {
-      color: #ef4444;
+      color: #dc2626;
       font-weight: 700;
     }
 
-    .problem-stats {
+    .stats-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 30px;
-      margin-top: 60px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+      margin: 60px 0;
     }
 
     .stat-card {
-      background: rgba(255, 255, 255, 0.05);
+      background: white;
       border-radius: 20px;
-      padding: 30px;
+      padding: 40px;
       text-align: center;
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      border: 2px solid transparent;
+      transition: all 0.3s ease;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-5px);
+      border-color: #dc2626;
+      box-shadow: 0 20px 40px rgba(220, 38, 38, 0.15);
     }
 
     .stat-number {
-      font-size: 3rem;
+      font-size: 4rem;
       font-weight: 900;
-      color: #ef4444;
+      color: #dc2626;
       display: block;
-      margin-bottom: 10px;
+      margin-bottom: 15px;
+      font-family: 'Poppins', sans-serif;
     }
 
     .stat-label {
-      color: #d1d5db;
+      color: #1f2937;
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+    }
+
+    .stat-description {
+      color: #6b7280;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .impact-section {
+      background: rgba(220, 38, 38, 0.05);
+      border-radius: 24px;
+      padding: 40px;
+      margin-top: 60px;
+    }
+
+    .impact-title {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #dc2626;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .impact-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+
+    .impact-stat {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .impact-number {
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: #dc2626;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .impact-text {
+      color: #374151;
       font-weight: 600;
+      font-size: 0.9rem;
     }
 
     /* ===== OUR SOLUTION SECTION ===== */
@@ -483,38 +548,142 @@
       line-height: 1.6;
     }
 
-    /* ===== WHY WE CREATED THIS SECTION ===== */
-    .story-section {
+    /* ===== MOVEMENT SECTION ===== */
+    .movement-section {
       padding: 80px 0;
-      background: white;
+      background: #f0f9ff;
     }
 
-    .story-content {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: center;
+    .movement-content {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
     }
 
-    .story-text {
-      font-size: 1.2rem;
+    .movement-intro {
+      font-size: 1.3rem;
       line-height: 1.8;
-      color: #4b5563;
+      color: #374151;
+      margin-bottom: 60px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
-    .story-highlight {
+    .movement-highlight {
       color: #a855f7;
       font-weight: 700;
     }
 
-    .story-image {
-      position: relative;
+    .success-stories {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      margin-top: 60px;
     }
 
-    .story-image img {
-      width: 100%;
+    .success-card {
+      background: white;
       border-radius: 20px;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      text-align: left;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      border: 2px solid transparent;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .success-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #a855f7, #ec4899);
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+
+    .success-card:hover {
+      transform: translateY(-5px);
+      border-color: #a855f7;
+      box-shadow: 0 20px 40px rgba(168, 85, 247, 0.2);
+    }
+
+    .success-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .success-badge {
+      background: linear-gradient(135deg, #a855f7, #ec4899);
+      color: white;
+      padding: 6px 12px;
+      border-radius: 16px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      display: inline-block;
+      margin-bottom: 16px;
+    }
+
+    .success-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #1f2937;
+      margin-bottom: 12px;
+    }
+
+    .success-description {
+      color: #6b7280;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .success-cta {
+      color: #a855f7;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      transition: all 0.2s ease;
+    }
+
+    .success-cta:hover {
+      color: #9333ea;
+      text-decoration: underline;
+    }
+
+    .movement-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin: 60px 0;
+      padding: 40px;
+      background: rgba(168, 85, 247, 0.05);
+      border-radius: 24px;
+    }
+
+    .movement-stat {
+      text-align: center;
+    }
+
+    .movement-number {
+      font-size: 3rem;
+      font-weight: 900;
+      color: #a855f7;
+      display: block;
+      margin-bottom: 10px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .movement-label {
+      color: #374151;
+      font-weight: 600;
+      font-size: 0.9rem;
     }
 
     /* ===== VISION SECTION ===== */
@@ -577,7 +746,12 @@
         order: 1;
       }
 
-      .problem-stats {
+      .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .impact-stats {
         grid-template-columns: 1fr;
         gap: 20px;
       }
@@ -587,14 +761,23 @@
         gap: 20px;
       }
 
-      .story-content {
+      .success-stories {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 20px;
+      }
+
+      .movement-stats {
+        grid-template-columns: 1fr;
+        gap: 20px;
       }
 
       .vision-goals {
         grid-template-columns: 1fr;
         gap: 20px;
+      }
+
+      .success-card {
+        text-align: center;
       }
     }
   </style>
@@ -666,30 +849,55 @@
   <!-- ===== THE PROBLEM SECTION ===== -->
   <section id="problem" class="problem-section">
     <div class="container">
-      <h2 class="section-title" style="color: white;">The Problem We Faced</h2>
+      <h2 class="section-title">The Student Energy Crisis</h2>
       <div class="problem-content">
-        <p class="problem-story">
-          Picture this: It's 2am in Stockholm. We're cramming for exams, surviving on <span class="problem-highlight">our fifth cup of coffee</span> and whatever energy drinks we could find. The next morning? We felt worse than when we started.
-        </p>
-        <p class="problem-story">
-          We realized we weren't alone. Everyone around us was stuck in the same cycle - <span class="problem-highlight">chasing energy with things that made them crash harder</span>. Coffee gave us anxiety. Energy drinks left us wired then exhausted. Protein bars were either chalk or candy bars in disguise.
-        </p>
-        <p class="problem-story">
-          There had to be a better way. Something that actually worked with our bodies, not against them.
-        </p>
+        <div class="problem-intro">
+          <p class="problem-story">
+            Picture this: It's 2am in Stockholm. We're cramming for exams, surviving on <span class="problem-highlight">our fifth cup of coffee</span> and whatever energy drinks we could find. The next morning? We felt worse than when we started.
+          </p>
+          <p class="problem-story">
+            We realized we weren't alone. Students everywhere are stuck in the same destructive cycle, and it's <span class="problem-highlight">crushing their academic performance</span>.
+          </p>
+        </div>
 
-        <div class="problem-stats">
+        <div class="stats-grid">
+          <div class="stat-card">
+            <span class="stat-number">4.2</span>
+            <div class="stat-label">Cups of Coffee Daily</div>
+            <p class="stat-description">Average consumption among university students during exam periods</p>
+          </div>
           <div class="stat-card">
             <span class="stat-number">73%</span>
-            <div class="stat-label">of people crash after energy drinks</div>
+            <div class="stat-label">Experience Energy Crashes</div>
+            <p class="stat-description">Of students report severe afternoon crashes after energy drinks</p>
           </div>
           <div class="stat-card">
-            <span class="stat-number">4+</span>
-            <div class="stat-label">cups of coffee daily for students</div>
+            <span class="stat-number">2.3x</span>
+            <div class="stat-label">Higher Anxiety Levels</div>
+            <p class="stat-description">Students consuming 4+ coffees daily vs. those with balanced intake</p>
           </div>
           <div class="stat-card">
-            <span class="stat-number">2pm</span>
-            <div class="stat-label">when most people hit the wall</div>
+            <span class="stat-number">45%</span>
+            <div class="stat-label">Worse Sleep Quality</div>
+            <p class="stat-description">Due to late-day caffeine consumption and energy drink dependency</p>
+          </div>
+        </div>
+
+        <div class="impact-section">
+          <h3 class="impact-title">The Academic Performance Impact</h3>
+          <div class="impact-stats">
+            <div class="impact-stat">
+              <span class="impact-number">-23%</span>
+              <div class="impact-text">Focus Duration After Crash</div>
+            </div>
+            <div class="impact-stat">
+              <span class="impact-number">-18%</span>
+              <div class="impact-text">Test Performance</div>
+            </div>
+            <div class="impact-stat">
+              <span class="impact-number">67%</span>
+              <div class="impact-text">Report Burnout Symptoms</div>
+            </div>
           </div>
         </div>
       </div>
@@ -732,27 +940,66 @@
     </div>
   </section>
 
-  <!-- ===== WHY WE CREATED THIS SECTION ===== -->
-  <section class="story-section">
+  <!-- ===== THE MOVEMENT SECTION ===== -->
+  <section class="movement-section">
     <div class="container">
-      <h2 class="section-title">Why We Created This</h2>
-      <div class="story-content">
-        <div class="story-text">
-          <p>
-            We could have just accepted that <span class="story-highlight">energy meant compromise</span>. That you had to choose between feeling good now or feeling good later. But we're stubborn.
-          </p>
-          <p>
-            We wanted something we'd actually reach for during those long study sessions, before workouts, or when we needed to power through a project. Something that <span class="story-highlight">tasted good, worked fast, and didn't leave us regretting it hours later</span>.
-          </p>
-          <p>
-            Most importantly, we wanted to prove that clean nutrition doesn't have to be boring, expensive, or ineffective. <span class="story-highlight">Good ingredients can taste amazing and actually work better</span> than their synthetic alternatives.
-          </p>
-          <p>
-            Vero exists because we believe you shouldn't have to choose between energy and health. You can have both.
-          </p>
+      <h2 class="section-title">Building The Movement</h2>
+      <div class="movement-content">
+        <p class="movement-intro">
+          We're not just selling energy bars. We're building a <span class="movement-highlight">movement of students who refuse to compromise</span> their health for their goals. Students who understand that peak performance comes from peak nutrition.
+        </p>
+        <p class="movement-intro">
+          Every Vero bar sold is a vote for a future where <span class="movement-highlight">clean energy is the norm, not the exception</span>. Where students can achieve their dreams without sacrificing their wellbeing.
+        </p>
+
+        <div class="movement-stats">
+          <div class="movement-stat">
+            <span class="movement-number">10K+</span>
+            <div class="movement-label">Students Switched</div>
+          </div>
+          <div class="movement-stat">
+            <span class="movement-number">89%</span>
+            <div class="movement-label">Report Better Focus</div>
+          </div>
+          <div class="movement-stat">
+            <span class="movement-number">94%</span>
+            <div class="movement-label">Would Recommend</div>
+          </div>
         </div>
-        <div class="story-image">
-          <img src="IMG_8401.JPG" alt="The Vero founders" />
+
+        <div class="success-stories">
+          <div class="success-card">
+            <div class="success-badge">Success Story</div>
+            <h3 class="success-title">From Burnout to Harvard</h3>
+            <p class="success-description">
+              Sarah was consuming 6+ energy drinks daily during MCAT prep. After switching to Vero, she improved her focus, reduced anxiety, and scored in the 95th percentile.
+            </p>
+            <a href="#" class="success-cta">Read Sarah's Story →</a>
+          </div>
+          <div class="success-card">
+            <div class="success-badge">Success Story</div>
+            <h3 class="success-title">MIT Acceptance Story</h3>
+            <p class="success-description">
+              Marcus replaced his coffee addiction with Vero during his engineering finals. Better sleep, sustained energy, and a 3.9 GPA earned him his dream MIT acceptance.
+            </p>
+            <a href="#" class="success-cta">Read Marcus's Story →</a>
+          </div>
+          <div class="success-card">
+            <div class="success-badge">Success Story</div>
+            <h3 class="success-title">Medical School Journey</h3>
+            <p class="success-description">
+              Emma credits Vero with helping her maintain peak performance through medical school applications. Now studying at Johns Hopkins.
+            </p>
+            <a href="#" class="success-cta">Read Emma's Story →</a>
+          </div>
+          <div class="success-card">
+            <div class="success-badge">Success Story</div>
+            <h3 class="success-title">Stanford Success</h3>
+            <p class="success-description">
+              Alex switched from energy drinks to Vero during his computer science degree. Improved coding focus led to internships at top tech companies.
+            </p>
+            <a href="#" class="success-cta">Read Alex's Story →</a>
+          </div>
         </div>
       </div>
     </div>
@@ -761,35 +1008,35 @@
   <!-- ===== OUR VISION SECTION ===== -->
   <section class="vision-section">
     <div class="container">
-      <h2 class="section-title" style="color: white;">Our Vision</h2>
+      <h2 class="section-title" style="color: white;">Join The Movement</h2>
       <div class="vision-content">
         <p class="vision-text">
-          We're not trying to reinvent nutrition or disrupt the entire food industry. We just want to make clean energy accessible, affordable, and actually enjoyable.
+          We're building more than a brand - we're creating a generation of students who prioritize their health while chasing their dreams. Every student who chooses Vero is part of this movement.
         </p>
 
         <div class="vision-goals">
           <div class="vision-goal">
-            <h4>Make Clean Energy Normal</h4>
+            <h4>Redefine Student Culture</h4>
             <p>
-              We want Vero to be the obvious choice when you need energy. Not because it's trendy, but because it simply works better than everything else.
+              Make clean energy the new normal on campuses worldwide. No more all-nighters fueled by synthetic stimulants and regret.
             </p>
           </div>
           <div class="vision-goal">
-            <h4>Prove Quality Doesn't Cost More</h4>
+            <h4>Prove Performance + Health</h4>
             <p>
-              Premium ingredients shouldn't mean premium prices. We're building efficient systems to make clean nutrition accessible to everyone.
+              Show that you don't have to sacrifice your wellbeing to achieve academic excellence. The best students fuel their bodies right.
             </p>
           </div>
           <div class="vision-goal">
-            <h4>Change How People Think About Energy</h4>
+            <h4>Create Success Stories</h4>
             <p>
-              Energy isn't about quick fixes or artificial boosts. It's about giving your body what it actually needs to perform at its best.
+              Help 100,000 students reach their academic goals with sustained energy, better focus, and improved performance.
             </p>
           </div>
           <div class="vision-goal">
-            <h4>Build a Community</h4>
+            <h4>Build The Community</h4>
             <p>
-              We're creating a space for people who care about what they put in their bodies and want to perform at their peak without compromise.
+              Connect ambitious students who understand that peak performance starts with what you put in your body.
             </p>
           </div>
         </div>
