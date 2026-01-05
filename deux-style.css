@@ -764,6 +764,14 @@ footer {
     display: none !important;
 }
 
+/* OVERRIDE: Allow page overlays on specific pages */
+body[data-page="shop"] .page-top-gradient,
+body[data-page="how-it-works"] .page-top-gradient,
+body[data-page="why-vero"] .page-top-gradient {
+    display: block !important;
+    visibility: visible !important;
+}
+
 /* Clean spacing */
 .container {
     max-width: 1280px !important;
