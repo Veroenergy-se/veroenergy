@@ -20,8 +20,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&family=Nunito:wght@400;500;600;700;800;900&family=Comfortaa:wght@300;400;500;600;700&family=Yellowtail&family=Belanosima:wght@400;600;700&family=Caveat:wght@400;500;600;700&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=49" />
-  <link rel="stylesheet" href="deux-style.css?v=38" />
+  <link rel="stylesheet" href="style.css?v=50" />
+  <link rel="stylesheet" href="deux-style.css?v=39" />
   
   <style>
     body {
@@ -320,194 +320,211 @@
       letter-spacing: 2px;
     }
 
-    /* ===== SHOP PAGE PRODUCT LAYOUT - OVERRIDE ALL EXISTING STYLES ===== */
-    body .products-section {
+    /* ===== SIMPLE SHOP PAGE DESIGN - CONVERSION FOCUSED ===== */
+    .simple-products-section {
       padding: 80px 0 !important;
-      background: #bfdbfe !important;
+      background: #f8fafc !important;
       position: relative !important;
-      overflow: hidden !important;
     }
 
-    body .products-section::before {
-      content: '' !important;
-      position: absolute !important;
-      top: -50% !important;
-      left: -10% !important;
-      width: 120% !important;
-      height: 200% !important;
-      background: radial-gradient(circle at 30% 50%, rgba(147, 197, 253, 0.3) 0%, transparent 50%) !important;
-      pointer-events: none !important;
-      z-index: 1 !important;
-    }
-
-    body .container {
-      position: relative !important;
-      z-index: 2 !important;
-      max-width: 1120px !important;
-      margin: 0 auto !important;
-      padding: 0 20px !important;
-    }
-
-    body .products-header {
-      text-align: center !important;
-      margin-bottom: 60px !important;
-    }
-
-    body .products-title {
-      font-size: 5rem !important;
-      font-weight: 900 !important;
-      color: #1f2937 !important;
-      margin-bottom: 16px !important;
-      font-family: 'Poppins', sans-serif !important;
-      text-transform: uppercase !important;
-      letter-spacing: 0.1em !important;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.1) !important;
-    }
-
-    body .quantity-carousel-wrapper {
-      position: relative !important;
+    .simple-products-section .container {
       max-width: 1000px !important;
       margin: 0 auto !important;
       padding: 0 20px !important;
     }
 
-    body .quantity-carousel {
+    .simple-products-section .products-header {
+      text-align: center !important;
+      margin-bottom: 60px !important;
+    }
+
+    .simple-products-section .products-title {
+      font-size: 4rem !important;
+      font-weight: 900 !important;
+      color: #1f2937 !important;
+      margin-bottom: 16px !important;
+      font-family: 'Poppins', sans-serif !important;
+    }
+
+    .simple-products-section .products-subtitle {
+      font-size: 1.2rem !important;
+      color: #6b7280 !important;
+      margin-bottom: 0 !important;
+    }
+
+    .simple-products-grid {
       display: grid !important;
       grid-template-columns: repeat(3, 1fr) !important;
       gap: 30px !important;
-      margin: 40px 0 !important;
+      margin-bottom: 60px !important;
     }
 
-    body .quantity-card {
+    .simple-product-card {
       background: white !important;
-      border-radius: 24px !important;
+      border-radius: 20px !important;
       padding: 40px 30px !important;
       text-align: center !important;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1) !important;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08) !important;
       border: 2px solid transparent !important;
       transition: all 0.3s ease !important;
       position: relative !important;
-      overflow: hidden !important;
-      display: flex !important;
-      flex-direction: column !important;
-      justify-content: space-between !important;
-      min-height: 400px !important;
     }
 
-    body .quantity-card::before {
-      content: '' !important;
+    .simple-product-card:hover {
+      transform: translateY(-5px) !important;
+      box-shadow: 0 20px 40px rgba(147, 197, 253, 0.15) !important;
+      border-color: #93c5fd !important;
+    }
+
+    .simple-product-card.popular {
+      border-color: #93c5fd !important;
+      transform: translateY(-5px) !important;
+      box-shadow: 0 15px 35px rgba(147, 197, 253, 0.2) !important;
+    }
+
+    .popular-badge {
       position: absolute !important;
-      top: 0 !important;
-      left: 0 !important;
-      right: 0 !important;
-      height: 4px !important;
-      background: linear-gradient(90deg, #147197, #0ea5e9) !important;
-      transform: scaleX(0) !important;
-      transition: transform 0.3s ease !important;
-    }
-
-    body .quantity-card:hover {
-      transform: translateY(-8px) !important;
-      border-color: #0ea5e9 !important;
-      box-shadow: 0 20px 40px rgba(14, 165, 233, 0.2) !important;
-    }
-
-    body .quantity-card:hover::before {
-      transform: scaleX(1) !important;
-    }
-
-    body .quantity-card.popular {
-      border-color: #0ea5e9 !important;
-      transform: translateY(-4px) !important;
-      box-shadow: 0 15px 35px rgba(14, 165, 233, 0.15) !important;
-    }
-
-    body .quantity-card.popular::before {
-      transform: scaleX(1) !important;
-    }
-
-    body .quantity-visual {
-      margin-bottom: 30px !important;
-    }
-
-    body .quantity-amount {
-      font-size: 4rem !important;
-      font-weight: 900 !important;
-      color: #0ea5e9 !important;
-      margin-bottom: 10px !important;
-      font-family: 'Poppins', sans-serif !important;
-      display: block !important;
-    }
-
-    body .product-box {
-      background: linear-gradient(135deg, #0ea5e9, #0284c7) !important;
+      top: -12px !important;
+      left: 50% !important;
+      transform: translateX(-50%) !important;
+      background: linear-gradient(135deg, #93c5fd, #60a5fa) !important;
       color: white !important;
-      padding: 12px 24px !important;
+      padding: 8px 20px !important;
       border-radius: 20px !important;
-      font-weight: 600 !important;
-      display: inline-block !important;
+      font-size: 0.8rem !important;
+      font-weight: 700 !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.05em !important;
+    }
+
+    .product-header h3 {
+      font-size: 1.8rem !important;
+      font-weight: 700 !important;
+      color: #1f2937 !important;
       margin-bottom: 20px !important;
     }
 
-    body .quantity-header h3 {
-      font-size: 1.5rem !important;
+    .product-price {
+      margin-bottom: 30px !important;
+    }
+
+    .price-main {
+      display: block !important;
+      font-size: 3.5rem !important;
+      font-weight: 900 !important;
+      color: #1f2937 !important;
+      font-family: 'Poppins', sans-serif !important;
+      line-height: 1 !important;
+    }
+
+    .price-per {
+      display: block !important;
+      font-size: 0.9rem !important;
+      color: #6b7280 !important;
+      margin-top: 5px !important;
+    }
+
+    .savings {
+      display: inline-block !important;
+      background: #10b981 !important;
+      color: white !important;
+      padding: 4px 12px !important;
+      border-radius: 12px !important;
+      font-size: 0.8rem !important;
+      font-weight: 600 !important;
+      margin-top: 8px !important;
+    }
+
+    .product-details {
+      margin-bottom: 30px !important;
+    }
+
+    .product-quantity {
+      font-size: 1.3rem !important;
       font-weight: 700 !important;
       color: #1f2937 !important;
       margin-bottom: 8px !important;
     }
 
-    body .quantity-subtitle {
+    .product-description {
       color: #6b7280 !important;
-      margin-bottom: 16px !important;
+      font-size: 0.95rem !important;
     }
 
-    body .savings-badge {
-      background: linear-gradient(135deg, #10b981, #059669) !important;
-      color: white !important;
-      padding: 6px 12px !important;
-      border-radius: 16px !important;
-      font-size: 0.8rem !important;
-      font-weight: 600 !important;
-      text-transform: uppercase !important;
-      letter-spacing: 0.05em !important;
-      display: inline-block !important;
-      margin-bottom: 20px !important;
-    }
-
-    body .quantity-cta {
-      background: linear-gradient(135deg, #0ea5e9, #0284c7) !important;
+    .simple-cta {
+      background: linear-gradient(135deg, #93c5fd, #60a5fa) !important;
       color: white !important;
       border: none !important;
       border-radius: 16px !important;
       font-size: 1.1rem !important;
-      font-weight: 600 !important;
-      padding: 16px 32px !important;
+      font-weight: 700 !important;
+      padding: 18px 40px !important;
       cursor: pointer !important;
       transition: all 0.3s ease !important;
       width: 100% !important;
-      display: flex !important;
-      align-items: center !important;
-      justify-content: space-between !important;
-      margin-top: auto !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.05em !important;
     }
 
-    body .quantity-cta:hover {
+    .simple-cta:hover {
       transform: translateY(-2px) !important;
-      box-shadow: 0 8px 20px rgba(14, 165, 233, 0.3) !important;
+      box-shadow: 0 10px 25px rgba(147, 197, 253, 0.4) !important;
     }
 
-    body .cta-text {
-      font-weight: 600 !important;
+    .popular-cta {
+      background: linear-gradient(135deg, #1f2937, #374151) !important;
+      box-shadow: 0 8px 20px rgba(31, 41, 55, 0.3) !important;
     }
 
-    body .cta-price {
-      font-weight: 900 !important;
-      font-size: 1.2rem !important;
+    .popular-cta:hover {
+      box-shadow: 0 12px 30px rgba(31, 41, 55, 0.4) !important;
     }
 
-    body .cta-price small {
+    .trust-signals {
+      display: grid !important;
+      grid-template-columns: repeat(4, 1fr) !important;
+      gap: 30px !important;
+      padding: 40px 0 !important;
+      border-top: 1px solid #e5e7eb !important;
+    }
+
+    .trust-item {
+      text-align: center !important;
+      padding: 20px !important;
+    }
+
+    .trust-icon {
+      display: block !important;
+      font-size: 2rem !important;
+      margin-bottom: 12px !important;
+    }
+
+    .trust-text {
       font-size: 0.9rem !important;
-      opacity: 0.8 !important;
+      font-weight: 600 !important;
+      color: #374151 !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.05em !important;
+    }
+
+    @media (max-width: 768px) {
+      .simple-products-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+      }
+
+      .trust-signals {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 20px !important;
+      }
+
+      .simple-products-section .products-title {
+        font-size: 3rem !important;
+      }
+
+      .price-main {
+        font-size: 2.5rem !important;
+      }
     }
 
     /* FINAL OVERRIDE - ENSURE OVERLAY IS VISIBLE */
@@ -841,17 +858,17 @@
       <!-- Hero Text Side -->
       <div class="hero-text-side">
         <h1 class="hero-headline">
-          <span class="headline-main">Energy That Feels</span>
-          <span class="headline-script">Amazing.</span>
+          <span class="headline-main">Get Your</span>
+          <span class="headline-script">Energy.</span>
         </h1>
         
         <p class="hero-description">
-          Premium energy bars crafted for peak performance. Clean ingredients, sustained energy, zero compromise on taste or quality.
+          Clean caffeine. Real protein. Zero compromise. Choose your pack and start feeling the difference today.
         </p>
         
         <div class="hero-cta-group">
           <a href="#products" class="cta-primary">Shop Now</a>
-          <a href="How-It-Works.html" class="cta-secondary">Learn More</a>
+          <a href="How-It-Works.html" class="cta-secondary">How It Works</a>
         </div>
       </div>
 
@@ -867,105 +884,98 @@
     </div>
   </section>
 
-  <!-- ===== PRODUCTS SECTION ===== -->
-  <section id="products" class="products-section" data-fade-scope>
+  <!-- ===== SIMPLE PRODUCTS SECTION ===== -->
+  <section id="products" class="simple-products-section">
     <div class="container">
       
       <!-- Section Header -->
       <div class="products-header">
-        <h2 class="products-title">Stock Up and Save</h2>
+        <h2 class="products-title">Choose Your Pack</h2>
         <p class="products-subtitle">
-          Select the perfect quantity for your energy needs. All packs include free shipping and our satisfaction guarantee.
+          Free shipping on all orders. 30-day money-back guarantee.
         </p>
       </div>
 
-      <!-- Quantity Options Carousel -->
-      <div class="quantity-carousel-wrapper">
-        <button class="carousel-nav carousel-prev" aria-label="Previous option">‹</button>
-        <div class="quantity-carousel">
+      <!-- Simple Product Grid -->
+      <div class="simple-products-grid">
         
-        <!-- 1 Box = 12 Bars -->
-        <article class="quantity-card" data-index="0">
-          <div class="quantity-card-inner">
-            <div class="quantity-visual">
-              <div class="quantity-amount" data-number="12">12</div>
-              <div class="product-box">
-                <span class="box-label">12 bars</span>
-              </div>
-            </div>
-            <div class="quantity-header">
-              <h3>Starter Pack</h3>
-              <p class="quantity-subtitle">1 Box • 12 Bars</p>
-            </div>
-            <div class="quantity-details">
-              <button class="quantity-cta" onclick="addToCart('starter')" style="text-decoration: none; display: block; width: 100%; border: none;">
-                <span class="cta-text">Add to Cart</span>
-                <span class="cta-price">$29</span>
-              </button>
+        <!-- Single Box -->
+        <div class="simple-product-card">
+          <div class="product-header">
+            <h3>Try It</h3>
+            <div class="product-price">
+              <span class="price-main">$29</span>
+              <span class="price-per">$2.42/bar</span>
             </div>
           </div>
-        </article>
+          <div class="product-details">
+            <div class="product-quantity">12 Bars</div>
+            <div class="product-description">Perfect for trying Vero</div>
+          </div>
+          <button class="simple-cta" onclick="addToCart('starter')">
+            Order Now
+          </button>
+        </div>
 
-        <!-- 2 Boxes = 24 Bars (Most Popular) -->
-        <article class="quantity-card popular active" data-index="1">
-          <div class="quantity-card-inner">
-            <div class="quantity-visual">
-              <div class="quantity-amount" data-number="24">24</div>
-              <div class="product-box">
-                <span class="box-label">24 bars</span>
-              </div>
-            </div>
-            <div class="quantity-header">
-              <h3>Duo Pack</h3>
-              <p class="quantity-subtitle">2 Boxes • 24 Bars</p>
-              <span class="savings-badge">Save 7%</span>
-            </div>
-            <div class="quantity-details">
-              <button class="quantity-cta" onclick="addToCart('duo')" style="text-decoration: none; display: block; width: 100%; border: none;">
-                <span class="cta-text">Add to Cart</span>
-                <span class="cta-price">$54 <small>($27/box)</small></span>
-              </button>
+        <!-- Most Popular - 2 Boxes -->
+        <div class="simple-product-card popular">
+          <div class="popular-badge">Most Popular</div>
+          <div class="product-header">
+            <h3>Stock Up</h3>
+            <div class="product-price">
+              <span class="price-main">$54</span>
+              <span class="price-per">$2.25/bar</span>
+              <span class="savings">Save $4</span>
             </div>
           </div>
-        </article>
+          <div class="product-details">
+            <div class="product-quantity">24 Bars</div>
+            <div class="product-description">2 weeks of clean energy</div>
+          </div>
+          <button class="simple-cta popular-cta" onclick="addToCart('duo')">
+            Order Now
+          </button>
+        </div>
 
-        <!-- 3 Boxes = 36 Bars -->
-        <article class="quantity-card" data-index="2">
-          <div class="quantity-card-inner">
-            <div class="quantity-visual">
-              <div class="quantity-amount" data-number="36">36</div>
-              <div class="product-box">
-                <span class="box-label">36 bars</span>
-              </div>
-            </div>
-            <div class="quantity-header">
-              <h3>Family Pack</h3>
-              <p class="quantity-subtitle">3 Boxes • 36 Bars</p>
-              <span class="savings-badge">Save 14%</span>
-            </div>
-            <div class="quantity-details">
-              <button class="quantity-cta" onclick="addToCart('family')" style="text-decoration: none; display: block; width: 100%; border: none;">
-                <span class="cta-text">Add to Cart</span>
-                <span class="cta-price">$75 <small>($25/box)</small></span>
-              </button>
+        <!-- Family Pack - 3 Boxes -->
+        <div class="simple-product-card">
+          <div class="product-header">
+            <h3>Family Pack</h3>
+            <div class="product-price">
+              <span class="price-main">$75</span>
+              <span class="price-per">$2.08/bar</span>
+              <span class="savings">Save $12</span>
             </div>
           </div>
-        </article>
+          <div class="product-details">
+            <div class="product-quantity">36 Bars</div>
+            <div class="product-description">Share with family & friends</div>
+          </div>
+          <button class="simple-cta" onclick="addToCart('family')">
+            Order Now
+          </button>
+        </div>
 
       </div>
-      <button class="carousel-nav carousel-next" aria-label="Next option">›</button>
-      </div>
 
-      <!-- Carousel Indicators -->
-      <div class="carousel-indicators">
-        <button class="indicator" data-slide="0" aria-label="1 Box"></button>
-        <button class="indicator active" data-slide="1" aria-label="2 Boxes"></button>
-        <button class="indicator" data-slide="2" aria-label="3 Boxes"></button>
-      </div>
-
-      <!-- Additional Info -->
-      <div class="products-footer-info">
-        <p>🚚 Free shipping on orders over $50 • 🔄 30-day satisfaction guarantee • 🌱 100% plant-based</p>
+      <!-- Trust Signals -->
+      <div class="trust-signals">
+        <div class="trust-item">
+          <span class="trust-icon">🚚</span>
+          <span class="trust-text">Free Shipping</span>
+        </div>
+        <div class="trust-item">
+          <span class="trust-icon">🔄</span>
+          <span class="trust-text">30-Day Guarantee</span>
+        </div>
+        <div class="trust-item">
+          <span class="trust-icon">🌱</span>
+          <span class="trust-text">100% Plant-Based</span>
+        </div>
+        <div class="trust-item">
+          <span class="trust-icon">⚡</span>
+          <span class="trust-text">Clean Energy</span>
+        </div>
       </div>
 
     </div>
