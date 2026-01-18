@@ -35,14 +35,14 @@
       top: 0;
       z-index: 999;
       width: 100%;
-      background: transparent;
-      border-bottom: none;
+      background: rgba(0, 0, 0, 1);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
       transition: box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease;
     }
     .vero-navbar--scrolled {
       box-shadow: 0 6px 20px rgba(0,0,0,0.08);
       border-color: transparent;
-      background: rgba(255, 255, 255, 0.95);
+      background: rgba(0, 0, 0, 1);
       backdrop-filter: blur(10px);
     }
     .vero-navbar__inner {
@@ -63,7 +63,7 @@
       transition: color 0.2s ease;
     }
     .vero-navbar--scrolled .vero-navbar__brand {
-      color: #111827;
+      color: #ffffff;
     }
     .vero-navbar__center {
       display: flex;
@@ -86,7 +86,7 @@
       transition: color 0.2s ease;
     }
     .vero-navbar--scrolled .vero-navbar__link {
-      color: #111827;
+      color: #ffffff;
     }
     .vero-navbar__link::after {
       content: "";
@@ -99,7 +99,7 @@
       transition: width 0.2s ease, background 0.2s ease;
     }
     .vero-navbar--scrolled .vero-navbar__link::after {
-      background: #111827;
+      background: #ffffff;
     }
     .vero-navbar__link:hover::after {
       width: 100%;
@@ -156,11 +156,11 @@
         display: flex;
       }
       .vero-navbar__toggle span {
-        background: white;
+        background: #ffffff;
         transition: background 0.2s ease;
       }
       .vero-navbar--scrolled .vero-navbar__toggle span {
-        background: #111827;
+        background: #ffffff;
       }
       .vero-navbar__center {
         position: absolute;
@@ -363,19 +363,19 @@
       display: none !important;
     }
 
-    /* Make navbar solid white */
+    /* Make navbar solid black */
     .vero-navbar {
-      background: white !important;
-      border-bottom: 1px solid #e5e5e5 !important;
+      background: rgba(0, 0, 0, 1) !important;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
     }
 
     .vero-navbar__brand,
     .vero-navbar__link {
-      color: #1a1a1a !important;
+      color: #ffffff !important;
     }
 
     .vero-navbar__link::after {
-      background: #1a1a1a !important;
+      background: #ffffff !important;
     }
 
     /* Full Width Images */
