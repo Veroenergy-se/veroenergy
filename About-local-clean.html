@@ -37,7 +37,7 @@
       padding-top: 0;
     }
 
-    /* ===== NAVBAR (fully transparent over video) ===== */
+    /* ===== NAVBAR (transparent over video) ===== */
     .vero-navbar {
       position: fixed;
       top: 0;
@@ -53,7 +53,7 @@
       transform: translateY(-100%);
     }
     .vero-navbar--scrolled {
-      background: rgba(0, 0, 0, 0.9);
+      background: rgba(0, 0, 0, 0.95);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
@@ -307,7 +307,7 @@
     }
 
     .story-hero-fullscreen img {
-      width: 105%;
+      width: 110%;
       height: 100%;
       object-fit: cover;
       animation: panLeftToRight 20s ease-in-out infinite alternate;
@@ -315,8 +315,8 @@
     }
 
     @keyframes panLeftToRight {
-      0% { transform: translateX(-2.5%); }
-      100% { transform: translateX(2.5%); }
+      0% { transform: translateX(-5%); }
+      100% { transform: translateX(5%); }
     }
 
     .story-hero-fullscreen .story-hero-overlay {
@@ -337,11 +337,21 @@
       font-family: 'Bebas Neue', cursive;
       font-size: clamp(4rem, 10vw, 7rem);
       color: white;
-      margin-bottom: 0;
+      margin-bottom: 2rem;
       letter-spacing: 0.05em;
       opacity: 0;
       transform: translateY(50px);
       animation: fadeInUp 1s ease-out 1.8s forwards;
+    }
+
+    .story-hero-fullscreen .story-hero-content p {
+      font-size: clamp(1.2rem, 3vw, 1.8rem);
+      color: rgba(255,255,255,0.95);
+      line-height: 1.8;
+      max-width: 800px;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 1s ease-out 2.2s forwards;
     }
 
     .story-highlight {
@@ -364,14 +374,12 @@
 
     .story-team-section {
       position: relative;
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
     }
 
     .team-photo-container {
       position: relative;
-      height: 500px;
+      height: 100%;
+      min-height: 600px;
       border-radius: 25px;
       overflow: hidden;
       box-shadow: 0 25px 80px rgba(0,0,0,0.15);
@@ -419,50 +427,6 @@
       font-size: 1.2rem;
       line-height: 1.6;
       opacity: 0.9;
-    }
-
-    /* Team Stats Bubbles */
-    .team-stats {
-      display: flex;
-      gap: 1.5rem;
-      justify-content: center;
-      opacity: 0;
-      transform: translateY(30px);
-      animation: fadeInUp 1s ease-out 4s forwards;
-    }
-
-    .stat-bubble {
-      background: linear-gradient(135deg, #d4a574, #c19660);
-      color: white;
-      padding: 1.5rem;
-      border-radius: 50%;
-      text-align: center;
-      min-width: 100px;
-      min-height: 100px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      box-shadow: 0 10px 30px rgba(212, 165, 116, 0.3);
-      transition: all 0.4s ease;
-    }
-
-    .stat-bubble:hover {
-      transform: translateY(-5px) scale(1.1);
-      box-shadow: 0 20px 50px rgba(212, 165, 116, 0.5);
-    }
-
-    .stat-number {
-      font-family: 'Bebas Neue', cursive;
-      font-size: 2rem;
-      font-weight: bold;
-      line-height: 1;
-    }
-
-    .stat-label {
-      font-size: 0.9rem;
-      opacity: 0.9;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
     }
 
     .story-content-enhanced {
@@ -1404,25 +1368,6 @@
         transform: rotate(0deg);
       }
       
-      .team-stats {
-        flex-direction: row;
-        gap: 1rem;
-      }
-      
-      .stat-bubble {
-        min-width: 80px;
-        min-height: 80px;
-        padding: 1rem;
-      }
-      
-      .stat-number {
-        font-size: 1.5rem;
-      }
-      
-      .stat-label {
-        font-size: 0.8rem;
-      }
-      
       .story-content-enhanced {
         gap: 2rem;
       }
@@ -1482,7 +1427,7 @@
     </div>
     <div class="hero-overlay">
       <div class="hero-content">
-        <h1 class="hero-title">Three Brothers. Building A Movement.</h1>
+        <h1 class="hero-title">Three Guys. Big Dreams.</h1>
       </div>
     </div>
   </section>
@@ -1502,28 +1447,16 @@
         </div>
       </div>
 
-      <!-- Enhanced Story Grid with Better Balance -->
+      <!-- Story Grid with New Team Photo -->
       <div class="story-grid-enhanced">
         
-        <!-- Team Photo Section with Better Layout -->
+        <!-- Team Photo Section -->
         <div class="story-team-section">
           <div class="team-photo-container">
             <img src="IMG_3983.JPG" alt="The Three Founders" />
             <div class="team-overlay">
               <h3>Three Guys From Stockholm</h3>
               <p>Always grinding. School, sports, startups at full speed.</p>
-            </div>
-          </div>
-          
-          <!-- Additional Visual Element -->
-          <div class="team-stats">
-            <div class="stat-bubble">
-              <span class="stat-number">700+</span>
-              <span class="stat-label">Experiments</span>
-            </div>
-            <div class="stat-bubble">
-              <span class="stat-number">2</span>
-              <span class="stat-label">Years</span>
             </div>
           </div>
         </div>
@@ -1755,16 +1688,6 @@
     document.body.style.transform = 'translateY(20px)';
     document.body.style.transition = 'all 0.8s ease-out';
   </script>
-          border-radius: 50%;
-          pointer-events: none;
-          animation: particleExplode 2s ease-out forwards;
-          top: 50%;
-          left: 50%;
-          z-index: 10;
-        `;
-        
-        const angle = (i / 15) * 360;
-        const distance = 100 + Math.random() * 50;
 
 </body>
 </html>
