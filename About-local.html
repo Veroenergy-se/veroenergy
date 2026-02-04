@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>About Us – The Story Behind Vero | Vero</title>
-  <meta name="description" content="Meet the team behind Vero. Learn about our mission to create the perfect energy bar and why we're passionate about clean, functional nutrition." />
   
   <!-- Google Analytics 4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-JWFPL9ZW9R"></script>
@@ -38,7 +37,7 @@
       padding-top: 80px;
     }
 
-    /* ===== NAVBAR (matching shop page) ===== */
+    /* ===== NAVBAR ===== */
     .vero-navbar {
       position: fixed;
       top: 0;
@@ -195,547 +194,111 @@
       }
     }
 
-    /* ===== HERO SECTION ===== */
+    /* ===== SIMPLE HERO SECTION ===== */
     .hero {
-      height: 90vh;
-      background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+      height: 100vh;
+      position: relative;
       display: flex;
       align-items: center;
       justify-content: center;
-      text-align: center;
-      position: relative;
       overflow: hidden;
     }
 
-    .hero::before {
+    .hero-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.6);
+    }
+
+    .hero-image::after {
       content: '';
       position: absolute;
       top: 0;
       left: 0;
-      right: 0;
-      bottom: 0;
-      background: url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)" opacity="0.02"/%3E%3C/svg%3E');
-      pointer-events: none;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
     }
 
     .hero-content {
       position: relative;
       z-index: 2;
-      max-width: 900px;
-      padding: 0 2rem;
-    }
-
-    .hero-title {
-      font-family: 'Bebas Neue', cursive;
-      font-size: clamp(4rem, 12vw, 7rem);
-      font-weight: 400;
-      color: #1a1a1a;
-      letter-spacing: 0.05em;
-      margin-bottom: 2rem;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-    }
-
-    .hero-subtitle {
-      font-size: clamp(1.2rem, 3vw, 1.6rem);
-      color: #d4a574;
-      font-weight: 600;
-      margin-bottom: 3rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-    }
-
-    .hero-description {
-      font-size: 1.3rem;
-      color: #4a4a4a;
-      line-height: 1.8;
-      margin-bottom: 3rem;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    /* ===== STORY SHOWCASE ===== */
-    .story-showcase {
-      padding: 4rem 0;
-      background: white;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .story-showcase-container {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-
-    .story-showcase-title {
-      font-family: 'Bebas Neue', cursive;
-      font-size: clamp(3rem, 8vw, 6rem);
-      color: #1a1a1a;
       text-align: center;
-      margin-bottom: 4rem;
-      letter-spacing: 0.05em;
-    }
-
-    /* Hero Story Image */
-    .story-hero {
-      position: relative;
-      height: 80vh;
-      border-radius: 20px;
-      overflow: hidden;
-      margin-bottom: 3rem;
-    }
-
-    .story-hero img {
-      width: 100%;
-      height: 140%;
-      object-fit: cover;
-      transform: translateY(-15%);
-      transition: transform 0.6s ease;
-    }
-
-    .story-hero:hover img {
-      transform: translateY(-15%) scale(1.03);
-    }
-
-    .story-hero-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.4) 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 4rem;
-      text-align: center;
-    }
-
-    .story-hero-content h3 {
-      font-family: 'Bebas Neue', cursive;
-      font-size: clamp(3rem, 8vw, 5rem);
       color: white;
-      margin-bottom: 2rem;
-      letter-spacing: 0.05em;
     }
 
-    .story-hero-content p {
-      font-size: 1.4rem;
-      color: rgba(255,255,255,0.9);
-      line-height: 1.8;
-      max-width: 700px;
-    }
-
-    .story-highlight {
-      color: #d4a574;
-      font-weight: 700;
-    }
-
-    /* Story Grid */
-    .story-grid {
-      display: grid;
-      grid-template-columns: 1.5fr 1fr;
-      gap: 3rem;
-      margin-bottom: 4rem;
-      height: 70vh;
-    }
-
-    .story-large {
-      position: relative;
-      border-radius: 20px;
-      overflow: hidden;
-    }
-
-    .story-large img {
-      width: 100%;
-      height: 140%;
-      object-fit: cover;
-      transform: translateY(-15%);
-      transition: transform 0.6s ease;
-    }
-
-    .story-large:hover img {
-      transform: translateY(-15%) scale(1.05);
-    }
-
-    .story-content {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 3rem;
-      background: #f8f9fa;
-      border-radius: 20px;
-      position: relative;
-    }
-
-    .story-content::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 4px;
-      height: 100%;
-      background: linear-gradient(180deg, #d4a574, #c19660);
-      border-radius: 2px;
-    }
-
-    .story-content h3 {
+    .hero-content h1 {
       font-family: 'Bebas Neue', cursive;
-      font-size: 2.5rem;
-      color: #1a1a1a;
-      margin-bottom: 1.5rem;
+      font-size: clamp(4rem, 10vw, 8rem);
+      margin-bottom: 1rem;
       letter-spacing: 0.05em;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
     }
 
-    .story-content p {
-      font-size: 1.2rem;
-      color: #4a4a4a;
-      line-height: 1.7;
-      margin-bottom: 1.5rem;
-    }
-
-    /* Floating Text Elements */
-    .story-floating-text {
-      position: absolute;
-      background: rgba(255, 255, 255, 0.98);
-      backdrop-filter: blur(15px);
-      padding: 2rem;
-      border-radius: 15px;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.12);
-      max-width: 280px;
-      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-      border: 1px solid rgba(212, 165, 116, 0.2);
-      z-index: 10;
-    }
-
-    .story-floating-text.top-left {
-      top: 20%;
-      left: -140px;
-    }
-
-    .story-floating-text.bottom-right {
-      bottom: 20%;
-      right: -140px;
-    }
-
-    .story-floating-text:hover {
-      transform: scale(1.05) rotate(-1deg);
-      box-shadow: 0 20px 50px rgba(0,0,0,0.18);
-    }
-
-    .story-floating-text h4 {
-      font-family: 'Bebas Neue', cursive;
+    .hero-content p {
       font-size: 1.5rem;
-      color: #1a1a1a;
-      margin-bottom: 0.5rem;
-      letter-spacing: 0.05em;
-    }
-
-    .story-floating-text p {
-      font-size: 0.95rem;
-      color: #4a4a4a;
-      line-height: 1.5;
-    }
-
-    /* Wide Bottom Story */
-    .story-wide {
-      position: relative;
-      height: 70vh;
-      border-radius: 20px;
-      overflow: hidden;
-      margin-bottom: 4rem;
-    }
-
-    .story-wide img {
-      width: 100%;
-      height: 140%;
-      object-fit: cover;
-      transform: translateY(-15%);
-      transition: transform 0.6s ease;
-    }
-
-    .story-wide:hover img {
-      transform: translateY(-15%) scale(1.02);
-    }
-
-    .story-wide-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(135deg, rgba(26,26,26,0.8) 0%, rgba(45,45,45,0.5) 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .story-wide-content {
-      text-align: center;
-      color: white;
-      max-width: 800px;
-      padding: 2rem;
-    }
-
-    .story-wide-content h3 {
-      font-family: 'Bebas Neue', cursive;
-      font-size: clamp(3rem, 8vw, 5rem);
-      margin-bottom: 2rem;
-      letter-spacing: 0.05em;
-    }
-
-    .story-wide-content p {
-      font-size: 1.4rem;
-      margin-bottom: 2rem;
       opacity: 0.9;
-      line-height: 1.7;
     }
 
-
-        padding: 3rem 2rem;
-      }
-      
-      .story-full-section {
-        height: 90vh; /* Increased from 70vh */
-      }
-      
-      .story-full-image {
-        height: 120vh; /* Ensure mobile images are also tall */
-      }
-      
-      .story-full-overlay {
-        padding: 2rem;
-      }
-      
-      .story-split-image {
-        height: 60vh; /* Minimum height for mobile */
-      }
+    /* ===== SIMPLE STORY SECTION ===== */
+    .story {
+      padding: 6rem 0;
+      background: white;
     }
 
-    /* ===== VALUES SECTION ===== */
-    .values-section {
-      padding: 8rem 2rem;
-      background: #f8f9fa;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .values-section::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)" opacity="0.02"/%3E%3C/svg%3E');
-      pointer-events: none;
-      z-index: 1;
-    }
-
-    .values-container {
+    .story-container {
       max-width: 1200px;
       margin: 0 auto;
-      text-align: center;
-      position: relative;
-      z-index: 2;
+      padding: 0 2rem;
     }
 
-    .values-title {
-      font-family: 'Bebas Neue', cursive;
-      font-size: clamp(3rem, 8vw, 5rem);
-      color: #1a1a1a;
-      margin-bottom: 4rem;
-      letter-spacing: 0.05em;
-    }
-
-    .values-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 3rem;
-    }
-
-    .value-card {
-      background: white;
-      padding: 3rem 2rem;
-      border-radius: 20px;
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      position: relative;
-      overflow: hidden;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-      transform-style: preserve-3d;
-    }
-
-    .value-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 4px;
-      background: linear-gradient(90deg, #d4a574, #c19660);
-    }
-
-    .value-card::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(135deg, rgba(212, 165, 116, 0.05) 0%, rgba(193, 150, 96, 0.05) 100%);
-      opacity: 0;
-      transition: opacity 0.4s ease;
-      z-index: 1;
-    }
-
-    .value-card:hover {
-      transform: translateY(-15px) rotateX(5deg) rotateY(5deg);
-      box-shadow: 0 25px 50px rgba(0,0,0,0.15);
-    }
-
-    .value-card:hover::after {
-      opacity: 1;
-    }
-
-    .value-card-content {
-      position: relative;
-      z-index: 2;
-    }
-
-    .value-image {
-      width: 100%;
-      height: 200px;
-      border-radius: 12px;
-      margin-bottom: 2rem;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .value-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.4s ease;
-    }
-
-    .value-card:hover .value-image img {
-      transform: scale(1.1);
-    }
-
-    .value-card-title {
-      font-family: 'Bebas Neue', cursive;
-      font-size: 2rem;
-      color: #1a1a1a;
-      margin-bottom: 1.5rem;
-      letter-spacing: 0.05em;
-    }
-
-    .value-card-description {
-      font-size: 1.1rem;
-      color: #4a4a4a;
-      line-height: 1.7;
-    }
-
-    /* ===== TEAM SECTION ===== */
-    .team-section {
-      padding: 8rem 2rem;
-      background: white;
-    }
-
-    .team-container {
-      max-width: 1000px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .team-title {
-      font-family: 'Bebas Neue', cursive;
-      font-size: clamp(3rem, 8vw, 5rem);
-      color: #1a1a1a;
-      margin-bottom: 3rem;
-      letter-spacing: 0.05em;
-    }
-
-    .team-description {
-      font-size: 1.3rem;
-      color: #4a4a4a;
-      line-height: 1.8;
-      margin-bottom: 4rem;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .team-image {
-      width: 100%;
-      max-width: 600px;
-      height: 400px;
-      background: #f8f9fa;
-      border-radius: 12px;
-      margin: 0 auto 3rem auto;
+    .story-block {
       display: flex;
       align-items: center;
-      justify-content: center;
-      overflow: hidden;
+      gap: 4rem;
+      margin-bottom: 6rem;
+      min-height: 60vh;
     }
 
-    .team-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 12px;
+    .story-block.reverse {
+      flex-direction: row-reverse;
     }
 
-    .team-quote {
-      font-size: 1.4rem;
-      color: #1a1a1a;
-      font-style: italic;
-      line-height: 1.7;
-      margin-bottom: 2rem;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
+    .story-text {
+      flex: 1;
     }
 
-    .team-signature {
-      font-size: 1.1rem;
-      color: #d4a574;
-      font-weight: 600;
-    }
-
-    /* ===== CTA SECTION ===== */
-    .cta-section {
-      padding: 8rem 2rem;
-      background: #1a1a1a;
-      color: white;
-      text-align: center;
-    }
-
-    .cta-container {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .cta-title {
+    .story-text h2 {
       font-family: 'Bebas Neue', cursive;
-      font-size: clamp(3rem, 8vw, 5rem);
+      font-size: clamp(3rem, 6vw, 5rem);
+      color: #1a1a1a;
       margin-bottom: 2rem;
       letter-spacing: 0.05em;
     }
 
-    .cta-description {
-      font-size: 1.3rem;
-      color: #cccccc;
+    .story-text p {
+      font-size: 1.4rem;
+      color: #4a4a4a;
       line-height: 1.8;
-      margin-bottom: 3rem;
+      margin-bottom: 2rem;
+      font-weight: 500;
     }
 
-    .cta-btn {
-      background: #d4a574;
-      color: #1a1a1a;
+    .story-cta {
+      background: #1a1a1a;
+      color: white;
       padding: 1.2rem 3rem;
-      border-radius: 6px;
+      border-radius: 8px;
       text-decoration: none;
       font-weight: 700;
       text-transform: uppercase;
@@ -744,10 +307,684 @@
       display: inline-block;
     }
 
-    .cta-btn:hover {
-      background: #c19660;
+    .story-cta:hover {
+      background: #333;
       transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(212, 165, 116, 0.3);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    }
+
+    .story-image {
+      flex: 1;
+      height: 400px;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    }
+
+    .story-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .story-image:hover img {
+      transform: scale(1.05);
+    }
+
+    /* ===== SOLUTION SECTION ===== */
+    .solution-section {
+      padding: 6rem 0;
+      background: #f8f9fa;
+    }
+
+    .solution-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 0 2rem;
+    }
+
+    .big-text h2 {
+      font-family: 'Bebas Neue', cursive;
+      font-size: clamp(4rem, 8vw, 7rem);
+      color: #1a1a1a;
+      margin-bottom: 3rem;
+      letter-spacing: 0.05em;
+    }
+
+    .product-showcase {
+      display: flex;
+      align-items: center;
+      gap: 4rem;
+      margin-bottom: 4rem;
+    }
+
+    .product-image {
+      flex: 1;
+      position: relative;
+      height: 400px;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .product-badge {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: #1a1a1a;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border-radius: 25px;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .product-stats {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .stat-item {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      padding: 2rem;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    }
+
+    .stat-number {
+      font-family: 'Bebas Neue', cursive;
+      font-size: 3rem;
+      color: #d4a574;
+      letter-spacing: 0.05em;
+    }
+
+    .stat-label {
+      font-size: 1.2rem;
+      color: #1a1a1a;
+      font-weight: 600;
+    }
+
+    .big-button {
+      background: #1a1a1a;
+      color: white;
+      padding: 2rem 4rem;
+      border-radius: 15px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+
+    .big-button:hover {
+      background: #333;
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+    }
+
+    /* ===== VISION SECTION ===== */
+    .vision-section {
+      padding: 6rem 0;
+      background: #1a1a1a;
+      color: white;
+      text-align: center;
+    }
+
+    .vision-content h2 {
+      font-family: 'Bebas Neue', cursive;
+      font-size: clamp(3rem, 6vw, 5rem);
+      margin-bottom: 2rem;
+      letter-spacing: 0.05em;
+    }
+
+    .vision-content p {
+      font-size: 1.8rem;
+      margin-bottom: 3rem;
+      opacity: 0.9;
+    }
+
+    .vision-cta {
+      background: #d4a574;
+      color: #1a1a1a;
+      padding: 1.5rem 3rem;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+
+    .vision-cta:hover {
+      background: #c19660;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(212, 165, 116, 0.3);
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      .simple-story {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+      }
+      
+      .story-text {
+        padding: 1rem;
+      }
+      
+      .story-image {
+        height: 300px;
+      }
+      
+      .solution-points {
+        justify-content: center;
+        gap: 1rem;
+      }
+      
+      .point {
+        min-width: 100px;
+        padding: 1rem;
+      }
+      
+      .schedule {
+        gap: 0.5rem;
+      }
+      
+      .time-block {
+        gap: 1rem;
+        padding: 0.8rem 0;
+      }
+      
+      .time {
+        font-size: 1.4rem;
+        min-width: 60px;
+      }
+      
+      .activity {
+        font-size: 1.2rem;
+      }
+      
+      .problem-overlay,
+      .why-overlay {
+        padding: 2rem;
+        margin: 0 1rem;
+      }
+      
+      .scroll-prompt {
+        bottom: 2rem;
+      }
+    }
+
+    /* Chapter 1: Floating Image */
+    .floating-image {
+      position: relative;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      overflow: hidden;
+      animation: floatUpDown 6s ease-in-out infinite;
+      box-shadow: 0 30px 80px rgba(212, 165, 116, 0.4);
+      border: 3px solid rgba(212, 165, 116, 0.3);
+    }
+
+    .floating-image::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: conic-gradient(from 0deg, transparent, rgba(212, 165, 116, 0.3), transparent);
+      animation: rotateRing 10s linear infinite;
+      z-index: -1;
+    }
+
+    .floating-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      animation: slowRotate 20s linear infinite;
+      filter: brightness(1.1) contrast(1.05);
+    }
+
+    @keyframes floatUpDown {
+      0%, 100% { 
+        transform: translateY(0px) scale(1); 
+        box-shadow: 0 30px 80px rgba(212, 165, 116, 0.4);
+      }
+      50% { 
+        transform: translateY(-30px) scale(1.08); 
+        box-shadow: 0 50px 100px rgba(212, 165, 116, 0.6);
+      }
+    }
+
+    @keyframes slowRotate {
+      from { transform: rotate(0deg) scale(1); }
+      to { transform: rotate(360deg) scale(1.02); }
+    }
+
+    @keyframes rotateRing {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    /* Chapter 2: Rotating Elements */
+    .rotating-elements {
+      position: relative;
+      width: 350px;
+      height: 350px;
+    }
+
+    .rotating-elements::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 200px;
+      height: 200px;
+      border: 2px dashed rgba(212, 165, 116, 0.3);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      animation: dashRotate 15s linear infinite reverse;
+    }
+
+    .rotating-elements::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 120px;
+      height: 120px;
+      border: 1px solid rgba(212, 165, 116, 0.5);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      animation: dashRotate 10s linear infinite;
+    }
+
+    @keyframes dashRotate {
+      from { transform: translate(-50%, -50%) rotate(0deg); }
+      to { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+
+    .element {
+      position: absolute;
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #d4a574, #c19660);
+      animation: orbitRotate 12s linear infinite;
+      box-shadow: 0 10px 30px rgba(212, 165, 116, 0.4);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .element::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      animation: innerSpin 3s ease-in-out infinite;
+    }
+
+    @keyframes innerSpin {
+      0%, 100% { transform: translate(-50%, -50%) scale(1) rotate(0deg); }
+      50% { transform: translate(-50%, -50%) scale(1.3) rotate(180deg); }
+    }
+
+    .element-1 {
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      animation-delay: 0s;
+    }
+
+    .element-2 {
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      animation-delay: 4s;
+    }
+
+    .element-3 {
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      animation-delay: 8s;
+    }
+
+    @keyframes orbitRotate {
+      from { 
+        transform: rotate(0deg) translateX(140px) rotate(0deg); 
+        box-shadow: 0 10px 30px rgba(212, 165, 116, 0.4);
+      }
+      50% {
+        box-shadow: 0 20px 50px rgba(212, 165, 116, 0.6);
+      }
+      to { 
+        transform: rotate(360deg) translateX(140px) rotate(-360deg); 
+        box-shadow: 0 10px 30px rgba(212, 165, 116, 0.4);
+      }
+    }
+
+    /* Progress Bar Animation */
+    .progress-bar {
+      position: relative;
+      width: 100%;
+      height: 8px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 4px;
+      margin: 2rem 0;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #d4a574, #c19660);
+      border-radius: 4px;
+      width: 0%;
+      animation: progressFill 3s ease-out 1.5s forwards;
+    }
+
+    @keyframes progressFill {
+      to { width: 100%; }
+    }
+
+    .progress-text {
+      position: absolute;
+      top: -30px;
+      right: 0;
+      font-size: 0.9rem;
+      color: #d4a574;
+      opacity: 0;
+      animation: textAppear 0.5s ease-out 4s forwards;
+    }
+
+    @keyframes textAppear {
+      to { opacity: 1; }
+    }
+
+    /* Chapter 3: Success Animation */
+    .success-animation {
+      position: relative;
+      width: 200px;
+      height: 200px;
+    }
+
+    .success-circle {
+      width: 100%;
+      height: 100%;
+      border: 4px solid #d4a574;
+      border-radius: 50%;
+      position: relative;
+      animation: successPulse 2s ease-in-out infinite;
+    }
+
+    .success-circle::before {
+      content: '✓';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 4rem;
+      color: #d4a574;
+      animation: checkmarkAppear 1s ease-out 0.5s forwards;
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0);
+    }
+
+    @keyframes successPulse {
+      0%, 100% { transform: scale(1); box-shadow: 0 0 20px rgba(212, 165, 116, 0.3); }
+      50% { transform: scale(1.1); box-shadow: 0 0 40px rgba(212, 165, 116, 0.6); }
+    }
+
+    @keyframes checkmarkAppear {
+      to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+      }
+    }
+
+    .success-particles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .success-particles::before,
+    .success-particles::after {
+      content: '';
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      background: #d4a574;
+      border-radius: 50%;
+      animation: particleFloat 3s ease-out infinite;
+    }
+
+    .success-particles::before {
+      top: 20%;
+      left: 20%;
+      animation-delay: 0s;
+    }
+
+    .success-particles::after {
+      top: 70%;
+      right: 20%;
+      animation-delay: 1s;
+    }
+
+    @keyframes particleFloat {
+      0% { transform: translateY(0) scale(1); opacity: 1; }
+      100% { transform: translateY(-100px) scale(0); opacity: 0; }
+    }
+
+    /* Achievement Badges */
+    .achievement-badges {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+
+    .badge {
+      background: rgba(212, 165, 116, 0.1);
+      color: #1a1a1a;
+      padding: 0.8rem 1.5rem;
+      border-radius: 25px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      border: 2px solid #d4a574;
+      backdrop-filter: blur(10px);
+      opacity: 1;
+      transform: translateY(0);
+      transition: all 0.3s ease;
+    }
+
+    .badge:hover {
+      background: #d4a574;
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    /* ===== MOBILE RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .story-scene {
+        flex-direction: column !important;
+        min-height: auto;
+      }
+      
+      .story-scene.reverse {
+        flex-direction: column !important;
+      }
+      
+      .scene-image {
+        height: 50vh;
+      }
+      
+      .scene-content,
+      .scene-visual {
+        padding: 2rem;
+      }
+      
+      .lifestyle-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+      
+      .lifestyle-card {
+        height: 300px;
+      }
+      
+      .scene-overlay {
+        padding: 2rem;
+      }
+      
+      .scene-overlay h3 {
+        font-size: 2.5rem;
+      }
+      
+      .problem-overlay,
+      .why-overlay {
+        padding: 2rem;
+        margin: 0 1rem;
+      }
+      
+      .scroll-prompt {
+        bottom: 2rem;
+      }
+    }
+
+    /* Why Section - Full Width Panning */
+    .why-section {
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .why-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 120%;
+      height: 100%;
+      background-image: url('Peanut butter studio pic.jpg');
+      background-size: cover;
+      background-position: center;
+      animation: panRightToLeft 25s ease-in-out infinite alternate;
+      filter: brightness(0.6);
+    }
+
+    @keyframes panRightToLeft {
+      0% { transform: translateX(10%); }
+      100% { transform: translateX(-10%); }
+    }
+
+    .why-overlay {
+      position: relative;
+      z-index: 2;
+      background: rgba(212, 165, 116, 0.95);
+      color: #1a1a1a;
+      padding: 4rem;
+      border-radius: 20px;
+      max-width: 900px;
+      margin: 0 2rem;
+      backdrop-filter: blur(15px);
+      text-align: center;
+      animation: contentSlideUp 1s ease-out;
+    }
+
+    @keyframes contentSlideUp {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .why-overlay h2 {
+      font-family: 'Bebas Neue', cursive;
+      font-size: clamp(3rem, 6vw, 5rem);
+      margin-bottom: 2rem;
+      letter-spacing: 0.05em;
+    }
+
+    .why-overlay p {
+      font-size: 1.4rem;
+      line-height: 1.8;
+      margin-bottom: 2rem;
+      font-weight: 500;
+    }
+
+    .why-cta {
+      background: #1a1a1a;
+      color: white;
+      padding: 1.5rem 3rem;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      transition: all 0.4s ease;
+      display: inline-block;
+      margin-top: 2rem;
+    }
+
+    .why-cta:hover {
+      background: #333;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    /* ===== MOBILE RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .solution-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      
+      .solution-features {
+        grid-template-columns: 1fr;
+      }
+      
+      .problem-overlay,
+      .why-overlay {
+        padding: 2rem;
+        margin: 0 1rem;
+      }
+      
+      .scroll-prompt {
+        bottom: 2rem;
+      }
     }
 
     /* ===== FOOTER ===== */
@@ -811,44 +1048,6 @@
       font-size: 13px;
       color: #999999;
     }
-
-    /* ===== MOBILE RESPONSIVE ===== */
-    @media (max-width: 768px) {
-      .story-grid {
-        grid-template-columns: 1fr;
-        height: auto;
-        gap: 2rem;
-      }
-      
-      .story-hero {
-        height: 60vh;
-      }
-      
-      .story-wide {
-        height: 60vh;
-      }
-      
-      .story-floating-text.top-left,
-      .story-floating-text.bottom-right {
-        position: static;
-        margin: 1rem 0;
-        max-width: none;
-      }
-      
-      .story-content {
-        padding: 2rem;
-      }
-
-      .values-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-      }
-
-      .story-image,
-      .team-image {
-        height: 300px;
-      }
-    }
   </style>
 </head>
 <body>
@@ -868,8 +1067,8 @@
         <ul class="vero-navbar__links">
           <li><a class="vero-navbar__link" href="index.html">Home</a></li>
           <li><a class="vero-navbar__link" href="Shop.html">Shop</a></li>
-          <li><a class="vero-navbar__link" href="Community-local.html">Community</a></li>
-          <li><a class="vero-navbar__link" href="About-local.html">About Us</a></li>
+          <li><a class="vero-navbar__link" href="Community.html">Community</a></li>
+          <li><a class="vero-navbar__link" href="About.html">About Us</a></li>
         </ul>
       </div>
       
@@ -879,151 +1078,59 @@
     </div>
   </nav>
 
-  <!-- ===== HERO SECTION ===== -->
+  <!-- ===== SIMPLE HERO SECTION ===== -->
   <section class="hero">
+    <div class="hero-image">
+      <img src="ChatGPT Image 14 dec. 2025 16_43_50.png" alt="Times Square Dreams" />
+    </div>
     <div class="hero-content">
-      <h1 class="hero-title">About Vero</h1>
-      <p class="hero-subtitle">The Story Behind the Perfect Bar</p>
-      <p class="hero-description">
-        We're not just another energy bar company. We're two friends from Sweden who got tired of choosing between taste and performance, between clean ingredients and actual results.
-      </p>
+      <h1>Three Guys. Big Dreams.</h1>
+      <p>This is our story</p>
     </div>
   </section>
 
-  <!-- ===== STORY SECTION ===== -->
-  <section class="story-showcase">
-    <div class="story-showcase-container">
-      <h2 class="story-showcase-title">Our Story</h2>
+  <!-- ===== SIMPLE STORY SECTION ===== -->
+  <section class="story">
+    <div class="story-container">
       
-      <!-- Large Hero Story Image -->
-      <div class="story-hero">
-        <img src="Peanut butter studio pic.jpg" alt="The Problem We Faced" />
-        <div class="story-hero-overlay">
-          <div class="story-hero-content">
-            <h3>The Problem We Faced</h3>
-            <p>
-              Picture this: It's 2 AM, you're deep in a study session or working on that project that could change everything. You need energy, but <span class="story-highlight">coffee makes you jittery</span>, energy drinks crash you harder than they lift you, and protein bars taste like cardboard.
-            </p>
-          </div>
+      <div class="story-block">
+        <div class="story-text">
+          <h2>We're Always Moving</h2>
+          <p>School. Sports. Side projects. We live at full speed and hate when energy crashes kill our momentum.</p>
+        </div>
+        <div class="story-image">
+          <img src="Peanut butter studio pic.jpg" alt="Always moving" />
         </div>
       </div>
 
-      <!-- Story Grid with Floating Text -->
-      <div class="story-grid">
-        
-        <!-- Large Left Image -->
-        <div class="story-large">
-          <img src="Peanut butter studio pic.jpg" alt="Our Solution" />
-          <div class="story-floating-text top-left">
-            <h4>Two Years of Testing</h4>
-            <p>Hundreds of combinations, working with nutritionists, refusing to compromise</p>
-          </div>
+      <div class="story-block reverse">
+        <div class="story-text">
+          <h2>Everything Else Sucks</h2>
+          <p>Coffee gives us jitters. Energy drinks taste like chemicals. Protein bars are cardboard. We needed something better.</p>
         </div>
-
-        <!-- Content Section -->
-        <div class="story-content">
-          <h3>Our Solution</h3>
-          <p>
-            So we did what any obsessive perfectionists would do: we spent <span class="story-highlight">two years in the kitchen</span>, testing hundreds of combinations, working with nutritionists, and refusing to compromise.
-          </p>
-          <p>
-            We discovered that <span class="story-highlight">salted caramel wasn't just delicious</span> – when done right, it was the perfect vehicle for clean caffeine, plant protein, and zero added sugar. One flavor, perfected.
-          </p>
+        <div class="story-image">
+          <img src="Peanut butter studio pic.jpg" alt="The problem" />
         </div>
       </div>
 
-      <!-- Full Width Mission Image -->
-      <div class="story-wide">
-        <img src="Peanut butter studio pic.jpg" alt="Why We Do This" />
-        <div class="story-wide-overlay">
-          <div class="story-wide-content">
-            <h3>Why We Do This</h3>
-            <p>
-              We believe that <span class="story-highlight">focus is a superpower</span>. In a world designed to scatter your attention, the ability to concentrate deeply is what separates dreamers from achievers.
-            </p>
-            <p>
-              Every Vero bar is crafted for the ambitious minds who refuse to settle. Students, entrepreneurs, creators – anyone who knows that <span class="story-highlight">great work requires great fuel</span>.
-            </p>
-          </div>
+      <div class="story-block">
+        <div class="story-text">
+          <h2>So We Made This</h2>
+          <p>700+ experiments later. Clean energy that actually works. No crash. No compromise. Just pure focus when you need it.</p>
+          <a href="Shop.html" class="story-cta">Try It</a>
+        </div>
+        <div class="story-image">
+          <img src="Peanut butter studio pic.jpg" alt="The solution" />
         </div>
       </div>
 
     </div>
   </section>
 
-  <!-- ===== VALUES SECTION ===== -->
-  <section class="values-section">
-    <div class="values-container">
-      <h2 class="values-title">What We Stand For</h2>
-      
-      <div class="values-grid">
-        <div class="value-card">
-          <div class="value-card-content">
-            <div class="value-image">
-              <img src="Peanut butter studio pic.jpg" alt="Plant-Based Ingredients" />
-            </div>
-            <h3 class="value-card-title">Clean Ingredients</h3>
-            <p class="value-card-description">
-              100% plant-based, zero added sugar, no artificial nonsense. We believe your body deserves real ingredients that work in harmony with your natural energy systems.
-            </p>
-          </div>
-        </div>
-
-        <div class="value-card">
-          <div class="value-card-content">
-            <div class="value-image">
-              <img src="Peanut butter studio pic.jpg" alt="Performance Testing" />
-            </div>
-            <h3 class="value-card-title">Functional Performance</h3>
-            <p class="value-card-description">
-              Every ingredient has a purpose. Green tea caffeine for clean energy, L-theanine for calm focus, plant protein for sustained performance. No fillers, no shortcuts.
-            </p>
-          </div>
-        </div>
-
-        <div class="value-card">
-          <div class="value-card-content">
-            <div class="value-image">
-              <img src="Peanut butter studio pic.jpg" alt="Quality Control" />
-            </div>
-            <h3 class="value-card-title">Relentless Quality</h3>
-            <p class="value-card-description">
-              We could have launched with "good enough." Instead, we spent two years perfecting one flavor because we believe excellence isn't negotiable.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== TEAM SECTION ===== -->
-  <section class="team-section">
-    <div class="team-container">
-      <h2 class="team-title">Meet the Team</h2>
-      <p class="team-description">
-        We're two friends from Stockholm who turned our frustration with mediocre energy products into a mission to create something better.
-      </p>
-      
-      <div class="team-image">
-        <img src="IMG_8401.JPG" alt="Vero Co-founders" />
-      </div>
-      
-      <blockquote class="team-quote">
-        "We built Vero because we needed it ourselves. Every late-night study session, every early morning workout, every moment when focus matters – we wanted fuel that enhanced our performance without compromising our health."
-      </blockquote>
-      <p class="team-signature">– The Vero Team, Stockholm 2025</p>
-    </div>
-  </section>
-
-  <!-- ===== CTA SECTION ===== -->
+  <!-- ===== SIMPLE CTA SECTION ===== -->
   <section class="cta-section">
-    <div class="cta-container">
-      <h2 class="cta-title">Ready to Experience the Difference?</h2>
-      <p class="cta-description">
-        Join thousands of ambitious minds who've discovered what clean, functional energy feels like. No crash, no compromise, just pure focus.
-      </p>
-      <a href="Shop.html" class="cta-btn">Try Vero Today</a>
-    </div>
+    <h2>For People Who Refuse to Slow Down</h2>
+    <a href="Shop.html" class="main-cta">Get Yours</a>
   </section>
 
   <!-- ===== FOOTER ===== -->
@@ -1039,7 +1146,7 @@
         <a href="#">Social media</a>
         <a href="#">News</a>
         <a href="Contact.html">Contact us</a>
-        <a href="About-local.html">About us</a>
+        <a href="About.html">About us</a>
         <a href="#">Privacy policy</a>
         <a href="#">Cookies settings</a>
       </div>
@@ -1091,61 +1198,342 @@
       }, 1000);
     });
 
-    // Parallax effects for images
-    window.addEventListener('scroll', () => {
-      const scrolled = window.pageYOffset;
-      
-      // Parallax for story images - subtle movement
-      const storyImages = document.querySelectorAll('.story-hero img, .story-large img, .story-wide img');
-      storyImages.forEach((img, index) => {
-        const speed = 0.1; // Very subtle parallax
-        const yPos = -(scrolled * speed);
-        img.style.transform = `translateY(calc(-15% + ${yPos}px))`;
+    // Scroll to next section function
+    function scrollToNext() {
+      const problemSection = document.querySelector('.problem-section');
+      problemSection.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
       });
+    }
+
+    // ===== CINEMATIC STORY SCROLL EXPERIENCE =====
+    
+    // Simple scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          
+          const storyText = entry.target.querySelector('.story-text');
+          const storyImage = entry.target.querySelector('.story-image');
+          
+          if (storyText) {
+            storyText.style.animation = 'fadeInUp 1s ease-out forwards';
+          }
+          if (storyImage) {
+            storyImage.style.animation = 'fadeInUp 1s ease-out 0.3s forwards';
+          }
+        }
+      });
+    }, {
+      threshold: 0.3,
+      rootMargin: '0px'
+    });
+
+    // Observe story blocks
+    document.querySelectorAll('.story-block').forEach(block => {
+      observer.observe(block);
+    });
+
+    // Add simple animations
+    const styles = `
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    `;
+    
+    const styleSheet = document.createElement('style');
+    styleSheet.textContent = styles;
+    document.head.appendChild(styleSheet);
+
+    // Create particle effect for chapter 2
+    function createParticleEffect(container) {
+      if (!container) return;
       
-      // Floating text animation on scroll for About page
-      const floatingTexts = document.querySelectorAll('.story-floating-text');
-      floatingTexts.forEach((text, index) => {
-        const rect = text.getBoundingClientRect();
+      for (let i = 0; i < 15; i++) {
+        const particle = document.createElement('div');
+        particle.style.cssText = `
+          position: absolute;
+          width: 4px;
+          height: 4px;
+          background: #d4a574;
+          border-radius: 50%;
+          pointer-events: none;
+          animation: particleExplode 2s ease-out forwards;
+          top: 50%;
+          left: 50%;
+          z-index: 10;
+        `;
+        
+        const angle = (i / 15) * 360;
+        const distance = 100 + Math.random() * 50;
+        
+        particle.style.setProperty('--angle', `${angle}deg`);
+        particle.style.setProperty('--distance', `${distance}px`);
+        
+        container.appendChild(particle);
+        
+        setTimeout(() => {
+          particle.remove();
+        }, 2000);
+      }
+      
+      // Add particle animation if not exists
+      if (!document.querySelector('#particleAnimation')) {
+        const particleStyle = document.createElement('style');
+        particleStyle.id = 'particleAnimation';
+        particleStyle.textContent = `
+          @keyframes particleExplode {
+            0% {
+              transform: translate(-50%, -50%) rotate(var(--angle)) translateX(0) scale(1);
+              opacity: 1;
+            }
+            100% {
+              transform: translate(-50%, -50%) rotate(var(--angle)) translateX(var(--distance)) scale(0);
+              opacity: 0;
+            }
+          }
+        `;
+        document.head.appendChild(particleStyle);
+      }
+    }
+
+    // Create celebration effect for chapter 3
+    function createCelebrationEffect(container) {
+      if (!container) return;
+      
+      for (let i = 0; i < 20; i++) {
+        const confetti = document.createElement('div');
+        confetti.style.cssText = `
+          position: absolute;
+          width: 8px;
+          height: 8px;
+          background: ${i % 2 === 0 ? '#d4a574' : '#c19660'};
+          border-radius: ${Math.random() > 0.5 ? '50%' : '0'};
+          pointer-events: none;
+          animation: confettiFall 3s ease-out forwards;
+          top: 0;
+          left: ${Math.random() * 100}%;
+          z-index: 10;
+        `;
+        
+        container.appendChild(confetti);
+        
+        setTimeout(() => {
+          confetti.remove();
+        }, 3000);
+      }
+      
+      // Add confetti animation if not exists
+      if (!document.querySelector('#confettiAnimation')) {
+        const confettiStyle = document.createElement('style');
+        confettiStyle.id = 'confettiAnimation';
+        confettiStyle.textContent = `
+          @keyframes confettiFall {
+            0% {
+              transform: translateY(-20px) rotate(0deg);
+              opacity: 1;
+            }
+            100% {
+              transform: translateY(400px) rotate(720deg);
+              opacity: 0;
+            }
+          }
+        `;
+        document.head.appendChild(confettiStyle);
+      }
+    }
+
+    // Enhanced parallax for cinematic effect
+    let ticking = false;
+    
+    function updateParallax() {
+      const scrolled = window.pageYOffset;
+      const rate = scrolled * -0.5;
+      
+      // Enhanced parallax for problem and why sections
+      const problemImage = document.querySelector('.problem-image');
+      const whyImage = document.querySelector('.why-image');
+      
+      if (problemImage) {
+        const problemRate = scrolled * -0.3;
+        const scale = 1 + (scrolled * 0.0001);
+        problemImage.style.transform = `translateY(${problemRate}px) scale(${Math.min(scale, 1.2)})`;
+      }
+      
+      if (whyImage) {
+        const whyRate = scrolled * -0.2;
+        const scale = 1 + (scrolled * 0.0001);
+        whyImage.style.transform = `translateY(${whyRate}px) scale(${Math.min(scale, 1.15)})`;
+      }
+
+      // Enhanced story chapters parallax with depth
+      const chapters = document.querySelectorAll('.story-chapter');
+      chapters.forEach((chapter, index) => {
+        const rect = chapter.getBoundingClientRect();
         const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
         
         if (isVisible) {
           const progress = (window.innerHeight - rect.top) / window.innerHeight;
-          const translateX = text.classList.contains('top-left') ? 
-            Math.min(0, -140 + (progress * 180)) : 
-            Math.max(0, 140 - (progress * 180));
+          const translateY = (progress - 0.5) * 60;
+          const scale = 0.95 + (progress * 0.1);
+          const opacity = Math.max(0.3, Math.min(1, progress * 1.5));
           
-          if (text.classList.contains('top-left')) {
-            text.style.left = `${translateX}px`;
-          } else {
-            text.style.right = `${Math.abs(translateX)}px`;
+          const visual = chapter.querySelector('.chapter-visual');
+          const content = chapter.querySelector('.chapter-content');
+          
+          if (visual) {
+            visual.style.transform = `translateY(${translateY}px) scale(${scale})`;
+            visual.style.opacity = opacity;
+          }
+          
+          if (content) {
+            const contentTranslateY = (progress - 0.5) * 30;
+            content.style.transform = `translateY(${contentTranslateY}px)`;
+            content.style.opacity = Math.max(0.5, opacity);
           }
         }
       });
-    });
 
-    // 3D card tilt effect
-    document.querySelectorAll('.value-card').forEach(card => {
-      card.addEventListener('mousemove', (e) => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
+      // Floating elements in hero respond to scroll
+      const floatingElements = document.querySelectorAll('.floating-element');
+      floatingElements.forEach((element, index) => {
+        const speed = 0.1 + (index * 0.05);
+        const yPos = scrolled * speed;
+        const rotation = scrolled * (0.1 + index * 0.02);
+        element.style.transform = `translateY(${yPos}px) rotate(${rotation}deg)`;
+      });
+
+      // Dynamic navbar background based on scroll
+      const navbar = document.getElementById('veroNavbar');
+      if (navbar) {
+        const opacity = Math.min(0.95, scrolled / 200);
+        navbar.style.background = `rgba(0, 0, 0, ${opacity})`;
+      }
+
+      ticking = false;
+    }
+
+    function requestTick() {
+      if (!ticking) {
+        requestAnimationFrame(updateParallax);
+        ticking = true;
+      }
+    }
+
+    window.addEventListener('scroll', requestTick);
+
+    // Mouse movement parallax for hero elements
+    document.addEventListener('mousemove', (e) => {
+      const mouseX = e.clientX / window.innerWidth;
+      const mouseY = e.clientY / window.innerHeight;
+      
+      const floatingElements = document.querySelectorAll('.floating-element');
+      floatingElements.forEach((element, index) => {
+        const speed = 10 + (index * 5);
+        const x = (mouseX - 0.5) * speed;
+        const y = (mouseY - 0.5) * speed;
         
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
-        
-        const rotateX = (y - centerY) / 10;
-        const rotateY = (centerX - x) / 10;
-        
-        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(20px)`;
+        element.style.transform += ` translate(${x}px, ${y}px)`;
       });
       
-      card.addEventListener('mouseleave', () => {
-        card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(0px)';
-      });
+      // Hero title responds to mouse
+      const heroTitle = document.querySelector('.hero-title');
+      if (heroTitle) {
+        const x = (mouseX - 0.5) * 20;
+        const y = (mouseY - 0.5) * 20;
+        heroTitle.style.transform = `translate(${x}px, ${y}px)`;
+      }
     });
 
-    // Smooth scrolling for anchor links
+    // Smooth scroll with momentum
+    function smoothScrollTo(target) {
+      const targetElement = document.querySelector(target);
+      if (targetElement) {
+        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - 80;
+        const startPosition = window.pageYOffset;
+        const distance = targetPosition - startPosition;
+        const duration = Math.min(2000, Math.abs(distance) * 2);
+        let start = null;
+
+        function animation(currentTime) {
+          if (start === null) start = currentTime;
+          const timeElapsed = currentTime - start;
+          const run = easeInOutQuart(timeElapsed, startPosition, distance, duration);
+          window.scrollTo(0, run);
+          if (timeElapsed < duration) requestAnimationFrame(animation);
+        }
+
+        function easeInOutQuart(t, b, c, d) {
+          t /= d / 2;
+          if (t < 1) return c / 2 * t * t * t * t + b;
+          t -= 2;
+          return -c / 2 * (t * t * t * t - 2) + b;
+        }
+
+        requestAnimationFrame(animation);
+      }
+    }
+
+    // Auto-advance story on scroll (optional cinematic mode)
+    let isAutoScrolling = false;
+    let scrollTimeout;
+
+    function enableCinematicMode() {
+      window.addEventListener('wheel', (e) => {
+        if (isAutoScrolling) return;
+        
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+          const chapters = document.querySelectorAll('.story-chapter');
+          const currentScroll = window.pageYOffset;
+          
+          let nextChapter = null;
+          
+          if (e.deltaY > 0) { // Scrolling down
+            chapters.forEach(chapter => {
+              const rect = chapter.getBoundingClientRect();
+              if (rect.top > 100 && !nextChapter) {
+                nextChapter = chapter;
+              }
+            });
+          } else { // Scrolling up
+            const reversedChapters = Array.from(chapters).reverse();
+            reversedChapters.forEach(chapter => {
+              const rect = chapter.getBoundingClientRect();
+              if (rect.top < -100 && !nextChapter) {
+                nextChapter = chapter;
+              }
+            });
+          }
+          
+          if (nextChapter) {
+            isAutoScrolling = true;
+            nextChapter.scrollIntoView({ 
+              behavior: 'smooth', 
+              block: 'center' 
+            });
+            
+            setTimeout(() => {
+              isAutoScrolling = false;
+            }, 1000);
+          }
+        }, 150);
+      });
+    }
+
+    // Optional: Enable cinematic mode (uncomment to activate)
+    // enableCinematicMode();
+
+    // Smooth scrolling for all internal links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -1162,3 +1550,56 @@
 
 </body>
 </html>
+    /* ===== SIMPLE CTA SECTION ===== */
+    .cta-section {
+      padding: 6rem 2rem;
+      background: #1a1a1a;
+      color: white;
+      text-align: center;
+    }
+
+    .cta-section h2 {
+      font-family: 'Bebas Neue', cursive;
+      font-size: clamp(3rem, 6vw, 5rem);
+      margin-bottom: 3rem;
+      letter-spacing: 0.05em;
+    }
+
+    .main-cta {
+      background: #d4a574;
+      color: #1a1a1a;
+      padding: 1.5rem 4rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+
+    .main-cta:hover {
+      background: #c19660;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(212, 165, 116, 0.3);
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      .story-block {
+        flex-direction: column !important;
+        text-align: center;
+        gap: 2rem;
+        margin-bottom: 4rem;
+      }
+      
+      .story-image {
+        height: 300px;
+      }
+      
+      .hero-content h1 {
+        font-size: clamp(3rem, 12vw, 6rem);
+      }
+    }
+  </style>
