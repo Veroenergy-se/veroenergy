@@ -490,9 +490,8 @@
 
     .ingredients-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 2rem;
-      align-items: start;
     }
 
     .ingredient-item {
@@ -501,11 +500,6 @@
       border-radius: 12px;
       box-shadow: 0 4px 15px rgba(0,0,0,0.05);
       transition: all 0.3s ease;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: center;
-      text-align: center;
     }
 
     .ingredient-item:hover {
@@ -714,7 +708,7 @@
   <!-- ===== PRODUCTS SECTION ===== -->
   <section class="products" id="products">
     <div class="products-container">
-      <h2 class="products-title">Taste The Perfect</h2>
+      <h2 class="products-title">Choose Your Pack</h2>
       
       <div class="products-grid">
         <!-- Starter Pack -->

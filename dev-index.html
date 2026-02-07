@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Vero Energy – Clean Energy That Actually Works [COMPLETE-LIVE-TEST]</title>
+  <title>Vero Energy – Clean Energy That Actually Works [DEV-INDEX-LIVE-TEST]</title>
   
   <!-- Google Analytics 4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-JWFPL9ZW9R"></script>
@@ -19,6 +19,40 @@
   
   <link rel="stylesheet" href="style.css?v=16" />
   <link rel="stylesheet" href="deux-style.css" />
+  
+  <!-- DEV MODE STYLES -->
+  <style>
+    .dev-banner {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: #ef4444;
+      color: white;
+      text-align: center;
+      padding: 8px;
+      font-size: 13px;
+      font-weight: bold;
+      z-index: 10000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+    
+    /* Adjust navbar for dev banner */
+    .vero-navbar {
+      top: 35px !important;
+    }
+    
+    /* Adjust hero section for dev banner */
+    .section--hero {
+      padding: 175px 20px 100px !important;
+    }
+    
+    @media (max-width: 768px) {
+      .section--hero {
+        padding: 155px 20px 80px !important;
+      }
+    }
+  </style>
   
   <style>
     /* Smooth scrolling */
@@ -207,6 +241,11 @@
   </style>
 </head>
 <body>
+
+  <!-- DEV MODE BANNER -->
+  <div class="dev-banner">
+    🚧 DEVELOPMENT MODE - Make your changes here before pushing to production
+  </div>
 
   <!-- ===== NAVIGATION ===== -->
   <nav class="vero-navbar" id="veroNavbar">
