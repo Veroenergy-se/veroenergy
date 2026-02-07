@@ -16,8 +16,9 @@
 }
 
 .shipping-text {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Bebas Neue', sans-serif !important;
     font-size: 0.875rem;
+    font-weight: 400 !important;
     font-weight: 600;
     color: #374151;
     letter-spacing: 0.025em;

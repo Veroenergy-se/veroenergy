@@ -3,27 +3,58 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Why Vero – Our Story & Vision</title>
+  <title>Why Vero – Our Mission & Values</title>
   
-  <!-- Google Analytics 4 -->
+  <!-- Google Analytics 4 with Cookie Consent -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-JWFPL9ZW9R"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
+    
+    // Set default consent state (denied until user consents)
+    gtag('consent', 'default', {
+      'analytics_storage': 'denied'
+    });
+    
     gtag('config', 'G-JWFPL9ZW9R', {
       'send_page_view': true,
       'anonymize_ip': true
     });
   </script>
   
+  <!-- Cookie Consent System -->
+  <script src="cookie-consent.js"></script>
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&family=Nunito:wght@400;500;600;700;800;900&family=Comfortaa:wght@300;400;500;600;700&family=Yellowtail&family=Belanosima:wght@400;600;700&family=Caveat:wght@400;500;600;700&family=Merriweather:wght@300;400;700&family=Bebas+Neue&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css?v=55" />
   <link rel="stylesheet" href="deux-style.css?v=44" />
+  <link rel="stylesheet" href="our-story-override.css?v=21" />
   
   <style>
+    /* CRITICAL: Reset all potential overlay elements */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* FORCE REMOVE ANY OVERLAYS */
+    .page-top-gradient,
+    *[class*="gradient"],
+    *[class*="overlay"],
+    *[style*="position: fixed"],
+    *[style*="position:fixed"] {
+      display: none !important;
+      visibility: hidden !important;
+      opacity: 0 !important;
+      height: 0 !important;
+      width: 0 !important;
+      z-index: -9999 !important;
+    }
+
     body {
       overflow-x: hidden;
       background: white !important;
@@ -31,21 +62,18 @@
       padding: 0 !important;
     }
 
-    /* ===== NAVBAR (matching index.html exactly) ===== */
+    /* ===== COMPLETE NAVBAR STYLING TO MATCH INDEX.HTML ===== */
     .vero-navbar {
       position: sticky;
       top: 0;
       z-index: 999;
       width: 100%;
-      background: white !important;
-      border-bottom: 1px solid #e5e5e5 !important;
-      transition: box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+      background: #000000 !important;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      transition: box-shadow 0.2s ease, border-color 0.2s ease;
     }
     .vero-navbar--scrolled {
-      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
       border-color: transparent;
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
     }
     .vero-navbar__inner {
       max-width: 1120px;
@@ -57,19 +85,17 @@
     }
     .vero-navbar__brand {
       text-decoration: none;
-      color: #1a1a1a !important;
+      color: #ffffff !important;
       font-size: 1.8rem;
       font-weight: 600;
       letter-spacing: 0.06em;
       text-transform: uppercase;
-      transition: color 0.2s ease;
-    }
-    .vero-navbar--scrolled .vero-navbar__brand {
-      color: #111827;
+      opacity: 1 !important;
     }
     .vero-navbar__center {
       display: flex;
       align-items: center;
+      gap: 2rem;
     }
     .vero-navbar__links {
       list-style: none;
@@ -79,16 +105,13 @@
     }
     .vero-navbar__link {
       text-decoration: none;
-      color: #1a1a1a !important;
+      color: #ffffff !important;
       text-transform: uppercase;
       letter-spacing: 0.05em;
       font-size: 1.05rem;
       padding-bottom: 2px;
       position: relative;
-      transition: color 0.2s ease;
-    }
-    .vero-navbar--scrolled .vero-navbar__link {
-      color: #111827;
+      opacity: 1 !important;
     }
     .vero-navbar__link::after {
       content: "";
@@ -97,17 +120,18 @@
       left: 0;
       width: 0%;
       height: 2px;
-      background: #1a1a1a !important;
-      transition: width 0.2s ease, background 0.2s ease;
-    }
-    .vero-navbar--scrolled .vero-navbar__link::after {
-      background: #111827;
+      background: #ffffff !important;
+      transition: width 0.2s ease;
     }
     .vero-navbar__link:hover::after {
       width: 100%;
     }
+    .vero-navbar__link:hover {
+      color: #ffffff !important;
+      opacity: 1 !important;
+    }
     .vero-navbar__cta {
-      background-color: rgba(168, 85, 247);
+      background-color: rgba(255, 208, 116);
       color: #1d1d1f;
       border-radius: 12px;
       font-size: 17px;
@@ -140,7 +164,7 @@
     .vero-navbar__toggle span {
       height: 3px;
       width: 100%;
-      background: #1a1a1a !important;
+      background: #ffffff;
       border-radius: 5px;
       transition: 0.3s ease;
     }
@@ -157,21 +181,13 @@
       .vero-navbar__toggle {
         display: flex;
       }
-      .vero-navbar__toggle span {
-        background: #1a1a1a !important;
-        transition: background 0.2s ease;
-      }
-      .vero-navbar--scrolled .vero-navbar__toggle span {
-        background: #111827;
-      }
       .vero-navbar__center {
         position: absolute;
         top: 100%;
         left: 0;
         width: 100%;
-        background: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(10px);
-        border-bottom: 1px solid #e5e7eb;
+        background: #000000;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
         flex-direction: column;
         gap: 1rem;
         padding: 1.25rem;
@@ -184,12 +200,6 @@
         opacity: 1;
         transform: translateY(0);
         pointer-events: auto;
-      }
-      .vero-navbar__center .vero-navbar__link {
-        color: #111827;
-      }
-      .vero-navbar__center .vero-navbar__link::after {
-        background: #111827;
       }
       .vero-navbar__links {
         flex-direction: column;
@@ -207,6 +217,33 @@
     
     /* Hide all color overlays */
     .page-top-gradient {
+      display: none !important;
+    }
+
+    /* FORCE HIDE PAGE TOP GRADIENT - OVERRIDE EXTERNAL CSS */
+    body[data-page="why-vero"] .page-top-gradient {
+      display: none !important;
+      visibility: hidden !important;
+      opacity: 0 !important;
+      height: 0 !important;
+      z-index: -9999 !important;
+    }
+
+    /* ADDITIONAL OVERRIDE - Hide any pseudo-elements or fixed positioned overlays */
+    body[data-page="why-vero"]::before,
+    body[data-page="why-vero"]::after,
+    .page-top-gradient::before,
+    .page-top-gradient::after {
+      display: none !important;
+      visibility: hidden !important;
+      opacity: 0 !important;
+      height: 0 !important;
+      z-index: -9999 !important;
+    }
+
+    /* FORCE REMOVE ANY FIXED POSITIONED OVERLAYS */
+    body[data-page="why-vero"] *[style*="position: fixed"],
+    body[data-page="why-vero"] *[style*="position:fixed"] {
       display: none !important;
     }
 
@@ -307,6 +344,7 @@
     }
   </style>
 
+  <style>
     /* ===== HERO SECTION ===== */
     .hero {
       padding: 80px 0;
@@ -904,13 +942,7 @@
       }
     }
 
-    /* FINAL OVERRIDE - ENSURE OVERLAY IS VISIBLE */
-    body[data-page="why-vero"] .page-top-gradient {
-      display: block !important;
-      visibility: visible !important;
-      opacity: 1 !important;
-      z-index: 998 !important;
-    }
+
   </style>
 </head>
 <body data-page="why-vero">
@@ -926,11 +958,11 @@
         <span></span>
       </div>
       
-      <div class="vero-navbar__center" id="veroMenu">
+      <div class="vero-navbar__center">
         <ul class="vero-navbar__links">
           <li><a class="vero-navbar__link" href="index.html">Home</a></li>
           <li><a class="vero-navbar__link" href="Shop.html">Shop</a></li>
-          <li><a class="vero-navbar__link" href="How-It-Works.html">How It Works</a></li>
+          <li><a class="vero-navbar__link" href="How-It-Works.html">Community</a></li>
           <li><a class="vero-navbar__link" href="Why-Vero.html">Why Vero</a></li>
         </ul>
       </div>
@@ -940,6 +972,22 @@
       </div>
     </div>
   </nav>
+
+  <script>
+    // Navbar toggle functionality
+    (function() {
+      const toggle = document.getElementById("veroToggle");
+      const menu = document.querySelector(".vero-navbar__center");
+      const navbar = document.getElementById("veroNavbar");
+      
+      if (toggle && menu) {
+        toggle.addEventListener("click", () => {
+          toggle.classList.toggle("vero-navbar__toggle--open");
+          menu.classList.toggle("vero-navbar__center--open");
+        });
+      }
+    })();
+  </script>
 
   <!-- ===== HERO IMAGE SECTION ===== -->
   <section class="hero-image-section">
@@ -1059,28 +1107,30 @@
     </div>
   
     <div class="footer-bottom">
+    <div class="footer-bottom">
       <p>© 2025 Vero. All rights reserved.</p>
+      <div style="margin-top: 1rem; display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+        <a href="privacy-policy.html" style="color: #ffffff; text-decoration: none; font-size: 14px; text-transform: uppercase; letter-spacing: 0.05em;">Privacy policy</a>
+        <a href="#" onclick="VeroCookieConsent.showSettings(); return false;" style="color: #ffffff; text-decoration: none; font-size: 14px; text-transform: uppercase; letter-spacing: 0.05em;">Cookie settings</a>
+      </div>
     </div>
   </footer>
 
   <script>
-    const toggle = document.getElementById("veroToggle");
-    const menu = document.getElementById("veroMenu");
-    const navbar = document.getElementById("veroNavbar");
-    
-    toggle.addEventListener("click", () => {
-      toggle.classList.toggle("vero-navbar__toggle--open");
-      menu.classList.toggle("vero-navbar__center--open");
-    });
-    
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 10) {
-        navbar.classList.add("vero-navbar--scrolled");
-        document.body.classList.add("scrolled");
-      } else {
-        navbar.classList.remove("vero-navbar--scrolled");
-        document.body.classList.remove("scrolled");
-      }
+    // FORCE REMOVE ANY OVERLAY ELEMENTS ON PAGE LOAD
+    document.addEventListener('DOMContentLoaded', function() {
+      // Remove any page-top-gradient elements
+      const gradients = document.querySelectorAll('.page-top-gradient');
+      gradients.forEach(el => el.remove());
+      
+      // Remove any fixed positioned elements that might be overlays
+      const fixedElements = document.querySelectorAll('*');
+      fixedElements.forEach(el => {
+        const style = window.getComputedStyle(el);
+        if (style.position === 'fixed' && el.className.includes('gradient')) {
+          el.remove();
+        }
+      });
     });
 
     // Smooth scrolling for anchor links

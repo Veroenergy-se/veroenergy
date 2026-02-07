@@ -356,12 +356,12 @@ a.cta-primary::before {
 
 /* ===== NAVBAR GET ENERGIZED BUTTON ===== */
 .vero-navbar__cta {
-  background-color: #2d5016 !important;
-  color: white !important;
+  background-color: #0B0C10 !important;
+  color: #F5F1E8 !important;
   font-weight: 700 !important;
   text-transform: uppercase !important;
   letter-spacing: 0.5px !important;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.3) !important;
+  text-shadow: none !important;
   position: relative !important;
   overflow: visible !important;
 }
@@ -392,10 +392,11 @@ a.cta-primary::before {
 }
 
 .vero-navbar__cta:hover {
-  background-color: #3d6b1e !important;
-  color: white !important;
+  background-color: #FFFFFF !important;
+  color: #0B0C10 !important;
+  border: 2px solid #0B0C10 !important;
   font-weight: 700 !important;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.4) !important;
+  text-shadow: none !important;
 }
 
 .vero-navbar__cta:hover::before,
@@ -1353,22 +1354,22 @@ body {
 }
 /* Style navbar CTA button to match hero buttons */
 .vero-navbar__cta {
-  background: transparent !important;
-  color: #ffffff !important;
-  border: 2px solid #ffffff !important;
+  background: #0B0C10 !important;
+  color: #F5F1E8 !important;
+  border: 2px solid #0B0C10 !important;
   border-radius: 0 !important;
   font-weight: 700 !important;
   text-transform: uppercase !important;
   letter-spacing: 0.05em !important;
   padding: 0.8rem 1.5rem !important;
   transition: all 0.3s ease !important;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5) !important;
+  text-shadow: none !important;
 }
 
 .vero-navbar__cta:hover {
-  background: #ffffff !important;
-  color: #000000 !important;
-  border: 2px solid #ffffff !important;
+  background: #FFFFFF !important;
+  color: #0B0C10 !important;
+  border: 2px solid #0B0C10 !important;
   transform: translateY(-1px) !important;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
   text-shadow: none !important;
@@ -1707,19 +1708,19 @@ footer::after,
 .vero-navbar__brand {
   font-size: 1.4rem !important;
   font-weight: 400 !important;
-  opacity: 0.7 !important;
+  opacity: 1 !important;
 }
 
 .vero-navbar__link {
   font-size: 0.85rem !important;
   font-weight: 400 !important;
-  opacity: 0.6 !important;
+  opacity: 1 !important;
 }
 
 .vero-navbar__cta {
   font-size: 0.85rem !important;
   font-weight: 400 !important;
-  opacity: 0.8 !important;
+  opacity: 1 !important;
 }
 
 /* ===== UNIFIED HERO TYPOGRAPHY - ALL LONDRINA SOLID FONT ===== */
@@ -2028,4 +2029,25 @@ h1, h2, h3, h4, h5, h6,
 
 .vero-navbar__cta {
   font-size: 1.2rem !important;
+}
+
+/* ===== FINAL OVERRIDE: GET ENERGIZED BUTTON OBSIDIAN BLACK ===== */
+.vero-navbar__cta,
+a.vero-navbar__cta,
+.vero-navbar .vero-navbar__cta,
+nav .vero-navbar__cta {
+  background: #0B0C10 !important;
+  background-color: #0B0C10 !important;
+  color: #F5F1E8 !important;
+  border: 2px solid #0B0C10 !important;
+}
+
+.vero-navbar__cta:hover,
+a.vero-navbar__cta:hover,
+.vero-navbar .vero-navbar__cta:hover,
+nav .vero-navbar__cta:hover {
+  background: #FFFFFF !important;
+  background-color: #FFFFFF !important;
+  color: #0B0C10 !important;
+  border: 2px solid #0B0C10 !important;
 }
