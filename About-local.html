@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>About Us – Meet the Team | Vero</title>
+  <title>About Us – Meet the Team | CAFO</title>
   
   <!-- Google Analytics 4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-JWFPL9ZW9R"></script>
@@ -216,7 +216,7 @@
 
     /* ===== OUR STORY SECTION ===== */
     .story-section {
-      padding: 8rem 0;
+      padding: 8rem 0 0 0;
       background: white;
       position: relative;
       overflow: hidden;
@@ -249,6 +249,7 @@
       display: flex;
       flex-direction: column;
       gap: 0;
+      padding-bottom: 4rem;
     }
 
     .story-block {
@@ -403,7 +404,7 @@
 
     /* ===== TEAM SECTION ===== */
     .team-section {
-      padding: 6rem 2rem;
+      padding: 0 0 4rem 0;
       background: #1a1a1a;
       position: relative;
       overflow: hidden;
@@ -421,7 +422,7 @@
     }
 
     .team-container {
-      max-width: 1200px;
+      max-width: 100%;
       margin: 0 auto;
       position: relative;
       z-index: 2;
@@ -429,7 +430,8 @@
 
     .team-header {
       text-align: center;
-      margin-bottom: 4rem;
+      margin-bottom: 3rem;
+      padding: 4rem 2rem 0 2rem;
     }
 
     .team-section .section-title {
@@ -445,12 +447,13 @@
 
     .team-showcase {
       display: grid;
-      grid-template-columns: 1.3fr 0.7fr;
+      grid-template-columns: 1fr 1fr;
       gap: 0;
       align-items: center;
       opacity: 0;
       transform: translateY(50px);
       transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      max-width: 100%;
     }
 
     .team-showcase.visible {
@@ -465,8 +468,9 @@
       box-shadow: 0 30px 80px rgba(0,0,0,0.4);
       transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
       will-change: transform;
-      height: 600px;
+      height: 650px;
       width: 100%;
+      margin-left: 0;
     }
 
     .team-image-large::after {
@@ -508,14 +512,15 @@
       color: white;
       will-change: transform, opacity;
       position: relative;
-      padding: 4rem;
+      padding: 4rem 8rem 4rem 6rem;
+      max-width: 700px;
     }
 
     .team-content::before {
       content: '';
       position: absolute;
       top: -2rem;
-      left: -2rem;
+      left: 2rem;
       width: 100px;
       height: 100px;
       border: 2px solid #d4a574;
@@ -525,7 +530,7 @@
 
     .team-name {
       font-family: 'Bebas Neue', cursive;
-      font-size: 3.5rem;
+      font-size: 4rem;
       color: #ffffff;
       margin-bottom: 1rem;
       letter-spacing: 0.05em;
@@ -534,17 +539,17 @@
     .team-role {
       color: #d4a574;
       font-weight: 700;
-      font-size: 1.5rem;
-      margin-bottom: 2rem;
+      font-size: 1.3rem;
+      margin-bottom: 2.5rem;
       text-transform: uppercase;
       letter-spacing: 0.1em;
     }
 
     .team-bio {
-      font-size: 1.3rem;
-      line-height: 1.9;
+      font-size: 1.2rem;
+      line-height: 1.8;
       color: #cccccc;
-      margin-bottom: 2rem;
+      margin-bottom: 1.8rem;
     }
 
     .team-cta {
@@ -571,15 +576,29 @@
 
     /* ===== CONTACT SECTION ===== */
     .contact-section {
-      padding: 8rem 2rem;
-      background: #1a1a1a;
+      padding: 6rem 2rem;
+      background: linear-gradient(180deg, #1a1a1a 0%, #0a0a0a 100%);
       color: white;
+      position: relative;
+    }
+
+    .contact-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent 0%, rgba(212, 165, 116, 0.3) 50%, transparent 100%);
+      pointer-events: none;
     }
 
     .contact-container {
-      max-width: 800px;
+      max-width: 900px;
       margin: 0 auto;
       text-align: center;
+      position: relative;
+      z-index: 2;
     }
 
     .contact-title {
@@ -590,6 +609,7 @@
       opacity: 0;
       transform: translateY(50px);
       transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      color: #ffffff;
     }
 
     .contact-title.visible {
@@ -621,12 +641,12 @@
     }
 
     .contact-method {
-      background: rgba(255, 255, 255, 0.1);
-      padding: 2rem;
-      border-radius: 15px;
-      min-width: 250px;
+      background: rgba(255, 255, 255, 0.08);
+      padding: 2.5rem;
+      border-radius: 20px;
+      min-width: 280px;
       backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(212, 165, 116, 0.2);
       opacity: 0;
       transform: translateY(30px) scale(0.9);
       transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
@@ -638,9 +658,10 @@
     }
 
     .contact-method:hover {
-      background: rgba(255, 255, 255, 0.15);
+      background: rgba(255, 255, 255, 0.12);
       transform: translateY(-5px) scale(1.05);
       border-color: #d4a574;
+      box-shadow: 0 15px 40px rgba(212, 165, 116, 0.2);
     }
 
     .contact-method-title {
@@ -827,10 +848,22 @@
       .team-showcase {
         grid-template-columns: 1fr;
         gap: 3rem;
+        padding: 0 2rem;
+      }
+
+      .team-image-large {
+        border-radius: 20px;
+        margin: 0 auto;
+        max-width: 600px;
       }
 
       .team-image-large img {
         height: 500px;
+      }
+
+      .team-content {
+        padding: 2rem;
+        max-width: 100%;
       }
 
       .contact-methods {
@@ -845,7 +878,7 @@
   <!-- ===== NAVBAR ===== -->
   <nav class="vero-navbar" id="veroNavbar">
     <div class="vero-navbar__inner">
-      <a class="vero-navbar__brand" href="index.html">Vero</a>
+      <a class="vero-navbar__brand" href="index.html">CAFO</a>
       
       <div class="vero-navbar__toggle" id="veroToggle">
         <span></span>
@@ -925,7 +958,7 @@
           <div class="story-text-content">
             <h3 class="story-subtitle">Built For Ambitious Minds</h3>
             <p class="story-text">
-              Vero isn't just another energy bar. It's fuel for people who refuse to slow down. No crash, no jitters, no guilt. Just clean energy that keeps up with your ambitions. This is just the beginning.
+              CAFO isn't just another energy bar. It's fuel for people who refuse to slow down. No crash, no jitters, no guilt. Just clean energy that keeps up with your ambitions. This is just the beginning.
             </p>
           </div>
         </div>
@@ -954,7 +987,7 @@
             Three ambitious minds from Stockholm who refused to accept the status quo. We're not just building a product—we're building a movement for people who demand more from their fuel.
           </p>
           <p class="team-bio">
-            From late-night study sessions to early morning workouts, we live the Vero lifestyle. Every bar we create is tested by us first, because we believe in leading by example.
+            From late-night study sessions to early morning workouts, we live the CAFO lifestyle. Every bar we create is tested by us first, because we believe in leading by example.
           </p>
           
           <a href="Shop.html" class="team-cta">Try Our Bars</a>
@@ -975,19 +1008,19 @@
         <div class="contact-method">
           <h3 class="contact-method-title">Email Us</h3>
           <p class="contact-method-info">
-            <a href="mailto:hello@vero.se">hello@vero.se</a>
+            <a href="mailto:hello@cafo.se">hello@cafo.se</a>
           </p>
         </div>
         
         <div class="contact-method">
           <h3 class="contact-method-title">Follow Us</h3>
           <p class="contact-method-info">
-            <a href="#" target="_blank">@vero.energy</a>
+            <a href="#" target="_blank">@cafo.energy</a>
           </p>
         </div>
       </div>
       
-      <a href="Shop.html" class="cta-button">Try Vero Today</a>
+      <a href="Shop.html" class="cta-button">Try CAFO Today</a>
     </div>
   </section>
 
@@ -995,7 +1028,7 @@
   <footer class="footer">
     <div class="footer-content">
       <div class="footer-description">
-        <h3 class="footer-brand">Vero</h3>
+        <h3 class="footer-brand">CAFO</h3>
         <p class="footer-text">The perfect bar. Clean energy that feels good.</p>
         <p class="footer-text">Made with care in the EU. 100% plant-based, zero added sugar, real ingredients.</p>
       </div>
@@ -1010,8 +1043,8 @@
       </div>
       
       <div class="footer-bottom">
-        <span>Copyright Vero 2025</span>
-        <span>Vero</span>
+        <span>Copyright CAFO 2025</span>
+        <span>CAFO</span>
         <span>Stockholm, Sweden</span>
       </div>
     </div>
