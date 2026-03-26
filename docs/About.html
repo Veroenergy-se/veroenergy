@@ -19,7 +19,7 @@
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=League+Gothic&family=Poppins:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   
   <style>
     /* ===== FREE SHIPPING BANNER ===== */
@@ -75,51 +75,57 @@
 
     /* ===== NAVBAR ===== */
     .cafo-navbar {
-      position: fixed;
+      position: sticky;
       top: 0;
       z-index: 999;
       width: 100%;
-      background: transparent !important;
-      border-bottom: none !important;
-      transition: all 0.3s ease;
-      transform: translateY(0);
+      background: #0B0C10 !important;
+      border-bottom: 2px solid #000000 !important;
+      transition: box-shadow 0.2s ease, border-color 0.2s ease;
+      overflow: visible;
     }
     .cafo-navbar.hidden {
-      transform: translateY(-100%);
+      transform: none;
     }
     .cafo-navbar--scrolled {
-      background: #1A1A1A !important;
+      background: #0B0C10 !important;
       border-bottom: 2px solid #000000 !important;
-      backdrop-filter: blur(10px);
     }
     .cafo-navbar__inner {
-      max-width: 1120px;
+      max-width: 100%;
       margin: auto;
-      padding: 0.5rem 1.5rem;
+      padding: 0 4rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      height: 100px;
+      overflow: visible;
+      position: relative;
     }
     .cafo-navbar__brand {
       text-decoration: none;
       color: #F5F1E8 !important;
-      font-family: 'Bebas Neue', cursive !important;
-      font-size: 1.8rem;
-      font-weight: 600;
-      letter-spacing: 0.06em;
+      font-family: 'League Gothic', sans-serif !important;
+      font-size: 3rem;
+      font-weight: 400 !important;
+      letter-spacing: 0.05em;
       text-transform: uppercase;
       opacity: 1 !important;
       display: flex;
       align-items: center;
     }
     .cafo-navbar__brand img {
-      height: 140px;
+      height: 120px;
       width: auto;
       display: block;
     }
     .cafo-navbar__center {
+      position: absolute !important;
+      left: 50% !important;
+      transform: translateX(-50%) !important;
       display: flex;
       align-items: center;
+      justify-content: center;
       gap: 2rem;
     }
     .cafo-navbar__links {
@@ -131,10 +137,10 @@
     .cafo-navbar__link {
       text-decoration: none;
       color: #F5F1E8 !important;
-      font-family: 'Bebas Neue', cursive !important;
+      font-family: 'League Gothic', sans-serif !important;
       text-transform: uppercase;
       letter-spacing: 0.05em;
-      font-size: 1.4rem;
+      font-size: 1.6rem;
       padding-bottom: 2px;
       position: relative;
       opacity: 1 !important;
@@ -161,17 +167,16 @@
       color: #F5F1E8 !important;
       opacity: 1 !important;
     }
-    .cafo-navbar__cta {
+    .cafo-navbar__cta { font-family: 'League Gothic', sans-serif !important; font-size: 1.8rem !important; padding: 10px 28px !important;
       background-color: #0B0C10;
-      color: #F5F1E8;
+      color: #ffffff;
       border-radius: 0;
-      font-size: 17px;
+      
       font-weight: 600;
       padding: 1em 2em;
       cursor: pointer;
       transition: all 0.3s ease-in-out;
-      border: 1px solid black;
-      box-shadow: 0 0 0 0 black;
+      border: 2px solid #ffffff;
       text-decoration: none;
       display: inline-block;
     }
@@ -256,6 +261,7 @@
       align-items: center;
       justify-content: center;
       z-index: 2;
+      padding-bottom: 15vh;
     }
 
     .hero-content {
@@ -266,8 +272,14 @@
     }
 
     .hero-title {
-      font-family: 'Bebas Neue', cursive;
-      font-size: clamp(4rem, 12vw, 8rem);
+      font-family: 'League Gothic', sans-serif !important;
+      font-size: clamp(6rem, 18vw, 14rem);
+      font-weight: 400 !important;
+      color: #ffffff;
+      letter-spacing: 0.01em;
+      text-transform: uppercase;
+      -webkit-text-stroke: 4px #ffffff;
+      margin: 0;
       font-weight: 400;
       letter-spacing: 0.05em;
       margin-bottom: 0;
@@ -881,7 +893,7 @@
         align-items: flex-start;
         gap: 1rem;
       }
-      .cafo-navbar__cta {
+      .cafo-navbar__cta { font-family: 'League Gothic', sans-serif !important; font-size: 1.8rem !important; padding: 10px 28px !important;
         width: 100%;
         text-align: center;
       }
@@ -948,18 +960,14 @@
 <body>
 
   <!-- Free Shipping Banner -->
-  <div class="free-shipping-banner">
-    <div class="free-shipping-content">
-      <span class="shipping-text">🚚 Free shipping on orders over $50</span>
-    </div>
+  <div style="background: #0B0C10; width: 100%; padding: 8px 0; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.1);">
+    <span style="font-family: 'Bebas Neue', 'Oswald', 'Anton', sans-serif !important; font-size: 1rem; font-weight: 400; color: #F5F1E8; letter-spacing: 0.1em; text-transform: uppercase;">🚚 Free shipping on orders over $50</span>
   </div>
 
   <!-- ===== NAVBAR ===== -->
   <nav class="cafo-navbar" id="cafoNavbar">
     <div class="cafo-navbar__inner">
-      <a class="cafo-navbar__brand" href="index.html">
-        <img src="White logo transperent .png" alt="CAFO - Caffeinated Focus" />
-      </a>
+      <a class="cafo-navbar__brand" href="index.html">CAFO</a>
       
       <div class="cafo-navbar__toggle" id="cafoToggle">
         <span></span>
@@ -972,7 +980,7 @@
           <li><a class="cafo-navbar__link" href="index.html">Home</a></li>
           <li><a class="cafo-navbar__link" href="Shop.html">Shop</a></li>
           <li><a class="cafo-navbar__link" href="Community.html">Community</a></li>
-          <li><a class="cafo-navbar__link" href="About.html">About Us</a></li>
+          <li><a class="cafo-navbar__link" href="About.html">Our Story</a></li>
         </ul>
       </div>
       
@@ -992,7 +1000,7 @@
     </div>
     <div class="hero-overlay">
       <div class="hero-content">
-        <h1 class="hero-title">Three Brothers. Building A Movement.</h1>
+        <h1 class="hero-title">Our Story</h1>
       </div>
     </div>
   </section>
@@ -1000,7 +1008,7 @@
   <!-- ===== OUR STORY SECTION ===== -->
   <section class="story-section">
     <div class="story-container">
-      <h2 class="section-title">Our Story</h2>
+      <h2 class="section-title">Three Brothers. Building A Movement.</h2>
       
       <!-- Story Grid with Images -->
       <div class="story-grid">
