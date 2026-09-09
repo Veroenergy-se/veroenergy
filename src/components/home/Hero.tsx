@@ -15,15 +15,24 @@ export default function Hero() {
           transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
         >
           <motion.h1
-            className="mt-8 sm:mt-12 font-monument font-black text-brown leading-none tracking-tight whitespace-nowrap text-2xl sm:text-4xl md:text-5xl lg:text-7xl"
+            className="mt-8 sm:mt-12 font-monument font-black text-brown leading-[1.05] tracking-tight text-3xl sm:text-5xl md:text-6xl lg:text-7xl"
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
           >
-            {t('hero.titleLine1')} {t('hero.titleLine2')}
+            <span className="block">{t('hero.titleLine1')}</span>
+            <span className="block">{t('hero.titleLine2')}</span>
           </motion.h1>
+          <motion.p
+            className="mt-5 font-accent font-semibold text-caforange uppercase tracking-[0.2em] text-sm sm:text-base"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
+            {t('hero.tagline')}
+          </motion.p>
           <motion.div
-            className="mt-40 lg:mt-56 flex flex-col items-center gap-7"
+            className="mt-16 lg:mt-20 flex flex-col items-center gap-7"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
